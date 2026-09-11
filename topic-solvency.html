@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>专题 · 保险风险最低资本 · 非寿险责任准备金评估</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .calc button{background:var(--blue);color:#fff;border:none;border-radius:6px;padding:6px 18px;font-size:13px;cursor:pointer;margin-left:8px}
+  .calc .row{margin:8px 0;font-size:13.5px}
+  .calc .out-box{background:var(--blue-l);border-radius:8px;padding:10px 14px;margin-top:10px;font-family:var(--mono);font-size:13px;line-height:2}
+</style>
+</head>
+<body>
+<aside class="side">
+  <div class="brand"><b>非寿险责任准备金评估</b><span>正精算师（非寿险）</span></div>
+    <nav>
+    <a href="xihong.html">关于 · 西红精算</a>
+    <a href="index.html">首页 · 考试全景</a>
+    <a href="about.html">本库说明 · 编法与用法</a>
+    <div class="grp">五大篇章（考纲权重）</div>
+    <a href="ch1.html">CH.01 总览与体系<span class="w">10%</span></a>
+    <a href="ch2.html">CH.02 未决赔款<span class="w">30%</span></a>
+    <a href="ch3.html">CH.03 未到期责任<span class="w">25%</span></a>
+    <a href="ch4.html">CH.04 评估实务<span class="w">20%</span></a>
+    <a href="ch5.html">CH.05 监管·会计·经营<span class="w">15%</span></a>
+    <div class="grp">拓展专题（不止于考纲）</div>
+    <a href="topic-stochastic.html">专题·随机模型与CV</a>
+    <a href="topic-reinsurance.html">专题·再保险准备金</a>
+    <a href="topic-rural.html">专题·农业保险精算规定</a>
+    <a href="topic-solvency.html" class="on">专题·保险风险最低资本</a>
+    <a href="topic-accounting.html">专题·财会15号与IFRS17衔接</a>
+    <div class="grp">真题 / 模拟 / 资料</div>
+    <a href="zhenti.html">真题馆</a>
+    <a href="moni-1.html">模拟卷一 · 流量三角形</a>
+    <a href="moni-2.html">模拟卷二 · 监管口径</a>
+    <a href="moni-3.html">模拟卷三 · 实务综合</a>
+    <a href="references.html">参考资料库</a>
+    <div class="grp">知识拓展</div>
+    <a href="textbook.html">书本题目·解题汇总</a>
+    <a href="regulations.html">监管原文·对照库</a>
+  </nav>
+  <div class="prog-mini">学习进度 <b>0 / 14</b></div>
+</aside>
+<main class="main">
+
+<div class="ch-head">
+  <div class="no">TOPIC · DEEP DIVE</div>
+  <h1>保险风险最低资本（偿二代Ⅱ·非寿险）</h1>
+  <p class="sub">K1 赔付波动 · K2 准备金发展 · K3 巨灾 —— 险种分类、聚合矩阵与准备金的资本化定价</p>
+  <div class="wbar"><div class="lab"><span>定位</span><span>CH.05 §5.1 的完整展开 · 大题近年上升点</span></div><div class="bar"><i style="width:10%"></i></div></div>
+  <div class="toc">
+    <a href="#tv1">一、在偿二代Ⅱ版图中的位置</a>
+    <a href="#tv2">二、K1 / K2 / K3 的计量框架</a>
+    <a href="#tv3">三、险种与聚合结构</a>
+    <a href="#tv4">四、准备金评估师的资本视角</a>
+    <a href="#tv5">五、跨库互证</a>
+  </div>
+</div>
+
+<section id="tv1">
+  <h2><span class="sn">一</span>在偿二代Ⅱ版图中的位置</h2>
+  <div class="arch">
+    <div class="arch-top"><b>偿付能力充足率的分子分母</b><div class="meta"><span>实际资本 / 最低资本</span></div></div>
+    <div class="arch-grid">
+      <div class="arch-card"><b>量化风险最低资本</b><p>保险风险（本专题）+ 市场风险 + 信用风险，三者间再按相关性矩阵聚合。</p></div>
+      <div class="arch-card"><b>保险风险（非寿险）拆解</b><p>赔付波动风险（保费及近期赔付经验暴露）+ 准备金发展风险（未决净额暴露）+ 巨灾风险（灾因暴露）——即 K1 / K2 / K3。</p></div>
+      <div class="arch-card"><b>控制风险调整</b><p>操作与治理缺陷带来的附加（+）或减免（−），与 19 号内控规范（→CH.05 §5.3）直接挂钩。</p></div>
+    </div>
+    <div class="arch-hint">记忆锚：保险风险是「承保与估计」的资本化；市场风险是「投资」的资本化；信用风险是「对手方」的资本化。准备金评估师主场在 K2。</div>
+  </div>
+</section>
+
+<section id="tv2">
+  <h2><span class="sn">二</span>K1 / K2 / K3 的计量框架</h2>
+  <div class="tbl-scroll"><table>
+    <tr><th>模块</th><th>风险暴露 EX</th><th>风险因子结构</th><th>特色调整</th></tr>
+    <tr><td><b>K1 赔付波动</b></td><td>自留保费 / 已赚保费口径（规模）</td><td>基础因子×(1+特征系数)：特征含险种结构、再保结构、赔付经验偏差</td><td>近年赔付率异常 → 因子上浮</td></tr>
+    <tr><td><b>K2 准备金发展</b></td><td>未决赔款准备金净额（摊回后）</td><td>基础因子×(1+特征系数)：特征含回溯偏差历史、长尾占比、三角形成熟度</td><td>连续负偏差回溯 → 因子上浮（估不准要多占资本）</td></tr>
+    <tr><td><b>K3 巨灾</b></td><td>按灾因（台风/洪水/地震/冰雹…）的风险暴露与区域集中度</td><td>灾因情景/概率模型计量；分灾因后高相关聚合</td><td>区域集中度加成；农险、财产险为主要载体</td></tr>
+  </table></div>
+  <div class="formula"><b>聚合的两层结构（框架级）</b><div class="fx">第一层（险种内）：MC(险种) = √[ K1² + K2² + 2·ρ12·K1·K2 ]<br>第二层（险种间）：MC(保险风险) = √[ Σi Σj ρij·MC(i)·MC(j) ]　（ρii=1，ρij 按险种对设定，均 &lt; 1）<br>巨灾部分 K3 通常以更高相关系数参与聚合（趋于线性相加）</div><span class="src src-gui">规</span>银保监发〔2021〕51号附件第4号（因子表与相关系数矩阵以附件原文为准，本站给框架）</div>
+  <div class="tip"><b>为什么 ρ &lt; 1 是「资本优惠」：</b>两个不完全相关的风险叠加，总波动小于简单相加（分散效应）。险种越多元，第二层的分散红利越大——这是「业务结构影响资本占用」的数学根源，论述题用它解释多元化战略。<span class="star s2">常考</span></div>
+</section>
+
+<section id="tv3">
+  <h2><span class="sn">三</span>险种与聚合结构</h2>
+  <div class="tbl-scroll"><table>
+    <tr><th>险种群</th><th>尾部特征</th><th>K2 因子量级直觉</th><th>准备金评估要点</th></tr>
+    <tr><td>车险（车损/三责）</td><td>短-中尾</td><td>低（进展短、数据厚）</td><td>链梯为主，人伤三责稍长</td></tr>
+    <tr><td>企财险 / 家财险</td><td>中尾，巨灾暴露</td><td>中（大案扰动）</td><td>巨灾分离 + B-F</td></tr>
+    <tr><td>责任险（公众/产品/职业）</td><td>长尾</td><td>高（IBNR 占比大、尾巴长）</td><td>B-F 为主，尾部因子重点论证</td></tr>
+    <tr><td>农险</td><td>季节性 + 巨灾</td><td>中-高（时空相关）</td><td>风险分布法 + 事件模型（→专题·农险）</td></tr>
+    <tr><td>意健险（短期）</td><td>短尾</td><td>低</td><td>赔付率法即可，关注逆选择</td></tr>
+    <tr><td>信用保证险</td><td>与经济周期共振</td><td>特殊（系统性）</td><td>宏观情景叠加，谨慎性加倍</td></tr>
+  </table></div>
+  <div class="prac"><b>演算示例（自构，框架级）：</b>某公司 K1 = 8 亿、K2 = 5 亿、ρ12 = 0.5 → 险种内 MC = √(64+25+2×0.5×8×5) = √129 ≈ 11.36 亿；若 ρ12 = 0（完全分散）→ √89 ≈ 9.43 亿；若 ρ12 = 1（完全同向）→ 13 亿。相关系数从 1 降到 0.5，资本省 1.64 亿——<b>风险相关性就是资本价格</b>。</div>
+</section>
+
+<section id="tv4">
+  <h2><span class="sn">四</span>准备金评估师的资本视角</h2>
+  <div class="lead">把 CH.02–CH.04 的每个技术选择翻译成 K2 的语言——这是「准备金评估对经营管理影响」的高阶答案。</div>
+  <div class="tbl-scroll"><table>
+    <tr><th>评估技术选择</th><th>K2 后果</th><th>经营含义</th></tr>
+    <tr><td>链梯 vs B-F（结果差 8%）</td><td>未决净额差 8% → K2 差同比例</td><td>方法选择的资本成本要进决策</td></tr>
+    <tr><td>尾部因子 +0.1（长尾险种）</td><td>未决↑ → K2↑，且尾部越远折现越少</td><td>尾部论证质量 = 资本效率</td></tr>
+    <tr><td>回溯连续负偏差</td><td>特征系数上浮（双重惩罚：补提+因子升）</td><td>回溯纪律是最便宜的资本管理</td></tr>
+    <tr><td>再保超赔结构优化</td><td>K2 净额下降 vs 信用风险上升</td><td>三元优化（→专题·再保 §四）</td></tr>
+    <tr><td>随机模型给出的 s.e.</td><td>K2 本质上就是对 s.e. 的监管定价</td><td>估得准（s.e. 小）≈ 资本省（→专题·随机模型）</td></tr>
+  </table></div>
+  <div class="exam"><span class="yr">2024回忆</span><span class="yr">2025回忆</span><b>真题影子：</b>「准备金评估结果与偿付能力的关系」——四层递进：① 未决净额是 K2 暴露 → ② 估计上调节接推高最低资本 → ③ 回溯质量影响特征系数 → ④ 结论「准确、可回溯的评估本身就是资本节约」。第④层是拉开档次的收束句。<span class="star s3">高频必背</span></div>
+</section>
+
+<section id="tv5">
+  <h2><span class="sn">五</span>跨库互证</h2>
+  <div class="tbl-scroll"><table>
+    <tr><th>概念</th><th>本站口径</th><th>C-ROSS II 知识库（cross-solvency）</th></tr>
+    <tr><td>K1/K2/K3 拆解</td><td>CH.05 §5.1 + 本专题</td><td>保险风险最低资本专章（因子表全文）</td></tr>
+    <tr><td>相关系数矩阵聚合</td><td>本专题 §二（框架）</td><td>量化风险聚合专章（矩阵原文）</td></tr>
+    <tr><td>控制风险与内控</td><td>CH.05 §5.3（19号文）</td><td>控制风险调整专章</td></tr>
+  </table></div>
+  <div class="src-note">因子具体数值以《保险公司偿付能力监管规则（Ⅱ）》附件第4号原文为准；两库如有个别口径差异，以监管原文为准。</div>
+  <div class="mnem"><b>一句话收束：</b>K1 罚「保费赌错」，K2 罚「准备金估错」，K3 罚「灾没躲开」——三者开平方，分散给折扣。</div>
+</section>
+
+<aside style="margin:36px 0 0;padding:18px 22px;background:linear-gradient(90deg,rgba(181,61,46,.06),rgba(24,95,165,.04));border:1px solid rgba(181,61,46,.22);border-left:4px solid #b53d2e;border-radius:8px">
+  <div style="font-size:13.5px;color:#7a3417;font-weight:600;letter-spacing:.04em;margin-bottom:8px">📎 监管原文对照</div>
+  <div style="font-size:13px;color:#3a302a;line-height:1.9">保险风险最低资本，监管原文 <a href="regulations.html#m51">§m51 偿二代Ⅱ第4号</a>，综合因子法 MC = EX × RF 是 11 号令之外的核心公式。</div>
+</aside>
+
+<button class="done-btn" data-id="tp-solvency">○ 标记本页已完成</button>
+
+<div class="pager"><a class="prev" href="topic-rural.html">← 专题·农业保险精算规定</a><a class="next" href="topic-accounting.html">专题·财会15号与IFRS17衔接 →</a></div>
+</main>
+<script src="js/kb.js"></script>
+<script src="js/gate.js"></script>
+</body>
+</html>
