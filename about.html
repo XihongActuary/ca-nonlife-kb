@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>本库说明 · 非寿险责任准备金评估</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .ab-hero{background:linear-gradient(140deg,#12233b 0%,#1d3a5f 70%,#2a4d78 100%);border-radius:16px;color:#fff;padding:38px 40px 32px;margin-bottom:30px;position:relative;overflow:hidden}
+  .ab-hero h1{color:#fff;font-size:28px;margin:6px 0 4px}
+  .ab-hero .sub{color:#a9c4e0;font-size:14px}
+  .src-note{font-size:12.5px;color:var(--ink-2);background:#fdf9ef;border:1px dashed var(--line-2);border-radius:8px;padding:10px 16px;margin:10px 0}
+  .arch-hint{margin:14px 0 0;text-align:center;font-size:12.5px;color:var(--ink-2)}
+</style>
+</head>
+<body>
+<aside class="side">
+  <div class="brand"><b>非寿险责任准备金评估</b><span>正精算师（非寿险）</span></div>
+    <nav>
+    <a href="xihong.html">关于 · 西红精算</a>
+    <a href="index.html">首页 · 考试全景</a>
+    <a href="about.html" class="on">本库说明 · 编法与用法</a>
+    <div class="grp">五大篇章（考纲权重）</div>
+    <a href="ch1.html">CH.01 总览与体系<span class="w">10%</span></a>
+    <a href="ch2.html">CH.02 未决赔款<span class="w">30%</span></a>
+    <a href="ch3.html">CH.03 未到期责任<span class="w">25%</span></a>
+    <a href="ch4.html">CH.04 评估实务<span class="w">20%</span></a>
+    <a href="ch5.html">CH.05 监管·会计·经营<span class="w">15%</span></a>
+    <div class="grp">拓展专题（不止于考纲）</div>
+    <a href="topic-stochastic.html">专题·随机模型与CV</a>
+    <a href="topic-reinsurance.html">专题·再保险准备金</a>
+    <a href="topic-rural.html">专题·农业保险精算规定</a>
+    <a href="topic-solvency.html">专题·保险风险最低资本</a>
+    <a href="topic-accounting.html">专题·财会15号与IFRS17衔接</a>
+    <div class="grp">真题 / 模拟 / 资料</div>
+    <a href="zhenti.html">真题馆</a>
+    <a href="moni-1.html">模拟卷一 · 流量三角形</a>
+    <a href="moni-2.html">模拟卷二 · 监管口径</a>
+    <a href="moni-3.html">模拟卷三 · 实务综合</a>
+    <a href="references.html">参考资料库</a>
+    <div class="grp">知识拓展</div>
+    <a href="textbook.html">书本题目·解题汇总</a>
+    <a href="regulations.html">监管原文·对照库</a>
+  </nav>
+  <div class="prog-mini">学习进度 <b>0 / 14</b></div>
+</aside>
+<main class="main">
+
+<div class="ab-hero">
+  <div class="no" style="font-family:var(--mono);font-size:12px;color:#8fb4dd;letter-spacing:3px">ABOUT THIS KB</div>
+  <h1>本库说明 · 编法与用法</h1>
+  <div class="sub">考纲为骨 · 教材为肉 · 真题为血 · 监管为魂</div>
+</div>
+
+<section>
+  <h2><span class="sn">§1</span>编写依据与权重分配</h2>
+  <div class="lead">考纲为「中考公布版」（2023-07-18 发布），参考教材与资料为「中精官网公布版」（2024-03-28 发布），共 6 项教材+监管依据。本库 5 章权重 10/30/25/20/15——把考纲的 40%/60% 拆到 5 章，把「原理 40%」分散到 CH.01/02/03，把「实务 60%」倾斜给 CH.02/04/05。</div>
+  <div class="tbl-scroll"><table>
+    <tr><th>考纲大类</th><th class="ctr">考纲权重</th><th>对应章节</th><th>本库章节权重</th><th>侧重</th></tr>
+    <tr><td rowspan="6">一、非寿险精算评估原理和方法</td><td class="ctr" rowspan="6">40%</td><td>未到期责任准备金基本概念</td><td class="ctr">CH.03 §3.1</td><td>概念框架</td></tr>
+    <tr><td>未到期责任准备金评估方法</td><td class="ctr">CH.03 §3.2-3.3</td><td>比例法·风险分布法</td></tr>
+    <tr><td>保费充足性测试</td><td class="ctr">CH.03 §3.5</td><td>保费不足准备金</td></tr>
+    <tr><td>未决赔款准备金基本概念</td><td class="ctr">CH.02 §2.1</td><td>已报案+IBNR+ULAE</td></tr>
+    <tr><td>未决赔款准备金评估方法</td><td class="ctr">CH.02 §2.2-2.5</td><td>链梯·B-F·Cape Cod·赔付率</td></tr>
+    <tr><td>风险边际和折现</td><td class="ctr">CH.02 §2.6</td><td>资本成本法·置信区间法</td></tr>
+    <tr><td rowspan="7">二、非寿险精算评估实务</td><td class="ctr" rowspan="7">60%</td><td>识别数据问题</td><td class="ctr">CH.04 §4.1</td><td>数据筛选·异常处理</td></tr>
+    <tr><td>模型调整与假设校验</td><td class="ctr">CH.04 §4.2</td><td>巨灾·通胀·进展速度</td></tr>
+    <tr><td>回溯分析</td><td class="ctr">CH.04 §4.3</td><td>偏差率·回溯修正</td></tr>
+    <tr><td>保险风险最低资本</td><td class="ctr">CH.05 §5.1</td><td>K1/K2/K3·相关系数</td></tr>
+    <tr><td>会计处理</td><td class="ctr">CH.05 §5.2</td><td>财会15号·IFRS17衔接</td></tr>
+    <tr><td>评估报告/内控/底稿</td><td class="ctr">CH.05 §5.3</td><td>11号令·19号内控</td></tr>
+    <tr><td>对经营管理影响</td><td class="ctr">CH.05 §5.4</td><td>承保·理赔·再保·财务</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2><span class="sn">§2</span>章节学习路径（建议用时 4–6 周）</h2>
+  <div class="lead">按「筑基 → 攻坚 → 综合 → 实战」四阶段推进，每天 60-90 分钟。</div>
+  <div class="tbl-scroll"><table>
+    <tr><th>周次</th><th>阶段</th><th>任务</th><th>产出</th></tr>
+    <tr><td class="ctr">W1</td><td>筑基</td><td>CH.01 总览（2天）→ CH.02 §2.1-2.2 基础概念（3天）→ 同步练 moni-1 前 3 题</td><td>能复述三角方法谱系，链梯法能独立算</td></tr>
+    <tr><td class="ctr">W2</td><td>筑基</td><td>CH.02 §2.3-2.5 B-F / Cape Cod / 赔付率（5天）→ 专题·随机模型选读</td><td>能区分四类方法的适用前提</td></tr>
+    <tr><td class="ctr">W3</td><td>攻坚</td><td>CH.02 §2.6 风险边际 + ULAE + 检验 + CH.03 §3.1-3.3 未到期概念方法</td><td>未到期比例法与风险分布法互证</td></tr>
+    <tr><td class="ctr">W4</td><td>攻坚</td><td>CH.03 §3.4-3.5 长期合同·保费充足性 + CH.04 数据·回溯全章</td><td>会算保费不足准备金与未到期回溯偏差</td></tr>
+    <tr><td class="ctr">W5</td><td>综合</td><td>CH.05 §5.1-5.2 最低资本 + 财会15号 + 专题·保险风险最低资本</td><td>K1/K2/K3 全链路聚合</td></tr>
+    <tr><td class="ctr">W6</td><td>实战</td><td>CH.05 §5.3-5.4 + 真题馆（2008/2023/2024/2025）+ 三套模拟卷</td><td>薄弱点回查、应试节奏</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2><span class="sn">§3</span>来源徽章与双层答案</h2>
+  <div class="lead">每条结论附来源徽章，便于回查与交叉验证。</div>
+  <div class="legend">
+    <span><span class="src src-jiao">教</span>谢志刚《非寿险责任准备金评估》（2011 版，第13章和16章除外）</span>
+    <span><span class="src src-gui">规</span>监管规则 / 会计准则（标文号）</span>
+    <span><span class="src src-ti">题</span>历年真题回忆（标年份 · 题号）</span>
+  </div>
+  <div class="src-note"><b>双层答案用法：</b>真题先给 <span class="ans-skel" style="display:inline-block;padding:4px 12px;margin:0"><b>骨架</b> · 关键词结论</span>，再展开 <b>完整答题过程</b>（含表格化公式、条文号、对照分值）。考场上先背骨架，临场展开为完整答案。<b>演算器</b>默认参数即一道真题数值，输入框可即时调整验证敏感性。</div>
+</section>
+
+<section>
+  <h2><span class="sn">§4</span>五星星级与权重即兵力</h2>
+  <div class="lead">每个知识点末尾的星级，标注「考频 × 分值 × 难度」——权重即兵力。</div>
+  <div class="legend">
+    <span><span class="star s3">高频必背</span>大题反复出，且分值高</span>
+    <span><span class="star s2">常考</span>大题或重要选择题</span>
+    <span><span class="star s1">了解</span>低频或仅选择题</span>
+  </div>
+  <div class="tip"><b>复习投入配比（与五章权重对应）：</b>CH.02 未决赔款占 30% — 这是大题重镇，<b>必须把链梯·B-F·Cape Cod·赔付率四种方法的完整演算练到熟练</b>；CH.03 未到期占 25% — 保费充足性测试是「法规 + 算式」组合题，每年的必考点；CH.04 实务占 20% — 数据问题与回溯分析近年比重上升；CH.05 监管占 15% — 偿二代Ⅱ附件第4号与财会15号是大题高频；CH.01 占 10% — 概念速读、占分低但不可缺。</div>
+</section>
+
+<section>
+  <h2><span class="sn">§5</span>与同期上线知识库的关系</h2>
+  <div class="tbl-scroll"><table>
+    <tr><th>本站章节</th><th>关联知识库</th><th>对照点</th></tr>
+    <tr><td>CH.05 §5.1 保险风险最低资本</td><td>C-ROSS II 偿付能力知识库（<code>xihongactuary.github.io/cross-solvency/</code>）</td><td>保险风险最低资本定义、参数与聚合规则同源</td></tr>
+    <tr><td>CH.05 §5.2 会计处理</td><td>CAS25 / IFRS17 双语知识库（<code>xihongactuary.github.io/ifrs17-kb/</code>）</td><td>财会15号（旧准则）→ IFRS17（新准则）的过渡</td></tr>
+    <tr><td>CH.03 §3.5 保费充足性测试</td><td>ca-life-kb CH.02 责任准备金 · 评估利率曲线</td><td>长险「充分性测试」与短险「充足性测试」的逻辑差异</td></tr>
+    <tr><td>CH.04 §4.3 回溯分析</td><td>ca-life-kb CH.05 报告分析</td><td>经验分析、回溯偏差率、调整方法口径一致</td></tr>
+  </table></div>
+  <div class="src-note">跨库内容如有口径差异，以本站「监管文号原文」为准。</div>
+</section>
+
+<section>
+  <h2><span class="sn">§6</span>关键约定与术语标准化</h2>
+  <ul>
+    <li><b>方法名规范</b>：链梯法（Chain Ladder）、案均赔款法（Case-amount）、B-F 法、Bornhuetter-Ferguson）、Cape Cod、准备金进展法（Reserve Run-off）、预期赔付率法 / 赔付率法（Loss Ratio）、最终进展因子法。</li>
+    <li><b>数据组织三坐标</b>：事故年（Accident Year）、保单年（Policy Year）、报告年（Report Year）；同义中英对照见 <a href="references.html">参考资料库</a>。</li>
+    <li><b>已决/已报案双口径</b>：已决赔款（Paid）→ 链梯法（Paid）；已报案赔款（Reported/Case）→ 链梯法（Reported）/ 案均法 / B-F / Cape Cod。混用必失分。</li>
+    <li><b>ULAE vs LAE</b>：ULAE = Unallocated Loss Adjustment Expenses（未分配理赔费用，即间接理赔费用）；ALAE = Allocated LAE（直接理赔费用，赔案可分摊部分）。</li>
+    <li><b>术语优先序</b>：监管文号原文 > 教材用词 > 实务通用术语。如「未到期责任准备金」与「未赚保费准备金」是同一口径不同阶段称谓。</li>
+  </ul>
+</section>
+
+<div class="pager">
+  <a href="index.html">← 首页</a>
+  <a href="ch1.html">CH.01 开始 →</a>
+</div>
+
+<footer class="colophon">非寿险责任准备金评估 · 西红精算 · 仅供学习交流</footer>
+</main>
+<script src="js/kb.js"></script>
+</body>
+</html>
