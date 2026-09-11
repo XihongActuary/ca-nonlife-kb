@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>专题 · 随机模型与CV · 非寿险责任准备金评估</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<aside class="side">
+  <div class="brand"><b>非寿险责任准备金评估</b><span>正精算师（非寿险）</span></div>
+    <nav>
+    <a href="xihong.html">关于 · 西红精算</a>
+    <a href="index.html">首页 · 考试全景</a>
+    <a href="about.html">本库说明 · 编法与用法</a>
+    <div class="grp">五大篇章（考纲权重）</div>
+    <a href="ch1.html">CH.01 总览与体系<span class="w">10%</span></a>
+    <a href="ch2.html">CH.02 未决赔款<span class="w">30%</span></a>
+    <a href="ch3.html">CH.03 未到期责任<span class="w">25%</span></a>
+    <a href="ch4.html">CH.04 评估实务<span class="w">20%</span></a>
+    <a href="ch5.html">CH.05 监管·会计·经营<span class="w">15%</span></a>
+    <div class="grp">拓展专题（不止于考纲）</div>
+    <a href="topic-stochastic.html" class="on">专题·随机模型与CV</a>
+    <a href="topic-reinsurance.html">专题·再保险准备金</a>
+    <a href="topic-rural.html">专题·农业保险精算规定</a>
+    <a href="topic-solvency.html">专题·保险风险最低资本</a>
+    <a href="topic-accounting.html">专题·财会15号与IFRS17衔接</a>
+    <div class="grp">真题 / 模拟 / 资料</div>
+    <a href="zhenti.html">真题馆</a>
+    <a href="moni-1.html">模拟卷一 · 流量三角形</a>
+    <a href="moni-2.html">模拟卷二 · 监管口径</a>
+    <a href="moni-3.html">模拟卷三 · 实务综合</a>
+    <a href="references.html">参考资料库</a>
+    <div class="grp">知识拓展</div>
+    <a href="textbook.html">书本题目·解题汇总</a>
+    <a href="regulations.html">监管原文·对照库</a>
+  </nav>
+  <div class="prog-mini">学习进度 <b>0 / 14</b></div>
+</aside>
+<main class="main">
+
+<div class="ch-head">
+  <div class="no">TOPIC · BEYOND THE SYLLABUS</div>
+  <h1>随机模型与变异系数（CV）</h1>
+  <p class="sub">链梯法只给一个数，随机模型给一个分布 —— Mack 模型 · Bootstrap · 置信区间 · CV 检验（教材 Ch5 P142）</p>
+  <div class="wbar"><div class="lab"><span>定位</span><span>拔高专题 · 风险边际与随机准备金的理论底座</span></div><div class="bar"><i style="width:8%"></i></div></div>
+  <div class="toc">
+    <a href="#ts1">一、为什么需要随机模型</a>
+    <a href="#ts2">二、Mack 模型（解析法）</a>
+    <a href="#ts3">三、Bootstrap（重抽样法）</a>
+    <a href="#ts4">四、CV：准备金的体检指标</a>
+    <a href="#ts5">五、与考点的连接</a>
+  </div>
+</div>
+
+<section id="ts1">
+  <h2><span class="sn">一</span>为什么需要随机模型</h2>
+  <div class="lead">链梯法的 CDF 连乘只回答「点估计是多少」；而风险边际（CH.02 §2.6 的 75% 分位）与偿付能力资本（K2）都需要「分布长什么样」。</div>
+  <div class="tbl-scroll"><table>
+    <tr><th>视角</th><th>确定性方法（链梯族）</th><th>随机模型</th></tr>
+    <tr><td>输出</td><td>一个数（点估计）</td><td>分布（均值 + 方差 + 分位数）</td></tr>
+    <tr><td>能回答</td><td>未决「大概是多少」</td><td>未决超过 X 的概率是多少（VaR 口径）</td></tr>
+    <tr><td>用途</td><td>负债入账</td><td>风险边际计量 · 资本占用 · 管理层沟通区间</td></tr>
+    <tr><td>代表</td><td>链梯 / B-F / 案均 / 赔付率</td><td>Mack（解析方差）· Bootstrap（模拟方差）· 广义线性模型</td></tr>
+  </table></div>
+  <div class="src-note"><span class="src src-jiao">教</span>教材 Ch5「随机模型」：链梯法的概率化改造——把进展因子看作随机变量，最终赔款成为随机变量。教材用 2001–2010 十事故年三角形演示「推广的链梯比率族模型」（.xls 第五章数据，首行 2001 年：6174 / 8061 / 8639 / 8951 / 9207 / 9363 / 9464 / 9559 / 9634，进展 9 期）。</div>
+</section>
+
+<section id="ts2">
+  <h2><span class="sn">二</span>Mack 模型（解析法）</h2>
+  <div class="lead">Mack（1993）在不指定分布的前提下，只用「进展因子独立 + 方差与均值成比例」两个假设，推出链梯估计的预测方差。</div>
+  <div class="formula"><b>Mack 两条假设 + 方差公式</b><div class="fx">假设① E[C(i,j+1) | C(i,j)] = f(j)·C(i,j)　（链梯关系的期望形式）<br>假设② Var[C(i,j+1) | C(i,j)] = σ²(j)·C(i,j)　（方差随规模放大）<br>参数估计：f̂(j) 即加权链梯因子；σ̂²(j) = 1/(n−j−1) · Σ C(i,j)·[f(i,j) − f̂(j)]²<br>预测误差（MSEP）：s.e.(LU(i)) = LU(i)·√[ Σ(j≥当前) σ̂²(j)/f̂(j)² · (1/C(i,j) + 1/S(j)) ]</div></div>
+  <p>直观拆解：预测方差 = <b>过程方差</b>（σ² 部分，赔款固有的随机性）+ <b>参数方差</b>（1/S(j) 部分，因子估计的抽样误差——暴露量 S(j) 越大，因子估得越准）。新事故年两块都大，老事故年两块都小——与链梯「新年份不确定」的直觉完全一致。</p>
+  <div class="prac"><b>考试定位：</b>正精算师（非寿险）对本专题要求「懂框架、会解释」，不要求手推 MSEP。大题若问「如何量化准备金评估的不确定性」，标准答案：Mack 解析法（假设少、快）或 Bootstrap（模拟法、可给完整分布），二者都输出 s.e. 与置信区间，支撑 75% 分位风险边际。</div>
+</section>
+
+<section id="ts3">
+  <h2><span class="sn">三</span>Bootstrap（重抽样法）</h2>
+  <div class="lead">Mack 硬算方差，Bootstrap 直接「把历史重演一万遍」——用重抽样生成一万个未来，看未决的分布。</div>
+  <div class="arch">
+    <div class="arch-top"><b>Bootstrap 五步流程</b><div class="meta"><span>残差重抽样 · England & Verrall</span></div></div>
+    <div class="arch-grid">
+      <div class="arch-card"><b>① 拟合</b><p>对增量三角形拟合链梯（或 GLM），得到拟合值与<b> Pearson 残差</b>。</p></div>
+      <div class="arch-card"><b>② 重抽残差</b><p>把调整后的残差放回池中，有放回地重抽样，生成「伪历史三角形」。</p></div>
+      <div class="arch-card"><b>③ 重估因子</b><p>对每个伪三角形重跑链梯，得到一组的进展因子与下三角预测（参数不确定性）。</p></div>
+      <div class="arch-card"><b>④ 加过程噪声</b><p>对预测的未来增量再按伽马/过度散布泊松分布抽样（过程不确定性）。</p></div>
+      <div class="arch-card"><b>⑤ 汇总分布</b><p>一万个总未决 → 直方图 → 均值、标准差、任意分位数（含 75%）。</p></div>
+    </div>
+    <div class="arch-hint">Mack 与 Bootstrap 结果通常接近（同源于链梯结构）；Bootstrap 的额外福利是可以输出<b>按事故年 / 按进展期的二维分布</b>，管理层沟通直观。</div>
+  </div>
+</section>
+
+<section id="ts4">
+  <h2><span class="sn">四</span>CV：准备金的体检指标</h2>
+  <div class="lead">CV（变异系数）= 标准差 / 均值——把「不确定性」换算成可横向比较的百分比。</div>
+  <div class="formula"><b>CV 与经验区间</b><div class="fx">CV = s.e.(CV准备金) / CV准备金均值<br>经验标尺（长尾业务）：CV &lt; 10% 健康 · 10–20% 正常 · &gt; 20% 数据或方法警报</div></div>
+  <div class="tbl-scroll"><table>
+    <tr><th>业务</th><th class="ctr">典型 CV 量级</th><th>驱动因素</th></tr>
+    <tr><td>车险（短尾）</td><td class="ctr">3–8%</td><td>数据厚、进展短、模式稳</td></tr>
+    <tr><td>财产险（中尾）</td><td class="ctr">8–15%</td><td>大额赔案扰动</td></tr>
+    <tr><td>责任险（长尾）</td><td class="ctr">15–30%+</td><td>尾部因子主观 + 司法环境漂移</td></tr>
+  </table></div>
+  <div class="tip"><b>CV 的三个用法：</b>① 同一业务逐期监控——CV 突升说明数据异常或结构突变；② 跨险种资本配置——CV 高的险种 K2 因子天然更重；③ 风险边际校准——75% 分位 ≈ 均值 + 0.674×s.e.（正态近似），s.e. 由 Mack/Bootstrap 给出，风险边际 = 0.674×s.e.，与资本成本法互为校验。<span class="star s2">常考</span></div>
+</section>
+
+<section id="ts5">
+  <h2><span class="sn">五</span>与考点的连接</h2>
+  <div class="tbl-scroll"><table>
+    <tr><th>本专题概念</th><th>回连主章</th><th>考试怎么考</th></tr>
+    <tr><td>75% 分位 ≈ 均值 + 0.674σ</td><td>CH.02 §2.6 风险边际</td><td>给 s.e. 求风险边际（置信区间法）</td></tr>
+    <tr><td>过程方差 vs 参数方差</td><td>CH.04 §4.2 假设校验</td><td>简答「不确定性来源」两分法</td></tr>
+    <tr><td>CV 监控阈值</td><td>CH.04 §4.4 结果检验</td><td>论述「如何监控评估质量」第四抓手</td></tr>
+    <tr><td>K2 与未决 s.e. 的同源性</td><td>CH.05 §5.1 最低资本</td><td>论述「估得准 = 资本节约」的数学根据</td></tr>
+  </table></div>
+  <div class="mnem"><b>一句话收束：</b>确定性方法管「入多少账」，随机模型管「睡得稳不稳」——前者是会计的语言，后者是风险的语言，正精算师必须会说两种。</div>
+</section>
+
+<button class="done-btn" data-id="tp-stochastic">○ 标记本页已完成</button>
+
+<div class="pager"><a class="prev" href="ch5.html">← CH.05 监管·会计·经营</a><a class="next" href="topic-reinsurance.html">专题·再保险准备金 →</a></div>
+</main>
+<script src="js/kb.js"></script>
+<script src="js/gate.js"></script>
+</body>
+</html>
