@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CH.01 总览与体系 · 非寿险责任准备金评估</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .famtree td{border:1px solid var(--line)}
+  .famtree .fam{background:var(--blue-l);font-weight:700;color:var(--blue-2)}
+</style>
+</head>
+<body>
+<aside class="side">
+  <div class="brand"><b>非寿险责任准备金评估</b><span>正精算师（非寿险）</span></div>
+    <nav>
+    <a href="xihong.html">关于 · 西红精算</a>
+    <a href="index.html">首页 · 考试全景</a>
+    <a href="about.html">本库说明 · 编法与用法</a>
+    <div class="grp">五大篇章（考纲权重）</div>
+    <a href="ch1.html" class="on">CH.01 总览与体系<span class="w">10%</span></a>
+    <a href="ch2.html">CH.02 未决赔款<span class="w">30%</span></a>
+    <a href="ch3.html">CH.03 未到期责任<span class="w">25%</span></a>
+    <a href="ch4.html">CH.04 评估实务<span class="w">20%</span></a>
+    <a href="ch5.html">CH.05 监管·会计·经营<span class="w">15%</span></a>
+    <div class="grp">拓展专题（不止于考纲）</div>
+    <a href="topic-stochastic.html">专题·随机模型与CV</a>
+    <a href="topic-reinsurance.html">专题·再保险准备金</a>
+    <a href="topic-rural.html">专题·农业保险精算规定</a>
+    <a href="topic-solvency.html">专题·保险风险最低资本</a>
+    <a href="topic-accounting.html">专题·财会15号与IFRS17衔接</a>
+    <div class="grp">真题 / 模拟 / 资料</div>
+    <a href="zhenti.html">真题馆</a>
+    <a href="moni-1.html">模拟卷一 · 流量三角形</a>
+    <a href="moni-2.html">模拟卷二 · 监管口径</a>
+    <a href="moni-3.html">模拟卷三 · 实务综合</a>
+    <a href="references.html">参考资料库</a>
+    <div class="grp">知识拓展</div>
+    <a href="textbook.html">书本题目·解题汇总</a>
+    <a href="regulations.html">监管原文·对照库</a>
+  </nav>
+  <div class="prog-mini">学习进度 <b>0 / 14</b></div>
+</aside>
+<main class="main">
+
+<div class="ch-head">
+  <div class="no">CHAPTER 01 · WEIGHT 10%</div>
+  <h1>责任准备金总览与体系</h1>
+  <p class="sub">未决与未到期两大族谱 · 三类时间基准 · 评估全流程 —— 概念分不多，但它是后面每一章的坐标系</p>
+  <div class="wbar"><div class="lab"><span>考纲权重</span><span>10%（概念速读 · 1–2 天）</span></div><div class="bar"><i style="width:10%"></i></div></div>
+  <div class="toc">
+    <a href="#s11">§1.1 为什么需要责任准备金</a>
+    <a href="#s12">§1.2 准备金体系全景图</a>
+    <a href="#s13">§1.3 三类时间基准与流量三角形</a>
+    <a href="#s14">§1.4 评估流程总览</a>
+    <a href="#s15">§1.5 非寿险 vs 寿险评估的差异</a>
+    <a href="#s16">§1.6 本章考点清单</a>
+  </div>
+</div>
+
+<section id="s11">
+  <h2><span class="sn">§1.1</span>为什么需要责任准备金</h2>
+  <div class="lead">非寿险（财产险、意外险、健康险短险）的赔付是「先收费、后发案、再赔付」——保费落袋的那一刻，负债刚刚开始。</div>
+  <div class="formula"><b>核心恒等式</b><div class="fx">评估日责任准备金 = 未来预期赔付与费用的现值 + 风险边际</div><span class="src src-jiao">教</span>谢志刚 Ch1 P16–20</div>
+  <p>三点理解：</p>
+  <ol>
+    <li><b>负债属性：</b>准备金是资产负债表上最大的负债科目（非寿险公司通常占总负债 60% 以上），评估多一分，利润少一分；评估少一分，偿付能力虚高一分。<span class="src src-jiao">教</span></li>
+    <li><b>两段负债：</b>保费对应的保障期横跨评估日——已赚部分对应<b>未决赔款准备金</b>（已发生、未赔完），未赚部分对应<b>未到期责任准备金</b>（未到期、保障还在）。</li>
+    <li><b>不确定性：</b>未决的金额靠估计（IBNR 不可观测），未到期的发生概率靠假设（赔付率先验）——所以叫「评估」valuation 而不是「计量」mere recording。<span class="src src-gui">规</span>银保监会令2021年第11号第三条：准备金评估应当遵循谨慎性原则。</li>
+  </ol>
+  <div class="mnem"><b>记忆钩子：</b>「<b>一个评估日，切出两段负债</b>」——评估日之前的保障已生效、赔案在途 → 未决；评估日之后的保障未生效、风险未到期 → 未到期。</div>
+</section>
+
+<section id="s12">
+  <h2><span class="sn">§1.2</span>准备金体系全景图</h2>
+  <div class="lead">整门课就是下面这张表。后面四章分别展开其中各格，考前默画此表可得概念题全部分数。</div>
+  <div class="tbl-scroll"><table class="famtree">
+    <tr><th class="fam">未到期责任准备金族</th><th>定义</th><th>评估方法（→CH.03）</th></tr>
+    <tr><td><b>未到期责任准备金</b>（UPR）</td><td>未赚保费对应的负债</td><td>比例法（1/365、1/8、1/24）· 风险分布法</td></tr>
+    <tr><td><b>保费不足准备金</b>（PDR）</td><td>充足性测试失败时补提</td><td>保费充足性测试（预期赔付+维持费用 vs UPR）</td></tr>
+    <tr><td><b>长期合同准备金</b></td><td>一年期以上非寿险（如工程险长期责任）</td><td>未到期+未决分别评估，参照长期口径</td></tr>
+    <tr><th class="fam">未决赔款准备金族</th><th>定义</th><th>评估方法（→CH.02）</th></tr>
+    <tr><td><b>已报案未决</b>（RBNS / RV）</td><td>已报告、尚未结案的估损</td><td>逐案估计法 · 案均赔款法</td></tr>
+    <tr><td><b>IBNR</b>（已发生未报告）</td><td>已发生、未报告（含发展不足）</td><td>链梯 · 准备金进展 · B-F · Cape Cod · 赔付率法</td></tr>
+    <tr><td><b>理赔费用准备金</b></td><td>ALAE（可直接归属）+ ULAE（间接）</td><td>比例法：已付ALAE/已付赔款 · ULAE 72法则族</td></tr>
+    <tr><td><b>风险边际</b></th><td>不确定性加成</td><td>资本成本法（75%分位）· 置信区间法</td></tr>
+  </table></div>
+  <div class="formula"><b>总准备金（考试最常考的拆解）</b><div class="fx">总未决 = Σ(已报案未决 RV) + Σ(IBNR) + Σ(ULAE) + 风险边际<br>资产负债表未决 = 已报案未决（含逐案估损与案均） + IBNR（含B-F等法） + 理赔费用准备金</div><span class="src src-gui">规</span>银保监会令2021年第11号附件口径</div>
+  <div class="warn"><b>易错点：</b>① ULAE 属于未决赔款准备金的一部分，不是独立科目；② 保费不足准备金属于<b>未到期族</b>的补充计提，挂在 UPR 之外单独列示；③ 理赔费用准备金分 ALAE（可归属，随逐案估计）与 ULAE（不可归属，按比例摊），考试问「间接理赔费用」指 ULAE。<span class="star s3">高频必背</span></div>
+</section>
+
+<section id="s13">
+  <h2><span class="sn">§1.3</span>三类时间基准与流量三角形</h2>
+  <div class="lead">流量三角形（run-off triangle）是全科的「操作台」。选错时间基准，后面所有方法都白算。</div>
+  <div class="tbl-scroll"><table>
+    <tr><th>基准</th><th>行（grouping）</th><th>列（进展）</th><th>适用</th><th>典型场景</th></tr>
+    <tr><td><b>事故年 AY</b></td><td>赔案发生日所在年度</td><td>发生→报告→赔付的进展月/年</td><td>IBNR 评估首选</td><td>车险、财产险——以「发生」为准，报告迟早不影响行归属</td></tr>
+    <tr><td><b>报告年 RY</b></td><td>赔案首次报告日所在年度</td><td>报告→赔付的进展</td><td>已报案未决进展 / 无报告迟滞数据时</td><td>教材 Ch4「报告年准备金进展法」用 RV 三角形</td></tr>
+    <tr><td><b>保单年 PY</b></td><td>保单生效日所在年度</td><td>生效→发生的进展</td><td>保单质量分析、定价反馈</td><td>同一年签发的保单同质性强，但数据最不成熟</td></tr>
+  </table></div>
+  <div class="formula"><b>三角形两种形态（考试必须会互换）</b><div class="fx">累计（cumulative）：C(i,j) = Σ增量 · 用于链梯法<br>增量（incremental）：X(i,j) = C(i,j) − C(i,j−1) · 用于B-F分步、随机模型</div></div>
+  <div class="prac"><b>实操直觉：</b>拿到数据先问三个问题——① 行是事故年还是报告年？② 数字是累计还是增量？③ 右下角缺格的「对角线」是评估日吗？三个答案确定后，方法选择基本就定了：累计三角形 + 均匀进展 → 链梯；报告不稳定 + 有先验赔付率 → B-F。</div>
+  <div class="tip"><b>教材真实数据（后续章节反复使用）：</b>6×6 累计已付赔款三角形（事故年 1–6，进展月 12–72）：<br>年1：1001 / 1855 / 2423 / 2988 / 3335 / 3483（最终赔付 3705）<br>年2：1113 / 2103 / 2774 / 3422 / 3844<br>年3：1265 / 2433 / 3233 / 3977；年4：1490 / 2873 / 3880；年5：1725 / 3261；年6：1889<br>配套：已赚保费 4486/5024/5680/6590/7482/8502，RV 234/475/969/1796/2881/3929，期望赔付率 0.83。<span class="src src-jiao">教</span>教材 Ch3–Ch4 例题（.xls 完整数据）</div>
+</section>
+
+<section id="s14">
+  <h2><span class="sn">§1.4</span>评估流程总览</h2>
+  <div class="lead">监管规定的评估流程是实务题的「程序模板」——回答任何「如何评估」的大题都按这五步走。</div>
+  <div class="arch">
+    <div class="arch-top"><b>准备金评估五步流程</b><div class="meta"><span>数据 → 假设 → 方法 → 结果 → 报告</span></div></div>
+    <div class="arch-grid">
+      <div class="arch-card"><b>① 数据收集与诊断</b><p>理赔明细、保费台账、再保摊回口径核对；识别异常（大赔案、通胀、司法环境变化、理赔流程变更）。→ CH.04 §4.1</p></div>
+      <div class="arch-card"><b>② 假设设定</b><p>进展模式、先验赔付率、通胀率、折现率、尾部因子。每个假设都要有历史数据或行业基准支撑。→ CH.04 §4.2</p></div>
+      <div class="arch-card"><b>③ 方法选择与计算</b><p>未决四法 + 未到期两法 + ULAE 比例法；多方法互证，取值说明理由。→ CH.02 / CH.03</p></div>
+      <div class="arch-card"><b>④ 结果检验与回溯</b><p>赔付率合理性检验、逐期回溯偏差分析、与上期结果对比解释差异。→ CH.04 §4.3 + 教材 Ch7</p></div>
+      <div class="arch-card"><b>⑤ 报告与内控</b><p>出具准备金评估报告，精算责任人签署；底稿留档、内部控制流程。→ CH.05 §5.3（11号令 + 19号内控规范）</p></div>
+    </div>
+  </div>
+  <div class="exam"><span class="yr">2024回忆</span><b>真题影子：</b>「简述非寿险准备金评估的主要流程及各环节的关键控制点」——按五步流程作答，每步点出 1 个关键控制点（数据：完整性核对；假设：有依据可回溯；方法：多方法互证；检验：回溯偏差率；报告：精算责任人签署）即可拿满分结构分。<span class="star s2">常考</span></div>
+</section>
+
+<section id="s15">
+  <h2><span class="sn">§1.5</span>非寿险 vs 寿险评估的差异</h2>
+  <div class="lead">跨科目对照题的送分点，也是从 F3 转战本过来的考生最需要的定位表。</div>
+  <div class="tbl-scroll"><table>
+    <tr><th>维度</th><th>非寿险（本科目）</th><th>寿险（F3）</th></tr>
+    <tr><td>负债主体</td><td>未决赔款（估过去已发生）+ 未到期（赌未来发生）</td><td>责任准备金（未来保费+给付的精算现值差）</td></tr>
+    <tr><td>核心工具</td><td>流量三角形、进展因子</td><td>生命表、现金价值、评估利率</td></tr>
+    <tr><td>风险边际</td><td>资本成本法 / 置信区间法（折现可选）</td><td>评估利率审慎 + 均衡纯保费机制</td></tr>
+    <tr><td>数据成熟度</td><td>短尾业务 1–2 年，长尾可达 10 年+</td><td>保单期限数十年，利率风险主导</td></tr>
+    <tr><td>充足性机制</td><td><b>保费充足性测试</b>（整体业务层面，补提 PDR）</td><td><b>准备金充足性测试</b>（未来现金流现值 vs 账面准备金）</td></tr>
+    <tr><td>监管重心</td><td>偿二代Ⅱ保险风险最低资本 K1/K2/K3</td><td>利率风险 / 身故风险最低资本</td></tr>
+  </table></div>
+  <div class="src-note"><span class="src src-ti">题</span>2008 完整卷简答题考过「非寿险准备金与寿险准备金的本质区别」——答「赔付发生的可观测性」（寿险给付事件确定、金额契约化；非寿险赔案发生与报告均滞后、金额估损）是得分关键句。</div>
+</section>
+
+<section id="s16">
+  <h2><span class="sn">§1.6</span>本章考点清单</h2>
+  <div class="tbl-scroll"><table>
+    <tr><th>考点</th><th class="ctr">星级</th><th>考过形式</th><th>速记要点</th></tr>
+    <tr><td>准备金两大族谱拆解</td><td class="ctr"><span class="star s3">高频必背</span></td><td>简答 / 选择</td><td>未决（RBNS+IBNR+ULAE+边际）+ 未到期（UPR+PDR）</td></tr>
+    <tr><td>IBNR 的完整含义</td><td class="ctr"><span class="star s3">高频必背</span></td><td>选择 / 判断</td><td>「已发生未报告」+「已报告未足额」（发展不足 IBNR）双层含义</td></tr>
+    <tr><td>事故年 vs 报告年 vs 保单年</td><td class="ctr"><span class="star s2">常考</span></td><td>选择 / 计算题前置</td><td>行归属按发生日 / 报告日 / 生效日</td></tr>
+    <tr><td>累计与增量三角形互换</td><td class="ctr"><span class="star s2">常考</span></td><td>计算题第一步</td><td>累计行内累加；增量 = 相邻累计之差</td></tr>
+    <tr><td>评估流程五步</td><td class="ctr"><span class="star s2">常考</span></td><td>简答</td><td>数据→假设→方法→检验→报告</td></tr>
+    <tr><td>谨慎性原则的监管出处</td><td class="ctr"><span class="star s1">了解</span></td><td>选择</td><td>银保监会令2021年第11号第三条</td></tr>
+    <tr><td>非寿险 vs 寿险差异</td><td class="ctr"><span class="star s1">了解</span></td><td>简答（2008）</td><td>可观测性 · 三角形 vs 生命表 · 充足性测试口径</td></tr>
+  </table></div>
+  <div class="mnem"><b>睡前一分钟：</b>默画族谱表（§1.2），复述「一个评估日切出两段负债」，再问自己 IBNR 的双层含义——本章 10% 就稳了。</div>
+</section>
+
+<button class="done-btn" data-id="ch1">○ 标记本页已完成</button>
+
+<div class="pager"><a class="prev" href="index.html">← 考试全景</a><a class="next" href="ch2.html">进入 CH.02 未决赔款准备金（30%重镇） →</a></div>
+</main>
+<script src="js/kb.js"></script>
+</body>
+</html>
