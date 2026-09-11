@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>模拟卷一 · 流量三角形 · 非寿险责任准备金评估</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<aside class="side">
+  <div class="brand"><b>非寿险责任准备金评估</b><span>正精算师（非寿险）</span></div>
+    <nav>
+    <a href="xihong.html">关于 · 西红精算</a>
+    <a href="index.html">首页 · 考试全景</a>
+    <a href="about.html">本库说明 · 编法与用法</a>
+    <div class="grp">五大篇章（考纲权重）</div>
+    <a href="ch1.html">CH.01 总览与体系<span class="w">10%</span></a>
+    <a href="ch2.html">CH.02 未决赔款<span class="w">30%</span></a>
+    <a href="ch3.html">CH.03 未到期<span class="w">25%</span></a>
+    <a href="ch4.html">CH.04 评估实务<span class="w">20%</span></a>
+    <a href="ch5.html">CH.05 监管·会计·经营<span class="w">15%</span></a>
+    <div class="grp">拓展专题（不止于考纲）</div>
+    <a href="topic-stochastic.html">专题·随机模型与CV</a>
+    <a href="topic-reinsurance.html">专题·再保险准备金</a>
+    <a href="topic-rural.html">专题·农业保险精算规定</a>
+    <a href="topic-solvency.html">专题·保险风险最低资本</a>
+    <a href="topic-accounting.html">专题·财会15号与IFRS17衔接</a>
+    <div class="grp">真题 / 模拟 / 资料</div>
+    <a href="zhenti.html">真题馆</a>
+    <a href="moni-1.html" class="on">模拟卷一 · 流量三角形</a>
+    <a href="moni-2.html">模拟卷二 · 监管口径</a>
+    <a href="moni-3.html">模拟卷三 · 实务综合</a>
+    <a href="references.html">参考资料库</a>
+    <div class="grp">知识拓展</div>
+    <a href="textbook.html">书本题目·解题汇总</a>
+    <a href="regulations.html">监管原文·对照库</a>
+  </nav>
+  <div class="prog-mini">学习进度 <b>0 / 14</b></div>
+</aside>
+
+<main class="main">
+  <div class="ch-head">
+    <div class="no">MOCK EXAM 01 / 03</div>
+    <h1>模拟卷一 · 流量三角形</h1>
+    <div class="sub">对应 CH.01 总览 + CH.02 未决赔款准备金（考纲权重合计 40%）—— 计算题的送分主战场</div>
+    <div class="meta">
+      <span>题型：单选×5 · 多选×3 · 计算大题×3 · 简答×2</span>
+      <span>满分 100 分：单选 10 + 多选 6 + 计算 60 + 简答 24</span>
+      <span>建议用时 150 分钟 · 计算题可对照演算器验算</span>
+    </div>
+    <div class="wbar"><div class="lab"><span>本卷覆盖考纲主题</span><span>CH.01+02（40%）</span></div><div class="bar"><i style="width:40%"></i></div></div>
+  </div>
+
+  <p class="lead">本页为<b>练习页</b>，不计入学习进度。卷一打地基：链梯、B-F、Cape Cod 三台主机各一道大题，全部使用<b>教材 Ch4 贯穿例题的真实数据</b>（与 <a href="ch2.html">CH.02</a> 演算器同源，可互验）。三角形的分数是送分题——练到「十分钟一道、数字一次对」即止。</p>
+
+  <button class="js-toggle-answers">展开/收起全部答案</button>
+
+  <section id="m1s">
+    <h2><span class="sn">卷一</span>第一部分 · 单项选择题（每题 2 分，共 10 分）</h2>
+
+    <p><b>1.</b> 某赔案已向保险公司报案，但因资料不全尚未在理赔系统立案。该赔案对应的准备金应归入：<span class="src src-jiao">教</span></p>
+    <p>A. 已决赔款　B. 已报案未决赔款准备金　C. IBNR 准备金　D. 未到期责任准备金</p>
+    <div class="ans-skel"><b>答案：B</b>。「已报未立」属于<b>已发生、已报案</b>，只是立案流程滞后——归已报案未决（用报案口径单独估计），塞进 IBNR 会扭曲回溯归因。</div>
+
+    <p><b>2.</b> 链梯法的核心隐含假设是：</p>
+    <p>A. 各事故年赔付率相同　B. 各事故年的赔款进展模式相同且稳定　C. 报案与结案同步　D. 赔款与保费同比例</p>
+    <div class="ans-skel"><b>答案：B</b>。链梯只假设「进展模式」稳定（历史因子可外推），不假设赔付率——赔付率法才假设 A。这是两组方法分水岭，选择题最爱。</div>
+
+    <p><b>3.</b> 累计进展因子 CDF（f）的倒数 1/f 的含义是：</p>
+    <p>A. 未报案赔款比例　B. 已报案（已发生）赔款占终极赔款的比例　C. 保费充足率　D. 结案率</p>
+    <div class="ans-skel"><b>答案：B</b>。1/f = 已报告比例；<b>1−1/f</b> 才是未报案比例（B-F 公式的那个）。2023 真题把「85%、80%、70%」直接当延迟比例给，考的就是这层换算。</div>
+
+    <p><b>4.</b> 关于 B-F 法，下列说法正确的是：<span class="src src-ti">题</span>2023·选4</p>
+    <p>A. 对近期（不成熟）事故年，B-F 结果偏向链梯法<br>B. 对近期（不成熟）事故年，B-F 结果偏向赔付率法（先验）<br>C. B-F 完全不使用三角形数据<br>D. B-F 的期望赔付率必须由行业数据给定</p>
+    <div class="ans-skel"><b>答案：B</b>。不成熟年 1/f 小 → 未报比例大 → 先验主导；成熟年 1/f→1 → 趋同链梯。2023 年原题考过「偏向链梯法」这个错误选项。</div>
+
+    <p><b>5.</b> ULAE 评估的经典「50/50」假设是指：</p>
+    <p>A. 间接理赔费用的一半发生在报案时、一半发生在结案时<br>B. ULAE 等于赔款的一半<br>C. 报案与结案各占赔款一半<br>D. 上下半年费用各半</p>
+    <div class="ans-skel"><b>答案：A</b>。ULAE 随「报案 + 结案」两个流程动作各耗一半——已报案未决已含报案那半，还须预留结案那半。2024 考题把它改成「30% 在报案时发生」，逻辑同源。</div>
+
+    <h2><span class="sn">卷一</span>第二部分 · 多项选择题（每题 2 分，共 6 分）</h2>
+
+    <p><b>6.</b> 下列方法中，属于 IBNR 准备金评估方法的有：</p>
+    <p>A. 链梯法　B. B-F 法　C. Cape Cod 法　D. 赔付率法　E. 逐案估损法</p>
+    <div class="ans-skel"><b>答案：A、B、C、D</b></div>
+    <div class="ans-detail">逐案估损（E）是<b>已报案未决</b>的方法，不能估 IBNR（未报案无从逐案）。案均法、准备金进展法也是 IBNR 方法家族成员——六方法总表见 <a href="ch2.html#s27">CH.02 §2.7</a>。</div>
+
+    <p><b>7.</b> 链梯法中进展因子的选择方法包括：</p>
+    <p>A. 全期简单平均　B. 近三年加权平均　C. 剔除最大最小值后平均　D. 最小二乘回归　E. 直接取最新一列因子</p>
+    <div class="ans-skel"><b>答案：A、B、C、D</b></div>
+    <div class="ans-detail">E 错误——单列因子噪声最大，不能直接用（除非数据只有一列）。四种方法对应「历史长度 × 稳健性」的取舍，2023 真题「根据进展因子说明理赔速度变化、选择合适的进展因子」就是让你现场做这个取舍并给理由。</div>
+
+    <p><b>8.</b> 尾部因子的估计来源包括：</p>
+    <p>A. 广义 Bondy 法　B. 狭义 Bondy 法　C. 曲线拟合外推　D. 行业监管公布值　E. 直接取 1.000</p>
+    <div class="ans-skel"><b>答案：A、B、C、D</b></div>
+    <div class="ans-detail">「直接取 1.000」意味着假设已完全进展——长尾业务不可接受，须论证。广义 Bondy 用已决三角形递推，狭义 Bondy 是其简化版（2013/2016 两次考过两者的计算区别）。</div>
+
+    <h2><span class="sn">卷一</span>第三部分 · 计算大题（每题 20 分，共 60 分）</h2>
+
+    <h3>九、（20 分）链梯法全流程</h3>
+    <p><b>题目：</b>某公司 6 个事故年的累计已决赔款对角线数据、选定累计进展因子（CDF）与已报案未决（RV）如下（单位：万元）：</p>
+    <div class="tbl-scroll"><table>
+      <tr><th>事故年</th><th class="num">对角线累计已决 PC</th><th class="num">CDF f</th><th class="num">RV</th></tr>
+      <tr><td class="ctr">AY1</td><td class="num">3483</td><td class="num">1.064</td><td class="num">234</td></tr>
+      <tr><td class="ctr">AY2</td><td class="num">3844</td><td class="num">1.111</td><td class="num">475</td></tr>
+      <tr><td class="ctr">AY3</td><td class="num">3977</td><td class="num">1.244</td><td class="num">969</td></tr>
+      <tr><td class="ctr">AY4</td><td class="num">3880</td><td class="num">1.533</td><td class="num">1796</td></tr>
+      <tr><td class="ctr">AY5</td><td class="num">3261</td><td class="num">2.037</td><td class="num">2881</td></tr>
+      <tr><td class="ctr">AY6</td><td class="num">1889</td><td class="num">3.869</td><td class="num">3929</td></tr>
+    </table></div>
+    <p>要求：（1）计算各事故年最终赔款 LU 与未决赔款准备金 CV（12 分）；（2）计算 IBNR 合计（4 分）；（3）若风险边际按最优估计的 12% 计提，计算含边际的未决赔款准备金总额（4 分）。</p>
+    <details class="answer"><summary>展开详尽答案</summary><div class="body ans-detail">
+      <div class="tbl-scroll"><table>
+        <tr><th>事故年</th><th class="num">LU = PC×f</th><th class="num">CV = LU − PC</th><th class="num">IBNR = CV − RV</th></tr>
+        <tr><td class="ctr">AY1</td><td class="num">3705</td><td class="num">222</td><td class="num">−12</td></tr>
+        <tr><td class="ctr">AY2</td><td class="num">4270</td><td class="num">427</td><td class="num">−49</td></tr>
+        <tr><td class="ctr">AY3</td><td class="num">4948</td><td class="num">971</td><td class="num">2</td></tr>
+        <tr><td class="ctr">AY4</td><td class="num">5948</td><td class="num">2068</td><td class="num">272</td></tr>
+        <tr><td class="ctr">AY5</td><td class="num">6643</td><td class="num">3382</td><td class="num">501</td></tr>
+        <tr><td class="ctr">AY6</td><td class="num">7309</td><td class="num">5420</td><td class="num">1491</td></tr>
+        <tr class="note-td"><td><b>合计</b></td><td class="num"><b>32823</b></td><td class="num"><b>12491</b></td><td class="num"><b>≈ 2206</b></td></tr>
+      </table></div>
+      <p><b>（2）</b>IBNR 合计 = 12491 − 10284（RV 合计）= <b>2206</b>（逐行加总因舍入差 1，两种算法都可）。</p>
+      <p><b>（3）</b>含边际总额 = 12491 × 1.12 = <b>13990</b>。注意边际加在<b>未决（CV）</b>上而不是 IBNR 上——RV 也有估计不确定性。验算：与 <a href="ch2.html#s22">CH.02 §2.2 演算器 2-1</a> 完全一致。</p>
+      <p><b>判分点：</b>AY1/AY2 的 IBNR 为负——这是正常的（早期事故年高估 RV），答题时要说明「负值保留、合计时对冲」，删掉负值是常见错误。</p>
+    </div></details>
+
+    <h3>十、（20 分）B-F 法（含敏感性）</h3>
+    <p><b>题目：</b>同一家公司，已知最近事故年 AY6：已赚保费 EP = 8502，期望赔付率 λ = 0.83，CDF f = 3.869，RV = 3929；事故年 AY5：EP = 7482，f = 2.037，RV = 2881。</p>
+    <p>要求：（1）用 B-F 法（RC 口径）计算 AY6 与 AY5 的 IBNR（10 分）；（2）若定价部门将 λ 修正为 0.89，重算 AY6 的 IBNR 并说明敏感方向（6 分）；（3）一句话说明 B-F 相对链梯法的优点（4 分）。</p>
+    <details class="answer"><summary>展开详尽答案</summary><div class="body ans-detail">
+      <p><b>（1）公式：IBNR = EP×λ×(1−1/f)</b></p>
+      <div class="tbl-scroll"><table>
+        <tr><th>事故年</th><th class="num">EP×λ（期望终极）</th><th class="num">1/f</th><th class="num">未报比例 1−1/f</th><th class="num">IBNR</th></tr>
+        <tr><td class="ctr">AY6</td><td class="num">7056.7</td><td class="num">0.259</td><td class="num">0.741</td><td class="num"><b>5229</b></td></tr>
+        <tr><td class="ctr">AY5</td><td class="num">6210.1</td><td class="num">0.491</td><td class="num">0.509</td><td class="num"><b>3161</b></td></tr>
+      </table></div>
+      <p><b>（2）λ = 0.89 时：</b>AY6 期望终极 = 8502×0.89 = 7566.8 → IBNR = 7566.8×0.741 = <b>5607</b>，增加约 378（+7.2%）。<b>敏感方向：</b>λ 每上调 0.01，AY6 IBNR 增加约 63（=EP×0.01×0.741）——λ 的取值比方法选择更影响结果，这是先验假设的杠杆（λ 0.83→0.89 使总 IBNR 从 2662 升到 2190+... 即教材所说「趋同链梯」的机理）。</p>
+      <p><b>（3）优点（任答一条即可）：</b>B-F 以先验赔付率锚定期望终极赔款，对近期事故年稀疏数据不敏感、对进展因子误差有缓冲——链梯的新数据噪声不会直接放大到结果。验算：<a href="ch2.html#s24">CH.02 §2.4 演算器 2-2</a>。</p>
+    </div></details>
+
+    <h3>十一、（20 分）Cape Cod 法</h3>
+    <p><b>题目：</b>某公司 5 个事故年数据如下（单位：万元）：</p>
+    <div class="tbl-scroll"><table>
+      <tr><th>事故年</th><th class="num">EP</th><th class="num">已报案赔款</th><th class="num">已报案比例</th></tr>
+      <tr><td class="ctr">AY1</td><td class="num">7000</td><td class="num">3600</td><td class="num">0.85</td></tr>
+      <tr><td class="ctr">AY2</td><td class="num">8000</td><td class="num">4000</td><td class="num">0.75</td></tr>
+      <tr><td class="ctr">AY3</td><td class="num">9000</td><td class="num">4800</td><td class="num">0.60</td></tr>
+      <tr><td class="ctr">AY4</td><td class="num">10000</td><td class="num">3600</td><td class="num">0.45</td></tr>
+      <tr><td class="ctr">AY5</td><td class="num">11000</td><td class="num">2800</td><td class="num">0.25</td></tr>
+    </table></div>
+    <p>要求：（1）计算 Cape Cod 期望赔付率 λ（6 分）；（2）计算各事故年 IBNR 与合计（10 分）；（3）若存在年 7% 的赔款通胀趋势，λ 与总 IBNR 如何变化？说明机理即可（4 分）。</p>
+    <details class="answer"><summary>展开详尽答案</summary><div class="body ans-detail">
+      <p><b>（1）分母 = Σ(已报案比例×EP)</b> = 5950+6000+5400+4500+2750 = <b>24600</b>；分子 = Σ已报案赔款 = <b>18800</b> → <b>λ = 0.765</b>。</p>
+      <p><b>（2）IBNR(i) = λ × 未报案已赚保费(i)：</b></p>
+      <div class="tbl-scroll"><table>
+        <tr><th>事故年</th><th class="num">未报案已赚保费</th><th class="num">IBNR = 0.765×未报案EP</th></tr>
+        <tr><td class="ctr">AY1</td><td class="num">1050</td><td class="num">802</td></tr>
+        <tr><td class="ctr">AY2</td><td class="num">2000</td><td class="num">1528</td></tr>
+        <tr><td class="ctr">AY3</td><td class="num">3600</td><td class="num">2751</td></tr>
+        <tr><td class="ctr">AY4</td><td class="num">5500</td><td class="num">4203</td></tr>
+        <tr><td class="ctr">AY5</td><td class="num">8250</td><td class="num">6305</td></tr>
+        <tr class="note-td"><td><b>合计</b></td><td class="num">20400</td><td class="num"><b>15590</b></td></tr>
+      </table></div>
+      <p><b>（3）趋势机理：</b>历史赔款按趋势因子重述到最新价格水平后，分子（已报案赔款）比未趋势时「变贵」更多（老事故年趋势因子大），λ 升至约 0.88 → 总 IBNR = <b>16783</b>。一句话：<b>通胀让「还没报案的那部分」按明天的价格计提</b>。验算：<a href="ch2.html#s24">CH.02 §2.4 演算器 2-3</a>（教材原例，2024 大题6 原型）。</p>
+    </div></details>
+
+    <h2><span class="sn">卷一</span>第四部分 · 简答题（每题 12 分，共 24 分）</h2>
+
+    <h3>十二、（12 分）方法比较与适用性</h3>
+    <p><b>题目：</b>分别用已报案链梯法、已决链梯法、B-F 法、案均法计算最终赔款后，如何评价各种方法的适用性？请给出评价框架并各举一个失效场景。</p>
+    <div class="ans-skel"><b>骨架：</b>评价框架 = 数据口径 × 隐含假设 × 成熟度要求三轴；每方法一句适用 + 一句失效。</div>
+    <details class="answer"><summary>展开详尽答案</summary><div class="body ans-detail">
+      <div class="tbl-scroll"><table>
+        <tr><th>方法</th><th>适用</th><th>失效场景</th></tr>
+        <tr><td>已报案链梯</td><td>报案情势稳定的成熟业务</td><td>立案标准调整、集中报案</td></tr>
+        <tr><td>已决链梯</td><td>结案节奏稳定的业务</td><td>理赔人手增减、结案政策变化</td></tr>
+        <tr><td>B-F</td><td>新业务、数据不成熟、先验可靠</td><td>定价假设与实际严重脱节</td></tr>
+        <tr><td>案均法</td><td>件数多、案均稳定（车险人伤）</td><td>大案占比突变、理赔模式不稳定</td></tr>
+      </table></div>
+      <p><b>满分结构（12 分拆解）：</b>框架 3 分 + 四方法各 2 分（适用 1 + 失效 1）+ 收束 1 分：「多方法并算、取审慎值、差异归因」是监管内控的稳健做法（银保监发〔2012〕19号内控精神）。完整版见 <a href="ch2.html#s27">CH.02 §2.7 六方法总表</a> 与 <a href="zhenti.html#z1">真题馆 Z.1·2016·大3</a>。</p>
+    </div></details>
+
+    <h3>十三、（12 分）随机模型选择</h3>
+    <p><b>题目：</b>评估师需要为未决赔款准备金的结果不确定性提供度量。请简述 Mack 模型与 Bootstrap 模型的假设差异、输出内容与适用场景。</p>
+    <div class="ans-skel"><b>骨架：</b>Mack = 无分布假设 + 均值方差（MSEP）；Bootstrap = 完整分布 + 任意分位；前者解析解快速，后者可算分位数做风险边际。</div>
+    <details class="answer"><summary>展开详尽答案</summary><div class="body ans-detail">
+      <div class="tbl-scroll"><table>
+        <tr><th>维度</th><th>Mack 模型</th><th>Bootstrap</th></tr>
+        <tr><td>分布假设</td><td>无（只要前两阶矩），三个链梯假设 + 方差结构</td><td>参数 Bootstrap + 过程偏差（常配 Gamma/Poisson）</td></tr>
+        <tr><td>输出</td><td>各事故年与合计的 MSEP（标准误）</td><td>完整预测分布，任意分位数</td></tr>
+        <tr><td>适用</td><td>快速解析、参数不确定性小样本稳健</td><td>需要分位数（75% 校准风险边际）、大额再保分层定价</td></tr>
+        <tr><td>局限</td><td>只有矩信息，给不出尾部分位</td><td>计算重、依赖残差重抽样合理性</td></tr>
+      </table></div>
+      <p><b>加分句：</b>「K2（准备金风险资本）本质上就是对 s.e. 的监管定价——估得准（s.e. 小）约等于资本省。」详见 <a href="topic-stochastic.html">专题·随机模型与CV</a>（2025 选择题「哪类模型适合什么情况」的答题素材库）。</p>
+    </div></details>
+  </section>
+
+  <div class="exam-score-grid">
+    <div class="sc"><b>100</b><span>本卷满分</span></div>
+    <div class="sc"><b>60</b><span>计算大题（送分主战场）</span></div>
+    <div class="sc"><b>72</b><span>及格参照线（60%）</span></div>
+  </div>
+
+  <div class="pager"><a class="prev" href="zhenti.html">← 真题馆</a><a class="next" href="moni-2.html">模拟卷二 · 监管口径 →</a></div>
+  <footer class="colophon">非寿险责任准备金评估 · 模拟卷一（流量三角形） · 知识星球「西红精算」</footer>
+</main>
+<script src="js/kb.js"></script>
+<script src="js/gate.js"></script>
+</body>
+</html>
