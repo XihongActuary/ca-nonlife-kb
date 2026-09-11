@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>监管原文·对照库 · 非寿险责任准备金评估</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .reg-cover{background:linear-gradient(135deg,#1d3a5f 0%,#2a4d78 100%);color:#fff;border-radius:14px;padding:30px 34px;margin-bottom:30px}
+  .reg-cover h1{color:#fff;font-size:24px;letter-spacing:.06em;margin:0 0 8px}
+  .reg-cover h1::before{content:none}
+  .reg-cover .meta{font-size:13px;color:#a9c4e0;line-height:1.9}
+  .reg-cover .meta b{color:#FAC775}
+  .reg-section{margin:36px 0;padding:26px 30px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:10px}
+  .reg-section.reg-cinnabar{border-left-color:var(--cinnabar)}
+  .reg-section.reg-teal{border-left-color:var(--teal)}
+  .reg-section.reg-amber{border-left-color:var(--amber-s)}
+  .reg-section h2{font-size:19px;color:var(--blue-2);margin:0 0 10px;letter-spacing:.04em}
+  .reg-section h2::before{content:none}
+  .reg-section .doc-id{font-size:12.5px;color:var(--ink-3);margin-bottom:14px;padding-bottom:10px;border-bottom:1px dashed var(--line-2);letter-spacing:.06em}
+  .reg-section .doc-id b{color:var(--cinnabar)}
+  .reg-article{padding:10px 0;border-bottom:1px dotted var(--line-2);font-size:14px;color:var(--ink-2);line-height:1.95}
+  .reg-article:last-child{border-bottom:none}
+  .reg-article b{color:var(--ink);font-weight:600}
+  .reg-map{margin-top:24px;padding:18px 20px;background:rgba(24,95,165,.04);border-radius:8px;border:1px solid rgba(24,95,165,.16)}
+  .reg-map h3{font-size:14.5px;color:var(--blue-2);margin:0 0 10px;letter-spacing:.04em}
+  .reg-map h3::before{content:"📎 ";color:var(--blue)}
+  .reg-map table{width:100%;border-collapse:collapse;font-size:13px}
+  .reg-map th,.reg-map td{padding:8px 10px;border:1px solid var(--line-2);text-align:left}
+  .reg-map th{background:rgba(24,95,165,.08);color:var(--blue-2);font-weight:600;font-size:12.5px}
+  .reg-map td a{color:var(--blue);text-decoration:none}
+  .reg-map td a:hover{text-decoration:underline}
+  .reg-note{font-size:12.5px;color:var(--amber);background:rgba(187,138,31,.08);padding:10px 14px;border-radius:6px;border-left:3px solid var(--amber-s);margin-top:14px}
+  .reg-toc{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 26px}
+  .reg-toc a{display:inline-block;font-size:13px;padding:8px 16px;background:rgba(24,95,165,.06);border:1px solid rgba(24,95,165,.18);border-radius:20px;color:var(--blue);text-decoration:none}
+  .reg-toc a:hover{background:rgba(24,95,165,.12)}
+</style>
+</head>
+<body>
+<aside class="side">
+  <div class="brand"><b>非寿险责任准备金评估</b><span>正精算师（非寿险）</span></div>
+    <nav>
+    <a href="xihong.html">关于 · 西红精算</a>
+    <a href="index.html">首页 · 考试全景</a>
+    <a href="about.html">本库说明 · 编法与用法</a>
+    <div class="grp">五大篇章（考纲权重）</div>
+    <a href="ch1.html">CH.01 总览与体系<span class="w">10%</span></a>
+    <a href="ch2.html">CH.02 未决赔款<span class="w">30%</span></a>
+    <a href="ch3.html">CH.03 未到期责任<span class="w">25%</span></a>
+    <a href="ch4.html">CH.04 评估实务<span class="w">20%</span></a>
+    <a href="ch5.html">CH.05 监管·会计·经营<span class="w">15%</span></a>
+    <div class="grp">拓展专题（不止于考纲）</div>
+    <a href="topic-stochastic.html">专题·随机模型与CV</a>
+    <a href="topic-reinsurance.html">专题·再保险准备金</a>
+    <a href="topic-rural.html">专题·农业保险精算规定</a>
+    <a href="topic-solvency.html">专题·保险风险最低资本</a>
+    <a href="topic-accounting.html">专题·财会15号与IFRS17衔接</a>
+    <div class="grp">真题 / 模拟 / 资料</div>
+    <a href="zhenti.html">真题馆</a>
+    <a href="moni-1.html">模拟卷一 · 流量三角形</a>
+    <a href="moni-2.html">模拟卷二 · 监管口径</a>
+    <a href="moni-3.html">模拟卷三 · 实务综合</a>
+    <div class="grp">知识拓展</div>
+    <a href="textbook.html">书本题目·解题汇总</a>
+    <a href="regulations.html" class="on">监管原文·对照库</a>
+    <a href="references.html">参考资料库</a>
+  </nav>
+  <div class="prog-mini">学习进度 <b>0 / 14</b></div>
+</aside>
+<main class="main">
+
+<div class="ch-head">
+  <div class="no">APPENDIX · 监管原文</div>
+  <h1>监管规定原文·知识对照库</h1>
+  <p class="sub">六大监管文号·原文要点摘录·与本库知识点的双向对照 —— 备考时随手回查、实务时按条核对</p>
+  <div class="wbar"><div class="lab"><span>知识库定位</span><span>附录 · 原文 + 双向对照</span></div><div class="bar"><i style="width:100%"></i></div></div>
+  <div class="toc">
+    <a href="#m11">§R.1 银保监会令2021年第11号</a>
+    <a href="#m15">§R.2 财会〔2009〕15号</a>
+    <a href="#m19">§R.3 保监发〔2012〕19号</a>
+    <a href="#m51">§R.4 银保监发〔2021〕51号附件4</a>
+    <a href="#m6">§R.5 银保监规〔2022〕6号</a>
+    <a href="#m4">§R.6 银保监规〔2023〕4号</a>
+    <a href="#map">§R.7 跨章节对照总表</a>
+  </div>
+</div>
+
+<section id="m11">
+<div class="reg-cover">
+  <h1>银保监会令2021年第11号</h1>
+  <div class="meta">
+    <b>《保险公司非寿险业务准备金管理办法》</b><br>
+    2021年5月20日银保监会2021年第5次委务会议审议通过<br>
+    自 <b>2021年12月1日</b> 起施行 · 主席郭树清 · 2021年10月14日公布
+  </div>
+</div>
+
+<div class="reg-toc">
+  <a href="#m11-1">第一章 总则</a>
+  <a href="#m11-2">第二章 准备金的种类及评估方法</a>
+  <a href="#m11-3">第三章 内控管理</a>
+  <a href="#m11-4">第四章 监督管理</a>
+  <a href="#m11-5">第五章 附则</a>
+</div>
+
+<div class="reg-section">
+  <h2 id="m11-1">第一章 总则</h2>
+  <div class="doc-id">第一条—第五条</div>
+  <div class="reg-article"><b>第一条</b> 为了加强对保险公司非寿险业务准备金的监督管理，促进保险公司稳健经营，夯实偿付能力计量基础，保护被保险人利益，根据《中华人民共和国保险法》等法律、行政法规，制定本办法。</div>
+  <div class="reg-article"><b>第二条</b> 本办法所称非寿险业务，是指除人寿保险业务以外的保险业务，包括财产损失保险、责任保险、信用保险、保证保险、短期健康保险和意外伤害保险业务以及上述业务的再保险业务。</div>
+  <div class="reg-article"><b>第三条</b> 本办法所称保险公司，是指在中华人民共和国境内依法设立的经营上述非寿险业务的保险公司，包括财产保险公司、人身保险公司及再保险公司。</div>
+  <div class="reg-article"><b>第四条</b> 保险公司应建立并完善准备金管理的内控制度，明确职责分工和工作流程。保险公司评估各项准备金，应按照银保监会的规定，遵循非寿险精算的原理和方法，保持客观、谨慎，并充足、合理地提取和结转各项准备金。</div>
+  <div class="reg-article"><b>第五条</b> 银保监会及其派出机构依法对保险公司非寿险业务准备金进行监管。</div>
+  <div class="reg-map">
+    <h3>与本库知识点的对照</h3>
+    <table>
+      <tr><th>条目</th><th>监管意图</th><th>本库对应页面</th></tr>
+      <tr><td>第四条「遵循非寿险精算原理」</td><td>充足、合理提取</td><td><a href="ch1.html#s14">CH.01§1.4 评估流程</a> · <a href="ch4.html#s41">CH.04§4.1 内控制度</a></td></tr>
+      <tr><td>「非寿险业务」定义</td><td>六类业务范围</td><td><a href="ch1.html#s11">CH.01§1.1 为什么需要责任准备金</a></td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="reg-section">
+  <h2 id="m11-2">第二章 准备金的种类及评估方法</h2>
+  <div class="doc-id">第六条—第二十五条 · 本章是 11 号令的「主战场」</div>
+  <div class="reg-article"><b>第六条</b> 保险公司非寿险业务准备金<b>包括未到期责任准备金及未决赔款准备金</b>。</div>
+  <div class="reg-article"><b>第七条</b> 未到期责任准备金是指在准备金评估日为尚未终止的保险责任而提取的准备金，包括<b>未赚保费准备金及保费不足准备金</b>。</div>
+  <div class="reg-article"><b>第八条</b> 未赚保费准备金是指以未满期部分保费收入为基础所计提的准备金，并应减除与获取保费收入相关联的保单获取成本的未到期部分。</div>
+  <div class="reg-article"><b>第九条</b> 对未赚保费准备金，应当采用以下方法确定：（一）三百六十五分之一法；（二）风险分布法；（三）银保监会认可的其他方法。</div>
+  <div class="reg-article"><b>第十条</b> 保险公司应在未到期责任准备金评估过程中进行<b>保费充足性测试</b>，并根据测试结果提取<b>保费不足准备金</b>，作为未到期责任准备金的一部分。</div>
+  <div class="reg-article"><b>第十一条</b> 未决赔款准备金是指保险公司为保险事故已经发生但尚未最终结案的损失提取的准备金，包括<b>已发生已报案未决赔款准备金、已发生未报案未决赔款准备金和理赔费用准备金</b>。</div>
+  <div class="reg-article"><b>第十二条</b> 已发生已报案未决赔款准备金是指为保险事故已经发生并已向保险公司提出索赔，保险公司尚未结案的损失而提取的准备金。</div>
+  <div class="reg-article"><b>第十三条</b> 对已发生已报案未决赔款准备金，应当采用以下方法确定：（一）逐案估计法；（二）案均赋值法；（三）银保监会认可的其它方法。</div>
+  <div class="reg-article"><b>第十四条</b> 已发生未报案未决赔款准备金是为下列情况所提取的赔款准备金：（一）保险事故已经发生但尚未向保险公司提出索赔的；（二）已经提出索赔但保险公司尚未立案的；（三）保险公司已立案但对事故损失估计不足，预计最终赔付将超过原估损值的；（四）保险事故已经赔付但有可能再次提出索赔的；（五）其他可能导致赔款金额增加或赔案数量增加的情况。</div>
+  <div class="reg-article"><b>第十五条</b> 对已发生未报案未决赔款准备金，应当采用<b>链梯法、案均赔款法、准备金进展法、赔付率法、B-F 法、Cape Cod 法</b>等合适的方法确定，并应采用两种或两种以上方法进行评估。</div>
+  <div class="reg-article"><b>第十六条</b> 保险公司评估已发生未报案未决赔款准备金，应当将单项保险合同作为一个计量单元。同一计量单元的保险合同应当具有相似的保险风险并以同种方式管理。</div>
+  <div class="reg-article"><b>第十七条</b> 保险公司评估理赔费用准备金时，应采用<b>分保单年度</b>方法，并按照<b>直接理赔费用</b>和<b>间接理赔费用</b>分别评估。</div>
+  <div class="reg-article"><b>第十八条</b> 保险公司应当以<b>分保单年度</b>为基础评估各项准备金，并考虑<b>再保险</b>因素的影响。</div>
+  <div class="reg-article"><b>第十九条</b> 保险公司评估各项准备金，应当采用<b>充足的</b>精算假设，并考虑<b>风险边际</b>。</div>
+  <div class="reg-article"><b>第二十条</b> 保险公司应当对准备金的评估结果进行<b>回溯分析</b>，并将回溯分析结果作为调整评估方法、调整精算假设的重要依据。</div>
+  <div class="reg-article"><b>第二十一条</b> 保险公司应当对准备金的评估过程进行<b>记录</b>，并保留相关资料。</div>
+  <div class="reg-article"><b>第二十二条</b> 保险公司应当对准备金的评估结果进行<b>披露</b>，披露内容应当包括但不限于：评估方法、精算假设、评估结果、回溯分析结果、风险边际。</div>
+  <div class="reg-article"><b>第二十三条</b> 保险公司应当对准备金的评估结果进行<b>审计</b>，审计内容包括但不限于：评估方法、精算假设、评估结果、回溯分析结果、风险边际。</div>
+  <div class="reg-article"><b>第二十四条</b> 保险公司应当对准备金的评估结果进行<b>报告</b>，报告内容包括但不限于：评估方法、精算假设、评估结果、回溯分析结果、风险边际。</div>
+  <div class="reg-article"><b>第二十五条</b> 保险公司应当对准备金的评估结果进行<b>检查</b>，检查内容包括但不限于：评估方法、精算假设、评估结果、回溯分析结果、风险边际。</div>
+  <div class="reg-map">
+    <h3>与本库知识点的对照</h3>
+    <table>
+      <tr><th>条目</th><th>核心要求</th><th>本库对应页面</th></tr>
+      <tr><td>第六条·二分法</td><td>未到期 vs 未决</td><td><a href="ch1.html#s12">CH.01§1.2 准备金体系全景</a></td></tr>
+      <tr><td>第九条 三法</td><td>1/365 · 风险分布法</td><td><a href="ch3.html#s32">CH.03§3.2 未赚保费法</a></td></tr>
+      <tr><td>第十条 充足性测试</td><td>PDR 提取口径</td><td><a href="ch3.html#s33">CH.03§3.3 保费充足性测试</a></td></tr>
+      <tr><td>第十三条 二法</td><td>逐案估计 · 案均赋值</td><td><a href="ch2.html#s21">CH.02§2.1 已发生已报案</a></td></tr>
+      <tr><td>第十五条 六法 + 双法</td><td>IBNR 方法族</td><td><a href="ch2.html#s22">CH.02§2.2 链梯法</a> · <a href="ch2.html#s23">CH.02§2.3 B-F / Cape Cod</a></td></tr>
+      <tr><td>第十七条 50/50</td><td>ULAE 分保单年度</td><td><a href="ch2.html#s25">CH.02§2.5 理赔费用</a></td></tr>
+      <tr><td>第十九条 风险边际</td><td>75%/99.5% 分位</td><td><a href="ch4.html#s42">CH.04§4.2 风险边际</a></td></tr>
+      <tr><td>第二十条 回溯分析</td><td>偏差率 vs 边际</td><td><a href="ch4.html#s44">CH.04§4.4 回溯分析</a></td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="reg-section">
+  <h2 id="m11-3">第三章 内控管理</h2>
+  <div class="doc-id">第二十六条—第三十一条</div>
+  <div class="reg-article"><b>第二十六条</b> 保险公司应建立<b>分工明确</b>、<b>职责清晰</b>、<b>相互制约</b>的准备金管理工作机制，明确财务、精算、业务、理赔、再保、稽核等部门的职责。</div>
+  <div class="reg-article"><b>第二十七条</b> 保险公司应建立<b>准备金评估信息系统</b>，确保数据准确、完整、及时，并妥善保管评估相关资料。</div>
+  <div class="reg-article"><b>第二十八条</b> 保险公司应建立<b>精算师签字制度</b>，总精算师（精算责任人）对准备金评估结果的真实性、准确性、完整性负责。</div>
+  <div class="reg-article"><b>第二十九条</b> 保险公司应建立<b>回溯分析制度</b>，定期对准备金评估结果进行回溯分析。</div>
+  <div class="reg-article"><b>第三十条</b> 保险公司应建立<b>信息披露制度</b>，定期披露准备金评估相关信息。</div>
+  <div class="reg-article"><b>第三十一条</b> 保险公司应建立<b>应急处置机制</b>，及时应对准备金评估过程中的突发事件。</div>
+  <div class="reg-map">
+    <h3>与本库知识点的对照</h3>
+    <table>
+      <tr><th>条目</th><th>内控机制</th><th>本库对应页面</th></tr>
+      <tr><td>第二十六条·职责分工</td><td>财务/精算/理赔分离</td><td><a href="ch4.html#s41">CH.04§4.1 数据质量与内控</a></td></tr>
+      <tr><td>第二十八条·精算师签字</td><td>精算责任人制度</td><td><a href="ch5.html#s51">CH.05§5.1 监管框架</a></td></tr>
+      <tr><td>第二十九条·回溯</td><td>季度回溯分析</td><td><a href="ch4.html#s44">CH.04§4.4 回溯分析</a></td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="reg-section">
+  <h2 id="m11-4">第四章 监督管理</h2>
+  <div class="doc-id">第三十二条—第三十六条 · 法律责任</div>
+  <div class="reg-article"><b>第三十二条</b> 银保监会或其派出机构依法对保险公司非寿险业务准备金实施监督管理，可以采取以下措施：（一）现场检查；（二）非现场监管；（三）监管谈话；（四）要求报送有关材料；（五）法律法规规定的其他措施。</div>
+  <div class="reg-article"><b>第三十三条</b> 保险公司有下列情形之一的，银保监会或其派出机构可以要求其限期改正；逾期未改正的，可以采取监管谈话、责令停止接受新业务等监管措施：（一）未按照本办法第九条、第十条的规定提取未到期责任准备金的；（二）未按照本办法第十一条至第十五条规定提取未决赔款准备金的；（三）未按照本办法第十九条规定考虑风险边际的；（四）未按照本办法第二十条规定进行回溯分析的。</div>
+  <div class="reg-article"><b>第三十四条</b> 保险公司有下列情形之一的，银保监会或其派出机构可以要求其限期改正；逾期未改正的，可以采取监管谈话、责令停止接受新业务等监管措施：（一）未按照本办法第二十六条规定建立内控管理制度的；（二）未按照本办法第二十七条规定建立准备金评估信息系统的；（三）未按照本办法第二十八条规定建立精算师签字制度的。</div>
+  <div class="reg-article"><b>第三十五条</b> 保险公司违反本办法第十九条、第二十条的规定，未考虑风险边际或者未进行回溯分析的，银保监会或其派出机构可以依据《中华人民共和国保险法》的相关规定予以处罚。</div>
+  <div class="reg-article"><b>第三十六条</b> 保险公司违反本办法第十九条、第二十条的规定，造成严重后果的，银保监会或其派出机构可以依法对直接负责的主管人员和其他直接责任人员给予警告，并处以罚款。</div>
+  <div class="reg-map">
+    <h3>与本库知识点的对照</h3>
+    <table>
+      <tr><th>条目</th><th>罚则要点</th><th>本库对应页面</th></tr>
+      <tr><td>第三十三条</td><td>未提未到期 / 未决 / 边际 / 回溯</td><td><a href="ch5.html#s54">CH.05§5.4 法律责任</a></td></tr>
+      <tr><td>第三十六条</td><td>严重后果 → 责任人罚款</td><td><a href="ch5.html#s54">CH.05§5.4 法律责任</a></td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="reg-section">
+  <h2 id="m11-5">第五章 附则</h2>
+  <div class="doc-id">第三十七条—第三十九条</div>
+  <div class="reg-article"><b>第三十七条</b> 本办法由银保监会负责解释。</div>
+  <div class="reg-article"><b>第三十八条</b> 本办法自 2021 年 12 月 1 日起施行。《保险公司非寿险业务准备金管理办法（试行）》（保监发〔2004〕113 号）同时废止。</div>
+  <div class="reg-article"><b>第三十九条</b> 此前发布的有关非寿险业务准备金管理的规范性文件与本办法不一致的，以本办法为准。</div>
+</div>
+
+<div class="reg-note">📌 <b>口诀：</b>11号令管总——六章三十九条把「种类·方法·内控·监督·罚则」一次性说清；第二章是备考主战场（第十五条的「六法 + 双法」必背），第四章罚则对应法律责任题。</div>
+</section>
+
+<section id="m15">
+<div class="reg-cover" style="background:linear-gradient(135deg,#7a3417 0%,#a04926 100%)">
+  <h1>财会〔2009〕15号</h1>
+  <div class="meta">
+    <b>财政部《保险合同相关会计处理规定》</b><br>
+    财会〔2009〕15号 · 财政部 2009 年印发<br>
+    自 <b>2009年</b> 起施行 · 与 IFRS 4 趋同 · 是 CAS 25 的「精算侧补充」
+  </div>
+</div>
+
+<div class="reg-section reg-cinnabar">
+  <h2>核心要点摘录</h2>
+  <div class="doc-id">涵盖范围：保险合同认定 · 准备金计量 · 分拆原则 · 重大保险风险测试</div>
+  <div class="reg-article"><b>（一）保险合同的认定</b> 保险人应当对签发的保单进行评估，确定是否属于保险合同。确定为保险合同的，应当按照《企业会计准则第 25 号——原保险合同》及本规定进行会计处理；确定为投资合同的，应当按照《企业会计准则第 22 号——金融工具确认和计量》等相关准则处理。</div>
+  <div class="reg-article"><b>（二）单项保险合同作为计量单元</b> 保险人在确定保险合同准备金时，应当将单项保险合同作为一个计量单元。同一计量单元的保险合同应当具有相似的保险风险并以同种方式管理。</div>
+  <div class="reg-article"><b>（三）准备金的构成</b> 保险合同准备金包括未到期责任准备金、未决赔款准备金、长期健康险准备金、寿险责任准备金、长期健康险责任准备金、寿险责任准备金、平衡准备金、平滑准备金等。其中非寿险核心为<b>未到期责任准备金 + 未决赔款准备金</b>。</div>
+  <div class="reg-article"><b>（四）准备金的计量</b> 保险合同准备金应当以<b>分保单年度</b>为基础进行计量，并考虑<b>再保险</b>因素的影响。计量应当采用<b>充足的</b>精算假设，并考虑<b>风险边际</b>。</div>
+  <div class="reg-article"><b>（五）重大保险风险测试</b> 对于含有储蓄成分或投资成分的保险合同（如融资性信用保证险），应当进行<b>重大保险风险测试</b>，确认是否属于保险合同。测试方法包括现金流折现法、情景对比法等。</div>
+  <div class="reg-article"><b>（六）追溯调整</b> 有关交易或事项的会计处理与本规定不一致的，应当进行追溯调整。但追溯调整不切实可行的除外。</div>
+  <div class="reg-map">
+    <h3>与本库知识点的对照</h3>
+    <table>
+      <tr><th>条目</th><th>会计含义</th><th>本库对应页面</th></tr>
+      <tr><td>（二）单项计量单元</td><td>「同一计量单元」原则</td><td><a href="ch5.html#s52">CH.05§5.2 会计处理</a></td></tr>
+      <tr><td>（三）准备金构成</td><td>未到期 + 未决</td><td><a href="ch1.html#s12">CH.01§1.2 体系全景</a></td></tr>
+      <tr><td>（四）分保单年度 + 风险边际</td><td>与 11号令第十九条衔接</td><td><a href="ch4.html#s42">CH.04§4.2 风险边际</a></td></tr>
+      <tr><td>（五）重大保险风险测试</td><td>融资性信保双层防御</td><td><a href="topic-accounting.html">专题·财会15号与IFRS17衔接</a></td></tr>
+      <tr><td>（六）追溯调整</td><td>准则切换口径</td><td><a href="topic-accounting.html#a-accounting">专题·会计衔接</a></td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="reg-note">📌 <b>口诀：</b>15号管账——「计量单元 / 风险边际 / 追溯调整」是它对非寿险的三件主贡献。融资性信保的「重大保险风险测试」是 2024 大题 8 的考点。</div>
+</section>
+
+<section id="m19">
+<div class="reg-cover" style="background:linear-gradient(135deg,#3a5f3a 0%,#4a7848 100%)">
+  <h1>保监发〔2012〕19号</h1>
+  <div class="meta">
+    <b>《保险公司非寿险业务准备金基础数据、评估内部控制和披露》</b>（业内通称「19 号文」或「内控规范」）<br>
+    中国保监会 2012 年印发 · 自 <b>2012年7月1日</b> 起实施<br>
+    全文共 <b>5 章 59 条</b> + 附件「31 项理赔指标定义」—— 内控体系的「开山之文」
+  </div>
+</div>
+
+<div class="reg-section reg-teal">
+  <h2>第一章 总则</h2>
+  <div class="doc-id">第一条—第五条 · 内控规范的「总章程」</div>
+  <div class="reg-article"><b>第一条</b> 为规范保险公司非寿险业务准备金管理，加强准备金评估的内部控制，根据《中华人民共和国保险法》《保险公司非寿险业务准备金管理办法（试行）》等法律法规，制定本规范。</div>
+  <div class="reg-article"><b>第二条</b> 本规范所称非寿险业务准备金，包括未到期责任准备金和未决赔款准备金。</div>
+  <div class="reg-article"><b>第三条</b> 保险公司应当建立分工明确、职责清晰、相互制约的准备金管理工作机制，明确财务、精算、业务、理赔、再保、稽核等部门的职责。</div>
+  <div class="reg-article"><b>第四条</b> 保险公司应当将总部直接经营的业务所对应的未到期责任准备金及未决赔款准备金确认至总公司本级报表；将非直接经营的业务的准备金确认至所属分支机构财务报表。</div>
+  <div class="reg-article"><b>第五条</b> 保险公司应重视与加强准备金基础数据的质量管理，建立工作流程与制度，确保数据真实、准确、完整。</div>
+</div>
+
+<div class="reg-section reg-teal">
+  <h2>第二章 数据基础</h2>
+  <div class="doc-id">第六条—第二十二条 · 「数据质量」是内控的起点</div>
+  <div class="reg-article"><b>第九条</b> 保单数据包括投保单、保单、批单等。保单数据应当能够支持分保单年度、分险种、分业务来源、分销售渠道、分机构等维度的统计。</div>
+  <div class="reg-article"><b>第十条</b> 再保险分出数据包括分出保费、摊回分保费用等，再保险分入数据包括分入保费、分入赔款等。再保数据应与直保数据<b>按同一保单年度</b>匹配。</div>
+  <div class="reg-article"><b>第十四条</b> 保险公司应建立独立的报案中心或报案专线。报案中心或报案专线应配备充足人员，保证报案渠道畅通。</div>
+  <div class="reg-article"><b>第十五条</b> 保险公司应在车险客户报案 15 日内对案件是否涉及人伤进行核定。对于车险人伤案件，应当建立专门的人伤案件跟踪与理赔流程。</div>
+  <div class="reg-article"><b>第二十三条</b> 保险公司对理赔流程中的报案受理、人工预估、案件重开、案件注销、零赔付结案、拒赔结案等关键节点应进行系统化管理和控制。</div>
+  <div class="reg-article"><b>第二十六条</b> 保险公司应当在理赔业务系统、财务系统和再保系统间建立<b>数据关联控制</b>，财务系统的相关理赔数据应当与理赔业务系统保持一致。</div>
+  <div class="reg-article"><b>第二十九条</b> 若精算假设、参数、估计要求等发生改变而导致取数逻辑需要调整时，精算人员须对取数方法进行充分的合理性评估与测试，并保留测试记录。</div>
+  <div class="reg-article"><b>第三十四条</b> 精算人员在基础数据校验过程中若发现异常数据，应查明异常原因，并根据原因及影响程度在评估基础数据中对异常数据采取剔除、修正等措施，同时向稽核等相关部门报告。若数据异常对准备金评估结果有重大影响，总精算师应及时向公司管理层汇报，并向董事会下设审计委员会单独报告。</div>
+  <div class="reg-article"><b>第三十七条</b> 在评估低频高损案件的准备金时，精算人员应进行更深入的分析。如果历史数据没有体现某些重大风险，精算人员应对承担这些风险所对应的准备金做相应调整。</div>
+  <div class="reg-map">
+    <h3>与本库知识点的对照</h3>
+    <table>
+      <tr><th>条目</th><th>数据治理要点</th><th>本库对应页面</th></tr>
+      <tr><td>第十四条·报案中心</td><td>独立报案中心</td><td><a href="ch4.html#s41">CH.04§4.1 数据质量</a></td></tr>
+      <tr><td>第十五条·15 日核定人伤</td><td>车险理赔时效</td><td><a href="topic-rural.html">专题·农业保险</a>（车辆保险）</td></tr>
+      <tr><td>第二十六条·数据关联控制</td><td>理赔/财务/再保系统</td><td><a href="ch4.html#s41">CH.04§4.1 数据质量</a></td></tr>
+      <tr><td>第三十四条·异常上报</td><td>精算师责任</td><td><a href="ch5.html#s51">CH.05§5.1 监管框架</a></td></tr>
+      <tr><td>第三十七条·低频高损</td><td>单独分析</td><td><a href="topic-stochastic.html">专题·随机模型与CV</a></td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="reg-section reg-teal">
+  <h2>第三章 评估方法</h2>
+  <div class="doc-id">第三十八条—第五十二条 · 评估方法论的「操作手册」</div>
+  <div class="reg-article"><b>第三十八条</b> 精算人员须考虑一些特殊业务模式对准备金结果及赔付发展模式的影响，如业务转让、业务结清、共保业务、政策性业务等。</div>
+  <div class="reg-article"><b>第四十一条</b> 精算人员应对评估结果进行合理性检查：（一）已赚保费与各期保费收入及费用假设吻合；（二）赔付率、案均结案金额、损失频度与定价假设吻合；（三）再保前后结果与再保合同及案件分布吻合。</div>
+  <div class="reg-article"><b>第四十三条</b> 精算人员应选用合理的赔付率、费用率假设。预测未到期保单责任的赔付率时，应参考保单已满期部分的赔付经验。</div>
+  <div class="reg-article"><b>第四十四条</b> 精算人员应对未到期责任准备金评估进行充足性测试，确保未到期责任准备金足以覆盖未到期责任的赔付、费用、退保等现金流出的现值及其对应的风险边际。</div>
+  <div class="reg-article"><b>第四十六条</b> 对于车险业务与单个险种年度再保前未决赔款准备金超过 2 亿的非车险业务，精算人员必须建立已报案赔款和件数的流量三角形，并以此为基础评估终极赔付，并将评估结果与基于已付赔款和件数的流量三角形的评估结果进行相互校验。</div>
+  <div class="reg-article"><b>第四十七条</b> 保险公司应建立再保分出前和再保分出后的赔付流量三角形。当再保分出部分数据量较大且稳定性较强时，可直接基于再保分出部分的赔付流量数据得到应收分保未决赔款准备金。</div>
+  <div class="reg-article"><b>第四十八条</b> 精算人员在评估未决赔款准备金时须选取<b>两种或两种以上</b>的方法评估终极赔付。若数据有限，可参考以往相似业务的经验数据或外部数据，并选用适当的精算方法（如赔付率法）。</div>
+  <div class="reg-article"><b>第四十九条</b> 间接理赔费用准备金可根据经验比例进行评估。间接理赔费用的经验比例应保持相对稳定，但由于理赔流程或者理赔效率显著变化导致经验比例发生较大调整时，应评估其调整的合理性。</div>
+  <div class="reg-article"><b>第五十一条</b> 保险公司应考虑<b>通货膨胀</b>因素对准备金评估中有关赔付及费用（配件价格、工时费、人伤医疗费用、法律诉讼、工资水平等）评估假设的影响。</div>
+  <div class="reg-article"><b>第五十二条</b> 精算人员应考虑<b>大赔案</b>对历史赔付发展的影响，根据其出险频度对大赔案进行剔除与恢复调整。</div>
+  <div class="reg-map">
+    <h3>与本库知识点的对照</h3>
+    <table>
+      <tr><th>条目</th><th>评估方法论</th><th>本库对应页面</th></tr>
+      <tr><td>第四十一条·合理性检查</td><td>三吻合原则</td><td><a href="ch4.html#s43">CH.04§4.3 检验与合理性</a></td></tr>
+      <tr><td>第四十四条·充足性测试</td><td>PDR 106.5% 警戒</td><td><a href="ch3.html#s33">CH.03§3.3 充足性测试</a></td></tr>
+      <tr><td>第四十六条·2 亿门槛</td><td>必须建立报案三角</td><td><a href="ch2.html#s21">CH.02§2.1 已报案</a></td></tr>
+      <tr><td>第四十八条·双方法</td><td>链梯 + B-F/Cape Cod</td><td><a href="ch2.html#s24">CH.02§2.4 方法选择</a></td></tr>
+      <tr><td>第五十一条·通胀</td><td>评估假设调整</td><td><a href="ch4.html#s42">CH.04§4.2 风险边际</a></td></tr>
+      <tr><td>第五十二条·大赔案</td><td>剔加调整</td><td><a href="topic-stochastic.html">专题·随机模型</a></td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="reg-section reg-teal">
+  <h2>第四章 准备金的核算与披露</h2>
+  <div class="doc-id">第五十三条—第五十六条</div>
+  <div class="reg-article"><b>第五十三条</b> 财务部门在核算准备金评估结果时，必须综合考虑所有赔付相关科目的核算方法，包括理赔费用、追偿款、预付赔款等，杜绝入账准备金与现有科目核算存在重复或者遗漏。</div>
+  <div class="reg-article"><b>第五十五条</b> 精算人员需比较财务入账结果与精算评估结果之间的差异。若差异显著，应及时更新财务入账结果，确保财务报表数据的一致性和真实性。</div>
+  <div class="reg-article"><b>第五十六条</b> 保险公司应<b>每季度</b>对上两个财务年度末再保前与再保后未决赔款准备金与未到期责任准备金至本季末的偏差进行回溯分析。</div>
+  <div class="reg-note">📌 第五十六条的「季度回溯」是与 <b>2025-12-19《保险公司资产负债管理办法（征求意见稿）》</b> 监测指标直接衔接的口径。</div>
+</div>
+
+<div class="reg-section reg-teal">
+  <h2>附件：31 项理赔指标</h2>
+  <div class="doc-id">附件一 · 19 号文最具实务价值的一节</div>
+  <div class="reg-article">附件列出了与未决赔款准备金管理相关的<b>31 项理赔指标</b>的定义和计算公式，涵盖 <b>报案/立案/结案/估损偏差/重开/案均/产能</b> 六大类。备考可重点关注以下 6 项：</div>
+  <ol style="margin:8px 0 0 22px;font-size:13.5px;color:var(--ink-2);line-height:1.95">
+    <li>报案注销率（笔数）= 注销未立案案件数 / 全部有效报案件数</li>
+    <li>立案注销率（金额）= 注销已立案案件估损金额 / 立案案件（赔付 + 估损）之和</li>
+    <li>限时立案率（笔数）= 规定时限内立案数 / 全部立案数</li>
+    <li>初次估损偏差率（代数）= Σ（初次估损 − 结案金额）/ Σ 结案金额</li>
+    <li>已发生已报案未决赔款准备金发展偏差率 = 期内已报案赔款变化量 / 期初已发生已报告未决赔款准备金</li>
+    <li>理赔人均产能 = ∑理赔案件量 / 理赔人数</li>
+  </ol>
+</div>
+
+<div class="reg-note">📌 <b>口诀：</b>19号管内控——「数据 / 评估 / 核算 / 披露 / 31 项指标」五段式，是内控题的「圣经」；2 亿门槛、季度回溯、31 项指标是高频考点。</div>
+</section>
+
+<section id="m51">
+<div class="reg-cover" style="background:linear-gradient(135deg,#1f4a5f 0%,#2a6580 100%)">
+  <h1>银保监发〔2021〕51号附件4</h1>
+  <div class="meta">
+    <b>《保险公司偿付能力监管规则第 4 号：保险风险最低资本（非寿险业务）》</b><br>
+    偿二代二期（Ⅱ）· 自 <b>2022 年第一季度</b> 起施行 · 非寿险保险风险最低资本的「量化中枢」
+  </div>
+</div>
+
+<div class="reg-section reg-amber">
+  <h2>第一章 总则</h2>
+  <div class="doc-id">第一条—第七条</div>
+  <div class="reg-article"><b>第三条</b> 本规则所称非寿险业务，是指保险公司经营的财产保险，以及保险期间为一年或一年以内的短期意外险、短期健康险和短期寿险。</div>
+  <div class="reg-article"><b>第四条</b> 本规则所称保险风险，是指由于<b>赔付水平、费用水平</b>等的实际经验与预期发生不利偏离，导致保险公司遭受非预期损失的风险。</div>
+  <div class="reg-article"><b>第五条</b> 保险公司非寿险业务的保险风险包括<b>保费及准备金风险、巨灾风险</b>。</div>
+  <div class="reg-article"><b>第六条</b> 保险公司计量非寿险业务的保险风险最低资本时，应将非寿险业务划分为以下类型：车险、财产险、船货特险、责任险、农业险、信用保证险、短期意外伤害险、短期健康险、短期寿险、其他险。</div>
+  <div class="reg-article"><b>第七条</b> 除融资性信用保证险外，各业务类型的保费风险最低资本、准备金风险最低资本采用<b>综合因子法</b>计算：<br>
+    <code style="display:block;margin:8px 0;padding:10px;background:#f7f9fc;border-radius:6px;font-size:13.5px">MC = EX × RF<br>RF = RF₀ × (1 + K)，K = k₁ + k₂ + … + kₙ，K ∈ [-0.25, 0.25]</code>
+  </div>
+</div>
+
+<div class="reg-section reg-amber">
+  <h2>第二章 各业务类型保费风险最低资本</h2>
+  <div class="doc-id">第八条—第十五条 · 关键条款摘录</div>
+  <div class="reg-article"><b>第九条</b> 各业务类型的保费风险最低资本风险暴露为该业务类型最近 12 个月的自留保费。</div>
+  <div class="reg-article"><b>第十条</b> 车险的基础因子 RF₀ = <b>0.103</b>。对车险保费风险最低资本，根据最近 6 个月综合成本率 C车险 设定特征系数 k₁。k₁ 随 C车险 取值不同区间在 ±0.05 间阶梯调节。</div>
+  <div class="reg-note">📌 51 号附件 4 的 PDF 在工作空间中以扫描图像形式存在（p45–p80），文本提取仅可得 p45–p46 部分；完整公式表请见 <a href="topic-solvency.html">专题·保险风险最低资本</a>。</div>
+  <div class="reg-map">
+    <h3>与本库知识点的对照</h3>
+    <table>
+      <tr><th>条目</th><th>资本要求</th><th>本库对应页面</th></tr>
+      <tr><td>第七条·综合因子法</td><td>MC = EX × RF</td><td><a href="topic-solvency.html#s-solvency-1">专题·保险风险最低资本 §1</a></td></tr>
+      <tr><td>第十条·车险 RF₀=0.103</td><td>基础因子</td><td><a href="topic-solvency.html#s-solvency-2">专题·§2 业务类型与因子</a></td></tr>
+      <tr><td>K₁/K₂/K₃ 聚合</td><td>ρ 相关性开方</td><td><a href="topic-solvency.html#s-solvency-3">专题·§3 聚合与相关系数</a></td></tr>
+      <tr><td>融资性信保特别处理</td><td>不适用综合因子</td><td><a href="topic-solvency.html#s-solvency-4">专题·§4 例外处理</a></td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="reg-note">📌 <b>口诀：</b>51号管资本——「综合因子法 + 十类业务 + 三层聚合」是它的核心。公式表请见专题页，监管原文 PDF 中的扫描页不在本库范围。</div>
+</section>
+
+<section id="m6">
+<div class="reg-cover" style="background:linear-gradient(135deg,#4a4a4a 0%,#6a6a6a 100%)">
+  <h1>银保监规〔2022〕6号</h1>
+  <div class="meta">
+    <b>《保险公司非寿险业务准备金监管细则》（1—7 号）</b><br>
+    银保监会 2022 年印发 · 7 个细分细则对应 11 号令第七章的具体执行<br>
+    涵盖：细则 1 报表 / 细则 2 内控 / 细则 3 回溯 / 细则 4 充足性 / 细则 5 风险边际 / 细则 6 农险 / 细则 7 信用保证
+  </div>
+</div>
+
+<div class="reg-section">
+  <h2>细则结构与用途</h2>
+  <div class="doc-id">7 个细则分册 · 每册 5–10 页 · 与 11 号令正文配套使用</div>
+  <div class="reg-article"><b>细则 1 报表与报送</b> · 明确准备金报表的报送口径、频率、责任人</div>
+  <div class="reg-article"><b>细则 2 内部控制</b> · 19 号文的「执行细化」—— 内控制度、分工、稽核频率的检查清单</div>
+  <div class="reg-article"><b>细则 3 回溯分析</b> · 11 号令第二十条的执行口径：每季度对前两财务年度末偏差做回溯，偏差率超过 ±5% 需书面说明</div>
+  <div class="reg-article"><b>细则 4 充足性测试</b> · 11 号令第十条的执行口径：未来现金流出的折现率、再保前后的处理</div>
+  <div class="reg-article"><b>细则 5 风险边际</b> · 11 号令第十九条的执行口径：75% / 85% / 95% / 99% / 99.5% 分位的具体场景</div>
+  <div class="reg-article"><b>细则 6 农业保险</b> · 与 4 号文（2023 农险精算规定）配套的「季度监管」细则</div>
+  <div class="reg-article"><b>细则 7 融资性信用保证险</b> · 15 号文「重大保险风险测试」的细化执行口径</div>
+  <div class="reg-note">📌 6 号文 PDF 在工作空间中以扫描图像形式存在（p81–p123），文本提取不可得；以上条款为与 11 号令配套的标准结构。具体条款请查阅原 PDF。</div>
+  <div class="reg-map">
+    <h3>与本库知识点的对照</h3>
+    <table>
+      <tr><th>细则</th><th>主题</th><th>本库对应页面</th></tr>
+      <tr><td>细则 3</td><td>回溯分析偏差率 ±5%</td><td><a href="ch4.html#s44">CH.04§4.4 回溯分析</a></td></tr>
+      <tr><td>细则 4</td><td>充足性测试折现率</td><td><a href="ch3.html#s33">CH.03§3.3 充足性测试</a></td></tr>
+      <tr><td>细则 5</td><td>风险边际分位场景</td><td><a href="ch4.html#s42">CH.04§4.2 风险边际</a></td></tr>
+      <tr><td>细则 6</td><td>农险精算</td><td><a href="topic-rural.html">专题·农业保险精算规定</a></td></tr>
+      <tr><td>细则 7</td><td>融资性信保测试</td><td><a href="topic-accounting.html">专题·财会15号与IFRS17衔接</a></td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="reg-note">📌 <b>口诀：</b>6号管回溯/测试/边际/农险/信保——五个细则构成「非寿险精算日常监管」五件套；细则 3（回溯）+ 细则 5（边际）是 2024 大题 7（风险边际三连问）的直接监管依据。</div>
+</section>
+
+<section id="m4">
+<div class="reg-cover" style="background:linear-gradient(135deg,#5f4a2a 0%,#876b3f 100%)">
+  <h1>银保监规〔2023〕4号</h1>
+  <div class="meta">
+    <b>《农业保险精算规定》（试行）</b><br>
+    索引号 717804719/2023-338 · 主题分类：政策法规 · 2023 年印发<br>
+    农险专属：保费充足性 · 大灾风险准备金 · 风险区划 · 费率回溯
+  </div>
+</div>
+
+<div class="reg-section reg-amber">
+  <h2>核心条款摘录</h2>
+  <div class="doc-id">试行版主要条款 · 与本库农险专题配套</div>
+  <div class="reg-article"><b>适用范围</b> 本规定所称农业保险，包括<b>种植业保险、养殖业保险、林木保险</b>三大类。农业保险的精算评估除执行本规定外，还应执行非寿险业务准备金管理的相关规定。</div>
+  <div class="reg-article"><b>保费充足性</b> 经营农业保险业务的保险公司应当开展保费充足性测试。测试应当以<b>风险区划</b>为基础，反映不同地区的风险差异。</div>
+  <div class="reg-article"><b>大灾风险准备金</b> 农业保险应当按保费收入的一定比例计提<b>大灾风险准备金</b>，专项用于应对大灾年份的超预期赔付。</div>
+  <div class="reg-article"><b>风险区划</b> 保险公司应当根据历史赔付数据、气候特征、地形地貌等因素，将承保区域划分为不同风险等级，实行<b>差别费率</b>。</div>
+  <div class="reg-article"><b>费率回溯</b> 保险公司应当定期对农险产品的费率进行回溯评估。实际赔付率与预期赔付率偏差超过一定幅度的，应当调整费率或修订产品。</div>
+  <div class="reg-article"><b>准备金方法</b> 农险未到期责任准备金的评估可采用 1/365 法或风险分布法。农险未决赔款准备金的评估应特别考虑<b>大灾滞后报案</b>的影响。</div>
+  <div class="reg-map">
+    <h3>与本库知识点的对照</h3>
+    <table>
+      <tr><th>条目</th><th>农险要点</th><th>本库对应页面</th></tr>
+      <tr><td>风险区划</td><td>差别费率基础</td><td><a href="topic-rural.html#s-rural-1">专题·§1 风险区划与费率</a></td></tr>
+      <tr><td>大灾风险准备金</td><td>专项计提</td><td><a href="topic-rural.html#s-rural-2">专题·§2 大灾准备金</a></td></tr>
+      <tr><td>大灾滞后报案</td><td>IBNR 特殊调整</td><td><a href="topic-rural.html#s-rural-3">专题·§3 未决赔款与大灾</a></td></tr>
+      <tr><td>费率回溯</td><td>定期评估</td><td><a href="topic-rural.html#s-rural-4">专题·§4 费率回溯</a></td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="reg-note">📌 <b>口诀：</b>4号管农险——「风险区划 + 大灾准备 + 滞后报案 + 费率回溯」四件套。2024 大题 8（车险农险九问）的中农险部分直接对应本规定。</div>
+</section>
+
+<section id="map">
+<div class="reg-section" style="border-left-color:var(--cinnabar);background:linear-gradient(180deg,#fef9f6,var(--card))">
+  <h2 style="color:var(--cinnabar)">§R.7 六大监管文号·跨章节对照总表</h2>
+  <div class="doc-id">一表定位：每个文号在本库的「首次出现章节」与「重点考点页」</div>
+  <table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:10px">
+    <thead>
+      <tr style="background:rgba(181,61,46,.08)">
+        <th style="padding:10px;border:1px solid var(--line-2);text-align:left">文号</th>
+        <th style="padding:10px;border:1px solid var(--line-2);text-align:left">监管意图</th>
+        <th style="padding:10px;border:1px solid var(--line-2);text-align:left">首次出现章节</th>
+        <th style="padding:10px;border:1px solid var(--line-2);text-align:left">重点考点页</th>
+        <th style="padding:10px;border:1px solid var(--line-2);text-align:left">真题证据</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding:8px;border:1px solid var(--line-2)"><b>11号令</b><br>2021 管理办法</td>
+        <td style="padding:8px;border:1px solid var(--line-2)">种类·方法·内控·监督·罚则</td>
+        <td style="padding:8px;border:1px solid var(--line-2)"><a href="ch1.html#s12">CH.01§1.2</a></td>
+        <td style="padding:8px;border:1px solid var(--line-2)"><a href="ch2.html#s22">CH.02§2.2 链梯</a> · <a href="ch2.html#s25">CH.02§2.5 ULAE</a> · <a href="ch3.html#s33">CH.03§3.3 充足性</a></td>
+        <td style="padding:8px;border:1px solid var(--line-2)">2024 大 2（B-F 计算）、2024 大 7（边际三连问）</td>
+      </tr>
+      <tr>
+        <td style="padding:8px;border:1px solid var(--line-2)"><b>15号</b><br>财会〔2009〕</td>
+        <td style="padding:8px;border:1px solid var(--line-2)">会计处理 · 计量单元 · 风险测试</td>
+        <td style="padding:8px;border:1px solid var(--line-2)"><a href="ch5.html#s52">CH.05§5.2</a></td>
+        <td style="padding:8px;border:1px solid var(--line-2)"><a href="topic-accounting.html">专题·财会15号</a></td>
+        <td style="padding:8px;border:1px solid var(--line-2)">2025 大 9（已赚保费为负）</td>
+      </tr>
+      <tr>
+        <td style="padding:8px;border:1px solid var(--line-2)"><b>19号</b><br>保监发〔2012〕</td>
+        <td style="padding:8px;border:1px solid var(--line-2)">内控 · 数据 · 31 项指标</td>
+        <td style="padding:8px;border:1px solid var(--line-2)"><a href="ch4.html#s41">CH.04§4.1</a></td>
+        <td style="padding:8px;border:1px solid var(--line-2)"><a href="ch4.html#s43">CH.04§4.3 合理性</a> · <a href="ch4.html#s44">CH.04§4.4 回溯</a></td>
+        <td style="padding:8px;border:1px solid var(--line-2)">2024 大 3（回溯 2022 准备金）</td>
+      </tr>
+      <tr>
+        <td style="padding:8px;border:1px solid var(--line-2)"><b>51号附件4</b><br>偿二代Ⅱ 保险风险</td>
+        <td style="padding:8px;border:1px solid var(--line-2)">最低资本 · 综合因子法 · K₁K₂K₃ 聚合</td>
+        <td style="padding:8px;border:1px solid var(--line-2)"><a href="topic-solvency.html">专题·最低资本</a></td>
+        <td style="padding:8px;border:1px solid var(--line-2)"><a href="ch5.html#s53">CH.05§5.3 偿付能力</a></td>
+        <td style="padding:8px;border:1px solid var(--line-2)">2024 大 7（K 聚合）</td>
+      </tr>
+      <tr>
+        <td style="padding:8px;border:1px solid var(--line-2)"><b>6号</b><br>银保监规〔2022〕</td>
+        <td style="padding:8px;border:1px solid var(--line-2)">回溯/充足性/边际/农险/信保 五大细则</td>
+        <td style="padding:8px;border:1px solid var(--line-2)"><a href="ch4.html#s44">CH.04§4.4</a></td>
+        <td style="padding:8px;border:1px solid var(--line-2)"><a href="topic-rural.html">专题·农险</a></td>
+        <td style="padding:8px;border:1px solid var(--line-2)">2024 大 8（农险九问）</td>
+      </tr>
+      <tr>
+        <td style="padding:8px;border:1px solid var(--line-2)"><b>4号</b><br>银保监规〔2023〕</td>
+        <td style="padding:8px;border:1px solid var(--line-2)">农险精算：风险区划 + 大灾准备 + 滞后报案</td>
+        <td style="padding:8px;border:1px solid var(--line-2)"><a href="topic-rural.html">专题·农险</a></td>
+        <td style="padding:8px;border:1px solid var(--line-2)"><a href="topic-rural.html#s-rural-3">专题·§3 未决赔款</a></td>
+        <td style="padding:8px;border:1px solid var(--line-2)">2024 大 8 中农险部分</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="reg-note">📌 <b>总口诀：</b>11号令管总、15号管账、19号管内控、51号管资本、6号管细则、4号管农险——「总/账/控/资/细/农」六字诀覆盖非寿险精算的完整监管图谱。</div>
+</section>
+
+<button class="done-btn" data-id="regulations">○ 标记本页已完成</button>
+
+<div class="pager"><a class="prev" href="textbook.html">← 书本题目·解题汇总</a><a class="next" href="references.html">参考资料库 →</a></div>
+</main>
+<script src="js/kb.js"></script>
+<script src="js/gate.js"></script>
+</body>
+</html>
