@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CH.02 未决赔款准备金评估 · 非寿险责任准备金评估</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .calc button{background:var(--blue);color:#fff;border:none;border-radius:6px;padding:6px 18px;font-size:13px;cursor:pointer;margin-left:8px}
+  .calc button:hover{background:var(--blue-2)}
+  .calc .row{margin:8px 0;font-size:13.5px}
+  .calc .out-box{background:var(--blue-l);border-radius:8px;padding:10px 14px;margin-top:10px;font-family:var(--mono);font-size:13px;line-height:2}
+  td.gap{background:#eef2f7!important;font-style:italic;color:#b0bccb}
+</style>
+</head>
+<body>
+<aside class="side">
+  <div class="brand"><b>非寿险责任准备金评估</b><span>正精算师（非寿险）</span></div>
+    <nav>
+    <a href="xihong.html">关于 · 西红精算</a>
+    <a href="index.html">首页 · 考试全景</a>
+    <a href="about.html">本库说明 · 编法与用法</a>
+    <div class="grp">五大篇章（考纲权重）</div>
+    <a href="ch1.html">CH.01 总览与体系<span class="w">10%</span></a>
+    <a href="ch2.html" class="on">CH.02 未决赔款<span class="w">30%</span></a>
+    <a href="ch3.html">CH.03 未到期责任<span class="w">25%</span></a>
+    <a href="ch4.html">CH.04 评估实务<span class="w">20%</span></a>
+    <a href="ch5.html">CH.05 监管·会计·经营<span class="w">15%</span></a>
+    <div class="grp">拓展专题（不止于考纲）</div>
+    <a href="topic-stochastic.html">专题·随机模型与CV</a>
+    <a href="topic-reinsurance.html">专题·再保险准备金</a>
+    <a href="topic-rural.html">专题·农业保险精算规定</a>
+    <a href="topic-solvency.html">专题·保险风险最低资本</a>
+    <a href="topic-accounting.html">专题·财会15号与IFRS17衔接</a>
+    <div class="grp">真题 / 模拟 / 资料</div>
+    <a href="zhenti.html">真题馆</a>
+    <a href="moni-1.html">模拟卷一 · 流量三角形</a>
+    <a href="moni-2.html">模拟卷二 · 监管口径</a>
+    <a href="moni-3.html">模拟卷三 · 实务综合</a>
+    <a href="references.html">参考资料库</a>
+    <div class="grp">知识拓展</div>
+    <a href="textbook.html">书本题目·解题汇总</a>
+    <a href="regulations.html">监管原文·对照库</a>
+  </nav>
+  <div class="prog-mini">学习进度 <b>0 / 14</b></div>
+</aside>
+<main class="main">
+
+<div class="ch-head">
+  <div class="no">CHAPTER 02 · WEIGHT 30%</div>
+  <h1>未决赔款准备金评估</h1>
+  <p class="sub">链梯 · 案均 · 准备金进展 · B-F · Cape Cod · 赔付率 —— 六种方法一网打尽，全部配教材真实数据完整演算</p>
+  <div class="wbar"><div class="lab"><span>考纲权重</span><span>30%（大题重镇 · 5–7 天）</span></div><div class="bar"><i style="width:30%"></i></div></div>
+  <div class="toc">
+    <a href="#s21">§2.1 概念拆解：RBNS · IBNR · ULAE</a>
+    <a href="#s22">§2.2 链梯法（含因子选择）</a>
+    <a href="#s23">§2.3 案均赔款法与准备金进展法</a>
+    <a href="#s24">§2.4 B-F 法与 Cape Cod 法</a>
+    <a href="#s25">§2.5 赔付率法与理赔费用准备金</a>
+    <a href="#s26">§2.6 风险边际与折现</a>
+    <a href="#s27">§2.7 方法选择总表与考点清单</a>
+  </div>
+</div>
+
+<section id="s21">
+  <h2><span class="sn">§2.1</span>概念拆解：RBNS · IBNR · ULAE</h2>
+  <div class="lead">未决赔款准备金 = 已报案未决（RBNS）+ 已发生未报告（IBNR）+ 理赔费用准备金。三者口径不清，后面所有方法都会算错对象。</div>
+  <div class="tbl-scroll"><table>
+    <tr><th>科目</th><th>口径</th><th>评估方法</th><th>数据特征</th></tr>
+    <tr><td><b>已报案未决 RBNS</b></td><td>已立案、估损未结案</td><td>逐案估计 · 案均赔款法</td><td>可观测（理赔系统逐案估损）</td></tr>
+    <tr><td><b>IBNR</b></td><td>①已发生未报告 ②已报告但估损不足（发展不足 IBNR）</td><td>链梯 · 准备金进展 · B-F · Cape Cod · 赔付率法</td><td>不可直接观测，必须估计</td></tr>
+    <tr><td><b>理赔费用准备金</b></td><td>ALAE（可归属，随案）+ ULAE（不可归属，摊派）</td><td>比例法（ALAE/赔款）· ULAE 进展法</td><td>费用三角形，波动小</td></tr>
+  </table></div>
+  <div class="formula"><b>本章统一记号（教材 Ch3–Ch4）</b><div class="fx">PC = 累计已付赔款 · RV = 已报案未决（逐案）· RC = 累计已报案赔款 = PC + RV<br>EP = 已赚保费 · λ = 期望赔付率 · LU = 最终赔款 · CV = 未决赔款准备金 = LU − PC<br>IBNR = CV − RV</div><span class="src src-jiao">教</span>谢志刚 Ch3 P67 · Ch4 P78</div>
+  <div class="warn"><b>IBNR 双层含义是高频判断题：</b>「IBNR 严格等于尚未向保险公司报告的赔案对应的准备金」——<b>错</b>。监管与教材口径均包含「已报告但最终赔付可能超出当前估损」的发展不足部分。<span class="star s3">高频必背</span></div>
+  <div class="src-note"><span class="src src-gui">规</span>银保监会令2021年第11号：未决赔款准备金包括已发生已报案未决赔款准备金、已发生未报告未决赔款准备金（IBNR）和理赔费用准备金。</div>
+</section>
+
+<section id="s22">
+  <h2><span class="sn">§2.2</span>链梯法（Chain Ladder）</h2>
+  <div class="lead">全科第一方法。假设：各事故年的赔付进展模式稳定（进展因子不随事故年变化）。五步流程 + 教材 6×6 真实数据完整演算。</div>
+
+  <div class="formula"><b>三行公式</b><div class="fx">① 逐年进展因子 f(j→j+1) = ΣC(i,j+1) / ΣC(i,j)（原始加权/体量加权法）<br>② 至最终累计进展因子 CDF(j) = f(j→j+1) × f(j+1→j+2) × … × 尾部因子<br>③ LU(i) = C(i,当前age) × CDF(当前age)；CV = LU − PC；IBNR = CV − RV</div></div>
+
+  <h3>第一步：累计已付赔款三角形（教材真实数据）</h3>
+  <div class="tbl-scroll"><table>
+    <tr><th>事故年 \ 进展月</th><th class="num">12</th><th class="num">24</th><th class="num">36</th><th class="num">48</th><th class="num">60</th><th class="num">72</th><th class="num">最终赔付</th></tr>
+    <tr><td>1</td><td class="num">1001</td><td class="num">1855</td><td class="num">2423</td><td class="num">2988</td><td class="num">3335</td><td class="num">3483</td><td class="num">3705</td></tr>
+    <tr><td>2</td><td class="num">1113</td><td class="num">2103</td><td class="num">2774</td><td class="num">3422</td><td class="num">3844</td><td class="gap">…</td><td class="gap">?</td></tr>
+    <tr><td>3</td><td class="num">1265</td><td class="num">2433</td><td class="num">3233</td><td class="num">3977</td><td class="gap">…</td><td class="gap">…</td><td class="gap">?</td></tr>
+    <tr><td>4</td><td class="num">1490</td><td class="num">2873</td><td class="num">3880</td><td class="gap">…</td><td class="gap">…</td><td class="gap">…</td><td class="gap">?</td></tr>
+    <tr><td>5</td><td class="num">1725</td><td class="num">3261</td><td class="gap">…</td><td class="gap">…</td><td class="gap">…</td><td class="gap">…</td><td class="gap">?</td></tr>
+    <tr><td>6</td><td class="num">1889</td><td class="gap">…</td><td class="gap">…</td><td class="gap">…</td><td class="gap">…</td><td class="gap">…</td><td class="gap">?</td></tr>
+  </table></div>
+  <div class="src-note"><span class="src src-jiao">教</span>教材 Ch3–Ch4 贯穿例题。配套：RV（对角线已报案未决）= 234 / 475 / 969 / 1796 / 2881 / 3929；EP = 4486 / 5024 / 5680 / 6590 / 7482 / 8502。</div>
+
+  <h3>第二步：逐年进展因子（个体 + 原始加权）</h3>
+  <div class="tbl-scroll"><table>
+    <tr><th>事故年</th><th class="num">12→24</th><th class="num">24→36</th><th class="num">36→48</th><th class="num">48→60</th><th class="num">60→72</th></tr>
+    <tr><td>1</td><td class="num">1.853</td><td class="num">1.306</td><td class="num">1.233</td><td class="num">1.116</td><td class="num">1.044</td></tr>
+    <tr><td>2</td><td class="num">1.889</td><td class="num">1.319</td><td class="num">1.234</td><td class="num">1.123</td><td class="gap">…</td></tr>
+    <tr><td>3</td><td class="num">1.923</td><td class="num">1.329</td><td class="num">1.230</td><td class="gap">…</td><td class="gap">…</td></tr>
+    <tr><td>4</td><td class="num">1.928</td><td class="num">1.351</td><td class="gap">…</td><td class="gap">…</td><td class="gap">…</td></tr>
+    <tr><td>5</td><td class="num">1.890</td><td class="gap">…</td><td class="gap">…</td><td class="gap">…</td><td class="gap">…</td></tr>
+    <tr><td><b>原始加权 f</b></td><td class="num f-hi"><b>1.899</b></td><td class="num f-hi"><b>1.329</b></td><td class="num f-hi"><b>1.232</b></td><td class="num f-hi"><b>1.120</b></td><td class="num f-hi"><b>1.044</b></td></tr>
+    <tr><td><b>尾部因子 72→最终</b></td><td class="num" colspan="5"><b>1.064</b>（= 3705 / 3483，由第 1 事故年实际最终赔付反推）</td></tr>
+  </table></div>
+  <div class="mnem"><b>加权法算例（12→24）：</b>分母 ΣC(i,12) = 1001+1113+1265+1490+1725 = 6594；分子 ΣC(i,24) = 1855+2103+2433+2873+3261 = 12525；f = 12525/6594 = <b>1.899</b>。注意：分子分母都只含<b>两列都完整</b>的事故年（第 6 年不进 12→24 因子）。</div>
+
+  <h3>第三步：因子选择——同一年龄、四种取法（教材对比表）</h3>
+  <div class="tbl-scroll"><table>
+    <tr><th>选法</th><th class="num">CDF(12→最终)</th><th class="num">AY6 最终赔款</th><th class="num">AY6 未决</th><th>特点与适用</th></tr>
+    <tr><td><b>原始加权法</b>（体量加权）</td><td class="num f-hi"><b>3.869</b></td><td class="num">7309</td><td class="num">5420</td><td>大事故年权重大，最常用默认</td></tr>
+    <tr><td>最高值法</td><td class="num">4.009</td><td class="num">7573</td><td class="num">5684</td><td>最保守，谨慎性原则的体现</td></tr>
+    <tr><td>简单算术平均法</td><td class="num">3.856</td><td class="num">7284</td><td class="num">5395</td><td>个体因子等权，抗大额扰动</td></tr>
+    <tr><td>近三年原始加权法</td><td class="num">3.912</td><td class="num">7390</td><td class="num">5501</td><td>体现最新进展模式（理赔提速/放慢）</td></tr>
+  </table></div>
+  <div class="tip"><b>总量比率技术（考点）：</b>不用逐年因子连乘，直接用「某进展月累计赔款 / 最终赔款」的总量因子。教材三种：第一事故年法（0.270）· 事故年平均值法（0.260）· 事故年最低值法（0.251，最谨慎）。AY6 未决分别对应 5103 / 5392 / 5651。<b>逐年链梯与总量比率是两套并行技术，考试会问区别。</b></div>
+
+  <h3>第四步：至最终累计进展因子（原始加权法）</h3>
+  <div class="tbl-scroll"><table>
+    <tr><th>进展月</th><th class="num">12</th><th class="num">24</th><th class="num">36</th><th class="num">48</th><th class="num">60</th><th class="num">72</th></tr>
+    <tr><td><b>CDF（至最终）</b></td><td class="num f-hi">3.869</td><td class="num f-hi">2.037</td><td class="num f-hi">1.533</td><td class="num f-hi">1.244</td><td class="num f-hi">1.111</td><td class="num f-hi">1.064</td></tr>
+  </table></div>
+
+  <h3>第五步：最终赔款、未决与 IBNR（全表）</h3>
+  <div class="tbl-scroll"><table>
+    <tr><th>事故年</th><th class="num">对角线 PC</th><th class="num">CDF</th><th class="num">LU 最终赔款</th><th class="num">CV 未决</th><th class="num">RV</th><th class="num">IBNR = CV−RV</th></tr>
+    <tr><td>1</td><td class="num">3483</td><td class="num">1.064</td><td class="num">3705</td><td class="num">222</td><td class="num">234</td><td class="num neg">−12</td></tr>
+    <tr><td>2</td><td class="num">3844</td><td class="num">1.111</td><td class="num">4270</td><td class="num">427</td><td class="num">475</td><td class="num neg">−49</td></tr>
+    <tr><td>3</td><td class="num">3977</td><td class="num">1.244</td><td class="num">4948</td><td class="num">971</td><td class="num">969</td><td class="num">2</td></tr>
+    <tr><td>4</td><td class="num">3880</td><td class="num">1.533</td><td class="num">5948</td><td class="num">2068</td><td class="num">1796</td><td class="num">272</td></tr>
+    <tr><td>5</td><td class="num">3261</td><td class="num">2.037</td><td class="num">6643</td><td class="num">3382</td><td class="num">2881</td><td class="num">501</td></tr>
+    <tr><td>6</td><td class="num">1889</td><td class="num">3.869</td><td class="num">7309</td><td class="num">5420</td><td class="num">3929</td><td class="num">1491</td></tr>
+    <tr><td><b>合计</b></td><td class="num"><b>20334</b></td><td></td><td class="num"><b>32825</b></td><td class="num f-hi"><b>12491</b></td><td class="num"><b>10284</b></td><td class="num f-hi"><b>2206</b></td></tr>
+  </table></div>
+  <div class="prac"><b>实务直觉：</b>老事故年（1、2）IBNR 为负、新事故年（6）IBNR 巨大——这是链梯法的正常形态：老案子估损充分甚至保守（发展释放），新案子报案远未完成。看到负 IBNR 不必慌，但持续大额负值说明逐案估损系统性偏保守，要在回溯中修正（→CH.04 §4.3）。</div>
+
+  <div class="calc">
+    <b>演算器 2-1 · 链梯法单行速算（默认 = AY6 真实数据）</b>
+    <div class="row">累计已付赔款 PC = <input id="cl_pc" value="1889">　至最终累计进展因子 CDF = <input id="cl_cdf" value="3.869">　已报案未决 RV = <input id="cl_rv" value="3929">
+    <button onclick="calcCL()">计算</button></div>
+    <div class="out-box" id="cl_out">LU = 7309.1　CV = 5420.1　IBNR = 1491.1</div>
+    <div class="calc-steps">步骤：LU = PC × CDF → CV = LU − PC → IBNR = CV − RV。改动 CDF 为 4.009（最高值法）即见谨慎性差异。</div>
+  </div>
+  <div class="exam"><span class="yr">2023回忆</span><b>真题影子：</b>给一张累计三角形，要求「计算逐年进展因子并选择合适因子估计未决赔款准备金」——就是本节五步。评分点：因子计算正确（含加权法的完整数据列）、CDF 连乘、LU/CV/IBNR 三层齐全。<span class="star s3">高频必背</span></div>
+</section>
+
+<section id="s23">
+  <h2><span class="sn">§2.3</span>案均赔款法与准备金进展法</h2>
+  <div class="lead">链梯法的两个「变体」：一个把赔款拆成「案均 × 案数」再进展，一个盯住「已报案未决 RV 本身的衰减规律」。</div>
+
+  <h3>案均赔款法（Ch3 已报案 + Ch4 IBNR 各用一次）</h3>
+  <div class="formula"><b>三步框架</b><div class="fx">① 案均三角形 = 赔款三角形 ÷ 赔案数目三角形（已付口径 / 已报案口径各一套）<br>② 对案均、案数<b>分别</b>做链梯，得最终案均 × 最终案数<br>③ LU = 最终案均 × 最终案数；CV = LU − PC；IBNR = CV − RV</div></div>
+  <div class="tbl-scroll"><table>
+    <tr><th>事故年</th><th class="num">12月已付案均</th><th class="num">最终已付案均</th><th class="num">12月累计已付案数</th><th class="num">最终案数</th><th class="num">LU 最终赔款</th><th class="num">CV</th><th class="num">IBNR</th></tr>
+    <tr><td>1</td><td class="num">3.59</td><td class="num">7.44</td><td class="num">279</td><td class="num">498</td><td class="num">3705</td><td class="num">222</td><td class="num neg">−12</td></tr>
+    <tr><td>2</td><td class="num">3.67</td><td class="num">7.92</td><td class="num">303</td><td class="num">539</td><td class="num">4270</td><td class="num">426</td><td class="num neg">−49</td></tr>
+    <tr><td>3</td><td class="num">3.86</td><td class="num">8.44</td><td class="num">328</td><td class="num">586</td><td class="num">4947</td><td class="num">970</td><td class="num">1</td></tr>
+    <tr><td>4</td><td class="num">4.34</td><td class="num">9.63</td><td class="num">343</td><td class="num">618</td><td class="num">5948</td><td class="num">2068</td><td class="num">272</td></tr>
+    <tr><td>5</td><td class="num">4.93</td><td class="num">10.71</td><td class="num">350</td><td class="num">619</td><td class="num">6628</td><td class="num">3367</td><td class="num">486</td></tr>
+    <tr><td>6</td><td class="num">5.32</td><td class="num">11.50</td><td class="num">355</td><td class="num">633</td><td class="num">7281</td><td class="num">5392</td><td class="num">1463</td></tr>
+    <tr><td><b>合计</b></td><td></td><td></td><td></td><td></td><td class="num"><b>32780</b></td><td class="num"><b>12446</b></td><td class="num"><b>2162</b></td></tr>
+  </table></div>
+  <div class="src-note"><span class="src src-jiao">教</span>教材 Ch4 案均赔款法例题（.xls「第四章IBNR评估-案均赔款法」原值）。案均法比纯链梯多一层「频率 × 强度」结构，可分别诊断是「案子多了」还是「单案贵了」——通胀年份两者会背离。</div>
+  <div class="tip"><b>为什么要拆案均：</b>赔款三角形里混着<b>频率</b>（案数进展）和<b>强度</b>（案均进展）两种规律。司法环境变化影响案均（强度），业务量增长影响案数（频率）——拆开后诊断力更强，这是简答题的标准得分句。</div>
+
+  <h3>准备金进展法（Reserve Development，教材 Ch4）</h3>
+  <div class="formula"><b>两个比率（都以 RV 为基数）</b><div class="fx">准备金进展比率 g(j→j+1) = [增量已付 X(i,j+1) + RV(i,j+1)] / RV(i,j)　（未来活动率）<br>准备金支付比率 p(j→j+1) = X(i,j+1) / RV(i,j)　（当期消耗率）</div></div>
+  <div class="tbl-scroll"><table>
+    <tr><th>简单平均</th><th class="num">12→24</th><th class="num">24→36</th><th class="num">36→48</th><th class="num">48→60</th><th class="num">60→72</th></tr>
+    <tr><td><b>进展比率 g</b></td><td class="num f-hi">1.26</td><td class="num f-hi">1.13</td><td class="num f-hi">1.15</td><td class="num f-hi">1.16</td><td class="num f-hi">0.99</td></tr>
+    <tr><td><b>支付比率 p</b></td><td class="num f-hi">0.46</td><td class="num f-hi">0.40</td><td class="num f-hi">0.52</td><td class="num f-hi">0.55</td><td class="num f-hi">0.39</td></tr>
+  </table></div>
+  <p>RV 三角形首列（各事故年 12 月末已报案未决）：1776 / 2139 / 2460 / 3031 / 3644 / 3929。递推示例（AY2，24→36 月）：RV(24)=1701，X(36) = 1701×0.40 ≈ 680，RV(36) = 1701×1.10 − 680 = 1191（教材精确值 671 / 1199，因使用未舍入比率）。逐列递推到对角线之外，再逐行汇总：</p>
+  <div class="tbl-scroll"><table>
+    <tr><th>合计口径</th><th class="num">LU 最终赔款</th><th class="num">CV 未决</th><th class="num">IBNR</th><th>与链梯法对比</th></tr>
+    <tr><td><b>准备金进展法</b></td><td class="num">31809</td><td class="num">11475</td><td class="num">1191</td><td>比链梯法（CV 12491）低约 8%</td></tr>
+    <tr><td>链梯法（对照）</td><td class="num">32825</td><td class="num">12491</td><td class="num">2206</td><td>—</td></tr>
+    <tr><td>案均赔款法（对照）</td><td class="num">32780</td><td class="num">12446</td><td class="num">2162</td><td>与链梯法高度接近</td></tr>
+  </table></div>
+  <div class="prac"><b>方法直觉：</b>准备金进展法用「RV 的衰减」而非「累计赔款的上升」外推，对<b>已报案数据质量高、报案模式稳定</b>的业务更稳健；结果系统性低于链梯时，往往说明逐案估损偏保守（RV 高估），正好用 CH.04 回溯验证。三法互证、差异可解释，就是评估报告里「多方法对比」一节的标准写法。</div>
+</section>
+
+<section id="s24">
+  <h2><span class="sn">§2.4</span>B-F 法与 Cape Cod 法</h2>
+  <div class="lead">链梯族完全相信三角形自身的进展；B-F 族则「一半信数据、一半信先验赔付率」。新事故年数据不成熟时，B-F 是更稳的选择。</div>
+
+  <h3>B-F 法（Bornhuetter–Ferguson，先验-已报案口径）</h3>
+  <div class="formula"><b>核心公式</b><div class="fx">IBNR(i) = EP(i) × λ × [1 − 1/f(i)]　　f = 已报案三角形链梯累计进展因子<br>直观拆解：EP × λ = 先验最终赔款 B-UL；1/f = 已报案比例；1 − 1/f = <b>未报案比例</b></div></div>
+  <p>先算已报案三角形（RC = PC + RV）的逐年因子（剔除最新对角线后加权）：f(12→24)=1.158、f(24→36)=1.049、f(36→48)=1.040、f(48→60)=1.023、f(60→72)≈1.000，累计得各年龄 f 与未报案比例：</p>
+  <div class="tbl-scroll"><table>
+    <tr><th>进展月</th><th class="num">12</th><th class="num">24</th><th class="num">36</th><th class="num">48</th><th class="num">60</th><th class="num">72</th></tr>
+    <tr><td>累计因子 f</td><td class="num">1.291</td><td class="num">1.115</td><td class="num">1.063</td><td class="num">1.023</td><td class="num">1.000</td><td class="num">1.000</td></tr>
+    <tr><td>已报案比例 1/f</td><td class="num">0.774</td><td class="num">0.897</td><td class="num">0.941</td><td class="num">0.978</td><td class="num">1.000</td><td class="num">1.000</td></tr>
+    <tr><td class="f-hi"><b>未报案比例 1−1/f</b></td><td class="num f-hi"><b>0.226</b></td><td class="num f-hi"><b>0.103</b></td><td class="num f-hi"><b>0.059</b></td><td class="num f-hi"><b>0.022</b></td><td class="num f-hi"><b>0</b></td><td class="num f-hi"><b>0</b></td></tr>
+  </table></div>
+  <div class="tbl-scroll"><table>
+    <tr><th>事故年</th><th class="num">EP</th><th class="num">λ</th><th class="num">B-UL = EP·λ</th><th class="num">未报案比例</th><th class="num">IBNR</th><th class="num">RV</th><th class="num">CV</th></tr>
+    <tr><td>1</td><td class="num">4486</td><td class="num">0.83</td><td class="num">3723</td><td class="num">0.000</td><td class="num">0</td><td class="num">234</td><td class="num">234</td></tr>
+    <tr><td>2</td><td class="num">5024</td><td class="num">0.83</td><td class="num">4170</td><td class="num">−0.001</td><td class="num neg">−2</td><td class="num">475</td><td class="num">473</td></tr>
+    <tr><td>3</td><td class="num">5680</td><td class="num">0.83</td><td class="num">4714</td><td class="num">0.022</td><td class="num">105</td><td class="num">969</td><td class="num">1074</td></tr>
+    <tr><td>4</td><td class="num">6590</td><td class="num">0.83</td><td class="num">5470</td><td class="num">0.059</td><td class="num">325</td><td class="num">1796</td><td class="num">2121</td></tr>
+    <tr><td>5</td><td class="num">7482</td><td class="num">0.83</td><td class="num">6210</td><td class="num">0.103</td><td class="num">642</td><td class="num">2881</td><td class="num">3523</td></tr>
+    <tr><td>6</td><td class="num">8502</td><td class="num">0.83</td><td class="num">7057</td><td class="num">0.226</td><td class="num">1592</td><td class="num">3929</td><td class="num">5521</td></tr>
+    <tr><td><b>合计</b></td><td class="num"><b>37764</b></td><td></td><td class="num"><b>31344</b></td><td></td><td class="num f-hi"><b>2662</b></td><td class="num"><b>10284</b></td><td class="num f-hi"><b>12946</b></td></tr>
+  </table></div>
+
+  <h3>B-F 的已付口径变体（BF-PC）</h3>
+  <p>把「已报案比例」换成「已付比例」：g = 已付赔款 / 最终赔款（简单平均总量因子：0.26 / 0.49 / 0.65 / 0.80 / 0.90 / 0.94），则 <b>IBNR = EP·λ·(1−g) − RV</b>（先验未付部分扣掉已挂账的 RV）。教材结果：合计 IBNR = <b>1562</b>、CV = 11846，比已报案口径（2662 / 12946）更低——因为已付进展比已报案进展慢，(1−g) 大但 RV 基数也大，两相抵后净 IBNR 更小。</p>
+
+  <div class="calc">
+    <b>演算器 2-2 · B-F 法速算（默认 = AY6 真实数据）</b>
+    <div class="row">已赚保费 EP = <input id="bf_ep" value="8502">　期望赔付率 λ = <input id="bf_elr" value="0.83">　累计进展因子 f = <input id="bf_f" value="1.291">　RV = <input id="bf_rv" value="3929">
+    <button onclick="calcBF()">计算</button></div>
+    <div class="out-box" id="bf_out">B-UL = 7056.7　未报案比例 = 0.2257　IBNR = 1590.4　CV = IBNR+RV = 5519.4</div>
+    <div class="calc-steps">步骤：B-UL = EP×λ → 1/f → 1−1/f → IBNR = B-UL×(1−1/f)。把 λ 改成 0.89 即见先验赔付率对结果的杠杆。</div>
+  </div>
+
+  <h3>Cape Cod 法（先用数据自估 λ，再走 B-F 框架）</h3>
+  <div class="formula"><b>与 B-F 的唯一区别：λ 不再外生给定</b><div class="fx">λ(Cape Cod) = Σ 趋势已报案赔款(i) / Σ [已报案比例(i) × EP(i)]　（只用「已报案部分对应的已赚保费」作分母）<br>IBNR(i) = λ × [EP(i) − 已报案比例(i)×EP(i)] = λ × 未报案已赚保费(i)</div></div>
+  <div class="tbl-scroll"><table>
+    <tr><th>事故年</th><th class="num">EP</th><th class="num">已报案赔款</th><th class="num">已报案比例</th><th class="num">已报案部分已赚保费</th><th class="num">未报案已赚保费</th><th class="num">IBNR</th><th class="num">LU</th></tr>
+    <tr><td>1</td><td class="num">7000</td><td class="num">3600</td><td class="num">0.85</td><td class="num">5950</td><td class="num">1050</td><td class="num">802</td><td class="num">4402</td></tr>
+    <tr><td>2</td><td class="num">8000</td><td class="num">4000</td><td class="num">0.75</td><td class="num">6000</td><td class="num">2000</td><td class="num">1528</td><td class="num">5528</td></tr>
+    <tr><td>3</td><td class="num">9000</td><td class="num">4800</td><td class="num">0.60</td><td class="num">5400</td><td class="num">3600</td><td class="num">2751</td><td class="num">7551</td></tr>
+    <tr><td>4</td><td class="num">10000</td><td class="num">3600</td><td class="num">0.45</td><td class="num">4500</td><td class="num">5500</td><td class="num">4203</td><td class="num">7803</td></tr>
+    <tr><td>5</td><td class="num">11000</td><td class="num">2800</td><td class="num">0.25</td><td class="num">2750</td><td class="num">8250</td><td class="num">6305</td><td class="num">9105</td></tr>
+    <tr><td><b>汇总</b></td><td class="num"><b>45000</b></td><td class="num"><b>18800</b></td><td></td><td class="num"><b>24600</b></td><td class="num"><b>20400</b></td><td class="num f-hi"><b>15590</b></td><td class="num"><b>34390</b></td></tr>
+  </table></div>
+  <p>λ(Cape Cod) = 18800 / 24600 = <b>0.765</b>（趋势为零情形）。教材含通胀版（赔付每年 7% 递增，趋势因子 1.31→1.00）：趋势后期望赔付率升至 0.88，合计 IBNR = 16783——通胀使最新事故年未报案部分按更贵的价格水平计提。</p>
+
+  <div class="calc">
+    <b>演算器 2-3 · Cape Cod 赔付率自估（默认 = 教材无趋势例）</b>
+    <div class="row">Σ趋势已报案赔款 = <input id="cc_num" value="18800">　Σ(已报案比例×EP) = <input id="cc_den" value="24600">　该事故年未报案已赚保费 = <input id="cc_uep" value="1050">
+    <button onclick="calcCC()">计算</button></div>
+    <div class="out-box" id="cc_out">λ = 0.764　该事故年 IBNR = 802.4</div>
+  </div>
+
+  <div class="exam"><span class="yr">2024回忆</span><span class="yr">2008</span><b>真题影子：</b>B-F 与链梯的对比论述是经典简答：「链梯法对进展因子完全依赖三角形、新事故年数据少时波动大；B-F 以先验赔付率锚定最终赔款，新事故年结果稳健、老事故年趋同于链梯」——再加一句「Cape Cod 把先验 λ 内生化，仅用已报案部分对应的保费估计」即满分结构。<span class="star s3">高频必背</span></div>
+</section>
+
+<section id="s25">
+  <h2><span class="sn">§2.5</span>赔付率法与理赔费用准备金</h2>
+  <div class="lead">赔付率法是 B-F 的极简版（完全不信三角形）；理赔费用准备金（ALAE/ULAE）是常被忽略的小分值稳定来源。</div>
+
+  <h3>赔付率法（期望赔付率法）</h3>
+  <div class="formula"><b>三行公式</b><div class="fx">LU(i) = EP(i) × λ　→　CV(i) = LU − PC(i)　→　IBNR(i) = CV − RV(i)</div></div>
+  <div class="tbl-scroll"><table>
+    <tr><th>事故年</th><th class="num">EP</th><th class="num">λ</th><th class="num">LU</th><th class="num">PC</th><th class="num">RV</th><th class="num">CV</th><th class="num">IBNR</th></tr>
+    <tr><td>6</td><td class="num">8502</td><td class="num">0.83</td><td class="num">7057</td><td class="num">1889</td><td class="num">3929</td><td class="num">5168</td><td class="num">1239</td></tr>
+    <tr><td>5</td><td class="num">7482</td><td class="num">0.83</td><td class="num">6210</td><td class="num">3261</td><td class="num">2881</td><td class="num">2949</td><td class="num">68</td></tr>
+    <tr><td>4</td><td class="num">6590</td><td class="num">0.83</td><td class="num">5470</td><td class="num">3880</td><td class="num">1796</td><td class="num">1590</td><td class="num neg">−206</td></tr>
+    <tr><td>3</td><td class="num">5680</td><td class="num">0.83</td><td class="num">4714</td><td class="num">3977</td><td class="num">969</td><td class="num">737</td><td class="num neg">−232</td></tr>
+    <tr><td>2</td><td class="num">5024</td><td class="num">0.83</td><td class="num">4170</td><td class="num">3844</td><td class="num">475</td><td class="num">326</td><td class="num neg">−149</td></tr>
+    <tr><td>1</td><td class="num">4486</td><td class="num">0.83</td><td class="num">3723</td><td class="num">3483</td><td class="num">234</td><td class="num">240</td><td class="num">6</td></tr>
+    <tr><td><b>合计</b></td><td class="num"><b>37764</b></td><td></td><td class="num"><b>31344</b></td><td class="num"><b>20334</b></td><td class="num"><b>10284</b></td><td class="num"><b>11010</b></td><td class="num f-hi"><b>726</b></td></tr>
+  </table></div>
+  <div class="warn"><b>对比记忆（同一套数据、四种方法的总 IBNR）：</b>链梯 2206 · B-F(RC) 2662 · 赔付率法 726 · 准备金进展 1191。赔付率法最激进（低），因为它对已报案进展完全视而不见；若采用趋势期望赔付率（0.84–0.89 分年递增），IBNR 升至 2190，与链梯法趋同——<b>λ 的取值比方法的选择更影响结果</b>，这是论述题的高阶得分句。</div>
+
+  <h3>理赔费用准备金（教材 Ch6）</h3>
+  <div class="tbl-scroll"><table>
+    <tr><th>口径</th><th>定义</th><th>评估方法</th><th>教材例（AY1）</th></tr>
+    <tr><td><b>ALAE</b> 直接理赔费用</td><td>可归属到具体赔案（查勘、鉴定、诉讼费）</td><td>与赔款同构：ALAE 三角形链梯，或按已付 ALAE/已付赔款比例</td><td>累计 ALAE：30→74→144→210→260→294，最终 320（尾部因子 1.09）</td></tr>
+    <tr><td><b>ULAE</b> 间接理赔费用</td><td>不可归属（理赔部门人力、职场、系统）</td><td>比例法：按历史 ULAE/赔款比率 × 未来赔款；经典假设「50% 费用发生在报案时、50% 发生在结案时」</td><td>逐年进展因子 2.47 / 1.95 / 1.46 / 1.24 / 1.13</td></tr>
+  </table></div>
+  <div class="mnem"><b>ULAE「一半开头、一半结尾」：</b>ULAE 随「报案+结案」两事件各耗一半。已报案未决已含报案那半，还要预留结案那半——所以 ULAE 准备金 ≈ 稳定比率 × (已付未来赔款 + 未决)，考题常以判断形式考这个 50/50 假设的用途。</div>
+</section>
+
+<section id="s26">
+  <h2><span class="sn">§2.6</span>风险边际与折现</h2>
+  <div class="lead">最优估计（上两节的 CV）只是第一层；监管口径要求显性或隐性的风险边际，长尾业务还应考虑货币时间价值。</div>
+  <div class="tbl-scroll"><table>
+    <tr><th>层</th><th>含义</th><th>方法</th><th>要点</th></tr>
+    <tr><td><b>最优估计</b></td><td>无偏的期望负债</td><td>链梯 / B-F 等点估计</td><td>本节之前所有演算的结果</td></tr>
+    <tr><td><b>风险边际</b></td><td>覆盖估计不确定性的加成</td><td>① 资本成本法：边际 = 资本成本 × 持有期折现<br>② 置信区间法：75% 分位 − 中位数（50%）</td><td>偿二代与 IFRS17 均用资本成本法（75% 分位校准）；旧财会口径可用置信区间法</td></tr>
+    <tr><td><b>折现</b></td><td>货币时间价值</td><td>未来赔付现金流按无风险（或监管指定）曲线折现</td><td>非寿险短险通常不折现；长尾（责任险）折现且敏感</td></tr>
+  </table></div>
+  <div class="formula"><b>置信区间法示例</b><div class="fx">若未决最优估计（中位数）= 12491，75% 分位 = 14100 → 风险边际 = 14100 − 12491 = 1609<br>总负债 = 12491 + 1609 = 14100（恰为 75% 分位）</div></div>
+  <div class="src-note"><span class="src src-gui">规</span>银保监会令2021年第11号：准备金评估应当考虑货币时间价值；未折现的应说明理由。风险边际的计量方法应保持一致性和充足性。（→专题·财会15号与IFRS17衔接：非金融风险调整 vs 本节风险边际的口径对照）</div>
+  <div class="exam"><span class="yr">2025回忆</span><b>真题影子：</b>「简述非寿险准备金风险边际的常用计量方法」——资本成本法（监管首选、75%分位校准、随持有期递减）+ 置信区间法（分位差、直观但对分布假设敏感）各答两句，再加「方法应保持一致」即可。<span class="star s2">常考</span></div>
+</section>
+
+<section id="s27">
+  <h2><span class="sn">§2.7</span>方法选择总表与考点清单</h2>
+  <div class="lead">同一套教材数据下六法对照——这张表就是大题「多方法对比」的答题模板。</div>
+  <div class="tbl-scroll"><table>
+    <tr><th>方法</th><th>数据依赖</th><th class="num">总 CV</th><th class="num">总 IBNR</th><th>适用场景</th><th>失效场景</th></tr>
+    <tr><td><b>链梯法</b></td><td>累计赔款三角形</td><td class="num">12491</td><td class="num">2206</td><td>进展稳定、数据成熟</td><td>大赔案扰动、进展模式突变</td></tr>
+    <tr><td>案均赔款法</td><td>赔款+案数两套三角形</td><td class="num">12446</td><td class="num">2162</td><td>需区分频率/强度诊断</td><td>赔案合并/拆分致案数失真</td></tr>
+    <tr><td>准备金进展法</td><td>RV 三角形 + 增量已付</td><td class="num">11475</td><td class="num">1191</td><td>逐案估损质量高</td><td>估损政策频繁变动</td></tr>
+    <tr><td><b>B-F（已报案）</b></td><td>已报案三角形 + 先验 λ</td><td class="num">12946</td><td class="num">2662</td><td>新事故年占比高</td><td>先验 λ 严重失真</td></tr>
+    <tr><td>B-F（已付）</td><td>已付三角形 + 先验 λ</td><td class="num">11846</td><td class="num">1562</td><td>已付数据最可信时</td><td>支付节奏受外部干预</td></tr>
+    <tr><td>Cape Cod</td><td>同 B-F，λ 内生</td><td class="num">—</td><td class="num">15590*</td><td>不想拍先验 λ、信任历史赔付率</td><td>业务结构变化致 λ 漂移</td></tr>
+    <tr><td>赔付率法</td><td>EP + λ</td><td class="num">11010</td><td class="num">726</td><td>几乎无进展数据（新业务）</td><td>忽略报案进展，过于粗糙</td></tr>
+  </table></div>
+  <div class="src-note">*Cape Cod 为教材独立 5 事故年例题（EP 45000），与前六行不同数据集，不可直接横比。</div>
+  <div class="tip"><b>答题模板（方法对比题）：</b>① 各方法一句话原理 → ② 各自数据依赖与假设 → ③ 本业务数据特征（尾部长短、报案稳定性、大额扰动）→ ④ 结论：主方法 + 校验方法 + 差异解释。四段式，每段都有分。</div>
+
+  <h3>考点清单</h3>
+  <div class="tbl-scroll"><table>
+    <tr><th>考点</th><th class="ctr">星级</th><th>考过形式</th><th>速记要点</th></tr>
+    <tr><td>链梯法五步完整演算</td><td class="ctr"><span class="star s3">高频必背</span></td><td>大题（几乎每年）</td><td>因子→CDF→LU→CV→IBNR，负 IBNR 正常</td></tr>
+    <tr><td>因子四种选择 + 总量比率技术</td><td class="ctr"><span class="star s3">高频必背</span></td><td>大题/选择</td><td>加权 3.869 vs 最高 4.009 vs 简单 3.856 vs 近三年 3.912</td></tr>
+    <tr><td>B-F 公式与未报案比例</td><td class="ctr"><span class="star s3">高频必背</span></td><td>大题 + 论述</td><td>IBNR = EP·λ·(1−1/f)；新事故年稳健</td></tr>
+    <tr><td>Cape Cod 的 λ 自估</td><td class="ctr"><span class="star s2">常考</span></td><td>大题</td><td>分母只用「已报案部分对应的已赚保费」</td></tr>
+    <tr><td>IBNR 双层含义</td><td class="ctr"><span class="star s3">高频必背</span></td><td>判断/选择</td><td>未报告 + 发展不足</td></tr>
+    <tr><td>ULAE 50/50 假设</td><td class="ctr"><span class="star s2">常考</span></td><td>选择/简答</td><td>报案一半、结案一半</td></tr>
+    <tr><td>风险边际两法</td><td class="ctr"><span class="star s2">常考</span></td><td>简答（2025）</td><td>资本成本法（75%校准）/ 置信区间法</td></tr>
+    <tr><td>案均法拆频率×强度</td><td class="ctr"><span class="star s2">常考</span></td><td>大题/论述</td><td>案均三角形与案数三角形分别链梯</td></tr>
+    <tr><td>准备金进展两比率定义</td><td class="ctr"><span class="star s1">了解</span></td><td>选择</td><td>g =（增量已付+新RV）/旧RV；p = 增量已付/旧RV</td></tr>
+    <tr><td>折现的监管口径</td><td class="ctr"><span class="star s1">了解</span></td><td>选择</td><td>考虑货币时间价值；不折现需说明理由</td></tr>
+  </table></div>
+  <div class="mnem"><b>睡前一分钟：</b>默写「IBNR = EP·λ·(1−1/f)」与「CV = LU − PC」，再背六法总 IBNR 排序（赔付率 726 < 进展 1191 < 链梯 2206 < B-F 2662）——数字记住量级即可，逻辑必须全对。</div>
+</section>
+
+<aside style="margin:36px 0 0;padding:18px 22px;background:linear-gradient(90deg,rgba(181,61,46,.06),rgba(24,95,165,.04));border:1px solid rgba(181,61,46,.22);border-left:4px solid #b53d2e;border-radius:8px">
+  <div style="font-size:13.5px;color:#7a3417;font-weight:600;letter-spacing:.04em;margin-bottom:8px">📎 监管原文对照</div>
+  <div style="font-size:13px;color:#3a302a;line-height:1.9">本章方法族（链梯/B-F/Cape Cod/案均/进展/赔付率）与 <a href="regulations.html#m11-2">11号令第二章 §m11-2</a>（第十五条「六法+双法」）、<a href="regulations.html#m19">19号文 §m19</a> 第三节（第四十六/四十八条「双方法交叉校验」）直接对应。</div>
+</aside>
+
+<button class="done-btn" data-id="ch2">○ 标记本页已完成</button>
+
+<div class="pager"><a class="prev" href="ch1.html">← CH.01 总览与体系</a><a class="next" href="ch3.html">进入 CH.03 未到期责任准备金（25%） →</a></div>
+</main>
+<script>
+function calcCL(){
+  var pc=parseFloat(document.getElementById('cl_pc').value)||0,
+      cdf=parseFloat(document.getElementById('cl_cdf').value)||1,
+      rv=parseFloat(document.getElementById('cl_rv').value)||0;
+  var lu=pc*cdf, cv=lu-pc, ib=cv-rv;
+  document.getElementById('cl_out').innerHTML='LU = '+lu.toFixed(1)+'　CV = '+cv.toFixed(1)+'　IBNR = '+ib.toFixed(1);
+}
+function calcBF(){
+  var ep=parseFloat(document.getElementById('bf_ep').value)||0,
+      l=parseFloat(document.getElementById('bf_elr').value)||0,
+      f=parseFloat(document.getElementById('bf_f').value)||1,
+      rv=parseFloat(document.getElementById('bf_rv').value)||0;
+  var bul=ep*l, p=1-1/f, ib=bul*p;
+  document.getElementById('bf_out').innerHTML='B-UL = '+bul.toFixed(1)+'　未报案比例 = '+p.toFixed(4)+'　IBNR = '+ib.toFixed(1)+'　CV = IBNR+RV = '+(ib+rv).toFixed(1);
+}
+function calcCC(){
+  var n=parseFloat(document.getElementById('cc_num').value)||0,
+      d=parseFloat(document.getElementById('cc_den').value)||1,
+      u=parseFloat(document.getElementById('cc_uep').value)||0;
+  var l=n/d;
+  document.getElementById('cc_out').innerHTML='λ = '+l.toFixed(3)+'　该事故年 IBNR = '+(l*u).toFixed(1);
+}
+</script>
+<script src="js/kb.js"></script>
+</body>
+</html>
