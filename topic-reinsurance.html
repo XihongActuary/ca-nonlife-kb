@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>专题 · 再保险准备金 · 非寿险责任准备金评估</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<aside class="side">
+  <div class="brand"><b>非寿险责任准备金评估</b><span>正精算师（非寿险）</span></div>
+    <nav>
+    <a href="xihong.html">关于 · 西红精算</a>
+    <a href="index.html">首页 · 考试全景</a>
+    <a href="about.html">本库说明 · 编法与用法</a>
+    <div class="grp">五大篇章（考纲权重）</div>
+    <a href="ch1.html">CH.01 总览与体系<span class="w">10%</span></a>
+    <a href="ch2.html">CH.02 未决赔款<span class="w">30%</span></a>
+    <a href="ch3.html">CH.03 未到期责任<span class="w">25%</span></a>
+    <a href="ch4.html">CH.04 评估实务<span class="w">20%</span></a>
+    <a href="ch5.html">CH.05 监管·会计·经营<span class="w">15%</span></a>
+    <div class="grp">拓展专题（不止于考纲）</div>
+    <a href="topic-stochastic.html">专题·随机模型与CV</a>
+    <a href="topic-reinsurance.html" class="on">专题·再保险准备金</a>
+    <a href="topic-rural.html">专题·农业保险精算规定</a>
+    <a href="topic-solvency.html">专题·保险风险最低资本</a>
+    <a href="topic-accounting.html">专题·财会15号与IFRS17衔接</a>
+    <div class="grp">真题 / 模拟 / 资料</div>
+    <a href="zhenti.html">真题馆</a>
+    <a href="moni-1.html">模拟卷一 · 流量三角形</a>
+    <a href="moni-2.html">模拟卷二 · 监管口径</a>
+    <a href="moni-3.html">模拟卷三 · 实务综合</a>
+    <a href="references.html">参考资料库</a>
+    <div class="grp">知识拓展</div>
+    <a href="textbook.html">书本题目·解题汇总</a>
+    <a href="regulations.html">监管原文·对照库</a>
+  </nav>
+  <div class="prog-mini">学习进度 <b>0 / 14</b></div>
+</aside>
+<main class="main">
+
+<div class="ch-head">
+  <div class="no">TOPIC · BEYOND THE SYLLABUS</div>
+  <h1>再保险与摊回准备金</h1>
+  <p class="sub">毛 / 净两套三角形 · 比例与非比例的分摊机制 · 摊回资产的信用维度（教材 Ch11 P252）</p>
+  <div class="wbar"><div class="lab"><span>定位</span><span>实务专题 · 净准备金与偿付能力的中间层</span></div><div class="bar"><i style="width:8%"></i></div></div>
+  <div class="toc">
+    <a href="#tr1">一、毛口径与净口径：两套世界</a>
+    <a href="#tr2">二、比例再保的摊回逻辑</a>
+    <a href="#tr3">三、非比例再保的摊回逻辑</a>
+    <a href="#tr4">四、摊回的信用与监管维度</a>
+    <a href="#tr5">五、考试连接</a>
+  </div>
+</div>
+
+<section id="tr1">
+  <h2><span class="sn">一</span>毛口径与净口径：两套世界</h2>
+  <div class="lead">监管要求净额准备金（扣除摊回），但摊回不是「毛准备金 × 一个折扣」——分摊结构随再保形态完全不同。</div>
+  <div class="tbl-scroll"><table>
+    <tr><th>维度</th><th>毛三角形</th><th>净三角形</th></tr>
+    <tr><td>赔款内容</td><td>分出前全部赔款</td><td>扣除再保摊回后的自留赔款</td></tr>
+    <tr><td>进展形态</td><td>反映业务本身</td><td>被再保结构「再塑造」（超赔层的截断效应）</td></tr>
+    <tr><td>评估用法</td><td>定价与业务分析</td><td>准备金入账、偿付能力（K2 净额口径）</td></tr>
+    <tr><td>常见错误</td><td colspan="2">用毛三角形因子直接套净数据（或反之）——截断改变了进展模式，必须各自成三角形</td></tr>
+  </table></div>
+  <div class="warn"><b>实务铁律：</b>毛 / 净三角形<b>分别建立、分别评估</b>，摊回 = 毛结果 − 净结果，再做合理性校验（如比例再保下摊回率应近似分出比例）。混装是回溯偏差的经典来源（→CH.04 §4.1 数据问题表）。<span class="star s2">常考</span></div>
+</section>
+
+<section id="tr2">
+  <h2><span class="sn">二</span>比例再保的摊回逻辑</h2>
+  <div class="lead">成数（Quota Share）与溢额（Surplus）：按<b>比例</b>分摊每一笔赔款，摊回结构与自留结构同构。</div>
+  <div class="formula"><b>成数再保</b><div class="fx">摊回赔款(i,j) = 毛赔款(i,j) × 分出比例　（逐笔、逐格成立）<br>净三角形 = 毛三角形 × 自留比例 → 净进展因子 = 毛进展因子（形状不变）<br>摊回准备金 = 毛准备金 × 分出比例</div></div>
+  <div class="prac"><b>溢额再保的变量：</b>每笔保额切成「线数（lines）」，自留额以上部分分出——大额赔案分出比例高，小额全额自留。于是<b>净三角形相对毛三角形「大案被削平」</b>：高进展格的削减多于低进展格，净尾部因子 ≠ 毛尾部因子 × 比例。溢额下必须独立建净三角形，不能偷懒换算。</p></div>
+</section>
+
+<section id="tr3">
+  <h2><span class="sn">三</span>非比例再保的摊回逻辑</h2>
+  <div class="lead">险位超赔（XL）、事故超赔（CAT XL）、赔付率超赔（Stop Loss）：按<b>触发条件</b>分摊，摊回呈「期权式」的非线性。</div>
+  <div class="tbl-scroll"><table>
+    <tr><th>形态</th><th>触发</th><th>摊回特征</th><th>对准备金评估的影响</th></tr>
+    <tr><td>险位超赔 XL</td><td>单案损失超过起赔点</td><td>单案封顶（限额），超出部分回归自留</td><td>净三角形大案被截断 → 需「截断后三角形 + 单独评估超限部分摊回」</td></tr>
+    <tr><td>事故超赔 CAT XL</td><td>一次事故累计损失超起赔点</td><td>按事故聚合，与巨灾模型联动</td><td>巨灾未决的摊回需事件级模拟（→CH.04 巨灾分离）</td></tr>
+    <tr><td>赔付率超赔 Stop Loss</td><td>年度综合赔付率超约定</td><td>年度结算，未决口径复杂</td><td>通常作利润平滑工具而非准备金分摊主力</td></tr>
+  </table></div>
+  <div class="formula"><b>险位超赔单案摊回（算例）</b><div class="fx">自留 50 万，超赔层 50–150 万（再保承接超过 50 万至 200 万之间）。<br>单案估损 180 万 → 摊回 = 180 − 50 = 130 万，净自留 = 50 万<br>单案估损 260 万 → 摊回 = 150 万（层满），净自留 = 110 万（50 + 超层 110）</div></div>
+  <div class="tip"><b>「层满回归」是超赔摊回的关键非线性：</b>估损从 180 涨到 260，摊回不再增加（层已满）——净未决对估损上修的敏感度反而<b>上升</b>。回溯分析若忽略这一点，超赔业务净偏差会系统性为负（低估）。<span class="star s1">了解</span></div>
+</section>
+
+<section id="tr4">
+  <h2><span class="sn">四</span>摊回的信用与监管维度</h2>
+  <div class="lead">摊回是资产（应收款），资产就有信用风险——「再保人赖账」在偿二代里有专门的资本占用。</div>
+  <div class="tbl-scroll"><table>
+    <tr><th>维度</th><th>要点</th></tr>
+    <tr><td>会计口径</td><td>摊回未决 / 摊回未到期作为资产列示，与净准备金对称（财会15号，→CH.05 §5.2）</td></tr>
+    <tr><td>信用风险资本</td><td>偿二代Ⅱ交易对手违约风险模块：按再保人评级与担保状况设定因子，摊回资产越大、信用越弱 → 资本占用越高</td></tr>
+    <tr><td>再保人集中度</td><td>单一再保人摊回集中 → 集中度加成；分散高质量再保 panel 是标准做法</td></tr>
+    <tr><td>评估披露</td><td>11号令框架下，准备金评估报告应说明摊回的计量基础与再保结构假设</td></tr>
+  </table></div>
+  <div class="prac"><b>经营闭环（连接 CH.05 §5.4）：</b>再保的三重身份——① 准备金端：降低净未决 → ② 资本端：K2 下降但交易对手违约风险上升 → ③ 决策端：最优再保结构 = K2 节约 − 信用资本占用 − 分保成本。正精算师给管理层的再保建议，就是解这道三元优化题。</div>
+</section>
+
+<section id="tr5">
+  <h2><span class="sn">五</span>考试连接</h2>
+  <div class="tbl-scroll"><table>
+    <tr><th>考法</th><th>答题骨架</th><th>星级</th></tr>
+    <tr><td>「净准备金如何评估」</td><td>毛/净分别建三角形 → 各自链梯 → 摊回 = 毛净差 → 与分出比例校验</td><td class="ctr"><span class="star s2">常考</span></td></tr>
+    <tr><td>「超赔再保对未决的影响」</td><td>截断效应 → 单独评估超限部分 → 层满回归的非线性敏感度</td><td class="ctr"><span class="star s1">了解</span></td></tr>
+    <tr><td>「摊回的信用风险」</td><td>资产属性 → 交易对手违约模块 → 集中度与评级因子</td><td class="ctr"><span class="star s1">了解</span></td></tr>
+  </table></div>
+  <div class="mnem"><b>一句话收束：</b>毛的世界看业务，净的世界看自己；比例再保按尺子分，超赔再保按触发分；摊回是资产，别忘信用那一票资本。</div>
+</section>
+
+<button class="done-btn" data-id="tp-reinsurance">○ 标记本页已完成</button>
+
+<div class="pager"><a class="prev" href="topic-stochastic.html">← 专题·随机模型与CV</a><a class="next" href="topic-rural.html">专题·农业保险精算规定 →</a></div>
+</main>
+<script src="js/kb.js"></script>
+<script src="js/gate.js"></script>
+</body>
+</html>
