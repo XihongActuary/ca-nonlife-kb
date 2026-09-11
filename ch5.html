@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CH.05 监管·会计·经营 · 非寿险责任准备金评估</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .calc button{background:var(--blue);color:#fff;border:none;border-radius:6px;padding:6px 18px;font-size:13px;cursor:pointer;margin-left:8px}
+  .calc button:hover{background:var(--blue-2)}
+  .calc .row{margin:8px 0;font-size:13.5px}
+  .calc .out-box{background:var(--blue-l);border-radius:8px;padding:10px 14px;margin-top:10px;font-family:var(--mono);font-size:13px;line-height:2}
+</style>
+</head>
+<body>
+<aside class="side">
+  <div class="brand"><b>非寿险责任准备金评估</b><span>正精算师（非寿险）</span></div>
+    <nav>
+    <a href="xihong.html">关于 · 西红精算</a>
+    <a href="index.html">首页 · 考试全景</a>
+    <a href="about.html">本库说明 · 编法与用法</a>
+    <div class="grp">五大篇章（考纲权重）</div>
+    <a href="ch1.html">CH.01 总览与体系<span class="w">10%</span></a>
+    <a href="ch2.html">CH.02 未决赔款<span class="w">30%</span></a>
+    <a href="ch3.html">CH.03 未到期责任<span class="w">25%</span></a>
+    <a href="ch4.html">CH.04 评估实务<span class="w">20%</span></a>
+    <a href="ch5.html" class="on">CH.05 监管·会计·经营<span class="w">15%</span></a>
+    <div class="grp">拓展专题（不止于考纲）</div>
+    <a href="topic-stochastic.html">专题·随机模型与CV</a>
+    <a href="topic-reinsurance.html">专题·再保险准备金</a>
+    <a href="topic-rural.html">专题·农业保险精算规定</a>
+    <a href="topic-solvency.html">专题·保险风险最低资本</a>
+    <a href="topic-accounting.html">专题·财会15号与IFRS17衔接</a>
+    <div class="grp">真题 / 模拟 / 资料</div>
+    <a href="zhenti.html">真题馆</a>
+    <a href="moni-1.html">模拟卷一 · 流量三角形</a>
+    <a href="moni-2.html">模拟卷二 · 监管口径</a>
+    <a href="moni-3.html">模拟卷三 · 实务综合</a>
+    <a href="references.html">参考资料库</a>
+    <div class="grp">知识拓展</div>
+    <a href="textbook.html">书本题目·解题汇总</a>
+    <a href="regulations.html">监管原文·对照库</a>
+  </nav>
+  <div class="prog-mini">学习进度 <b>0 / 14</b></div>
+</aside>
+<main class="main">
+
+<div class="ch-head">
+  <div class="no">CHAPTER 05 · WEIGHT 15%</div>
+  <h1>监管 · 会计 · 经营管理</h1>
+  <p class="sub">偿二代Ⅱ最低资本 · 财会15号会计处理 · 11号令与内控 · 经营传导 —— 法条弹药库与论述题模板</p>
+  <div class="wbar"><div class="lab"><span>考纲权重</span><span>15%（3 天，背诵为主）</span></div><div class="bar"><i style="width:15%"></i></div></div>
+  <div class="toc">
+    <a href="#s51">§5.1 保险风险最低资本（K1 / K2 / K3）</a>
+    <a href="#s52">§5.2 会计处理（财会15号）</a>
+    <a href="#s53">§5.3 评估报告 · 内控 · 底稿</a>
+    <a href="#s54">§5.4 准备金对经营管理的影响</a>
+    <a href="#s55">§5.5 考点清单与文号速查</a>
+  </div>
+</div>
+
+<section id="s51">
+  <h2><span class="sn">§5.1</span>保险风险最低资本（K1 / K2 / K3）</h2>
+  <div class="lead">偿二代Ⅱ（银保监发〔2021〕51号附件第4号）把非寿险保险风险拆成三块：赔付波动（K1）、准备金发展（K2）、巨灾（K3）——其中 K2 与本科目「血肉相连」：准备金估错直接吃掉偿付能力。</div>
+  <div class="tbl-scroll"><table>
+    <tr><th>风险模块</th><th>风险来源</th><th>风险暴露 EX 的口径</th><th>与准备金评估的接口</th></tr>
+    <tr><td><b>K1 赔付波动风险</b></td><td>承保结果偏离预期（费率不足 / 频率强度波动）</td><td>保费口径：自留已赚保费（或自留保费）规模</td><td>充足性测试失利率（PDR 规模）是其恶化信号</td></tr>
+    <tr><td><b>K2 准备金发展风险</b></td><td>未决赔款准备金未来发展偏离估计</td><td>未决赔款准备金净额（扣除摊回后）</td><td><b>直接接口</b>：链梯/B-F 的估计误差 → K2 资本占用</td></tr>
+    <tr><td><b>K3 巨灾风险</b></td><td>台风 / 洪水 / 地震等灾因的聚合损失</td><td>按灾因的风险暴露（区域集中度加成）</td><td>巨灾未决的分离评估（→CH.04 §4.2）对应此处资本</td></tr>
+  </table></div>
+  <div class="formula"><b>计量框架（框架级公式，具体因子表见附件4）</b><div class="fx">单个风险模块：K = EX × RF ×（1 + 特征调整系数）<br>险种内聚合：MC(险种) = √[ K1² + K2² + 2·ρ12·K1·K2 ]　（赔付波动与准备金发展相关系数 ρ12 &lt; 1）<br>险种间聚合：MC(保险风险) = √[ ΣΣ ρij·MCi·MCj ]　（险种间相关性按矩阵设定）<br>巨灾模块按灾因分别计量后高相关聚合（趋于直接相加）</div><span class="src src-gui">规</span>银保监发〔2021〕51号《保险公司偿付能力监管规则（Ⅱ）》附件第4号</div>
+  <div class="prac"><b>传导链示例（自构数字）：</b>某财险公司未决净额 10 亿，K2 风险因子 5% → K2 = 5000 万。若回溯发现长尾业务持续负偏差、准备金补提 10% → 未决升至 11 亿 → K2 增至 5500 万 → 最低资本上升 → 核心偿付能力充足率下降。<b>「准备金每多估 1 亿，偿付能力被占用一档」</b>——这条链是论述题「准备金评估对偿付能力影响」的标准答案骨架。</div>
+  <div class="tip"><b>深度延伸：</b>因子表、相关系数矩阵、险种分类（车险 / 财产险 / 责任险 / 农险 / 意健险…）的完整展开见 <a href="topic-solvency.html">专题·保险风险最低资本</a> 与跨库的 C-ROSS II 偿付能力知识库（口径同源互证）。<span class="star s2">常考</span></div>
+</section>
+
+<section id="s52">
+  <h2><span class="sn">§5.2</span>会计处理（财会15号）</h2>
+  <div class="lead">财会〔2009〕15号《保险合同相关会计处理规定》：非寿险准备金的科目体系、计量属性与损益流转——会计题的「科目对照表」。</div>
+  <div class="tbl-scroll"><table>
+    <tr><th>科目</th><th>计量</th><th>损益流转</th></tr>
+    <tr><td><b>未到期责任准备金</b></td><td>未赚保费法（1/365 等）/ 风险分布法</td><td>提取 / 转回「未到期责任准备金」科目进当期损益</td></tr>
+    <tr><td><b>保费不足准备金</b></td><td>充足性测试差额</td><td>测试失败补提，计入当期损益（承保亏损显性化）</td></tr>
+    <tr><td><b>未决赔款准备金</b></td><td>已报案（逐案+案均）+ IBNR + 理赔费用</td><td>提取 / 转回「未决赔款准备金」科目进当期损益</td></tr>
+    <tr><td><b>再保摊回</b></td><td>摊回未决 / 摊回未到期，与净额口径对应</td><td>冲减负债、确认摊回赔付支出</td></tr>
+  </table></div>
+  <div class="formula"><b>利润表的准备金语言</b><div class="fx">承保利润 ≈ 已赚保费 − 已发生赔款 − 手续费及佣金 − 营业税金 − 业务及管理费<br>其中：已赚保费 = 保费收入 − ΔUPR；已发生赔款 = 已付赔款 + Δ未决赔款准备金（含 PDR 影响）</div></div>
+  <div class="warn"><b>高频陷阱：</b>① 「多提准备金 = 利润减少」——计提是<b>负债增加</b>，通过提取科目费用化；② UPR 的变动影响<b>已赚保费</b>（收入端），未决的变动影响<b>已发生赔款</b>（成本端）——两条线不要串；③ 再保摊回是<b>资产</b>（应收摊回），不是负的准备金科目。<span class="star s3">高频必背</span></div>
+  <div class="exam"><span class="yr">2008</span><span class="yr">2024回忆</span><b>真题影子：</b>「充足性测试失败对财务报表的影响」：负债端 UPR 不变 + PDR 新增 → 当期提取费用增加 → 承保利润下降 → 同时提示 K1 恶化（费率不足信号）。三层递进作答。<span class="star s2">常考</span></div>
+  <div class="tip"><b>新旧准则衔接：</b>财会15号（含保险合同准备金、充足性测试、风险边际隐含在审慎假设中）→ 2023 起新保险合同准则（对应 IFRS17 / CAS25）：未到期责任准备金被拆进「未到期责任负债 + 保险合同财务变动」，显性风险边际变成「非金融风险调整」。完整对照见 <a href="topic-accounting.html">专题·财会15号与IFRS17衔接</a>。</div>
+</section>
+
+<section id="s53">
+  <h2><span class="sn">§5.3</span>评估报告 · 内控 · 底稿</h2>
+  <div class="lead">11号令（管理办法）定义务，19号文（内控规范）定流程——两份文件合起来就是「程序题」的全部答案。</div>
+  <div class="tbl-scroll"><table>
+    <tr><th>制度要点</th><th>出处</th><th>内容速记</th></tr>
+    <tr><td><b>评估频率</b></td><td>11号令</td><td>至少每季度评估一次；出现重大事件及时重估</td></tr>
+    <tr><td><b>签署责任</b></td><td>11号令</td><td>精算责任人（总精算师）签署准备金评估报告，对假设与方法负责</td></tr>
+    <tr><td><b>回溯义务</b></td><td>11号令 + 2022年6号细则</td><td>定期回溯，连续偏差超限须分析、整改并向监管报告</td></tr>
+    <tr><td><b>谨慎性原则</b></td><td>11号令第三条</td><td>不得高估资产、低估负债；假设有依据、可回溯</td></tr>
+    <tr><td><b>治理架构</b></td><td>保监发〔2012〕19号</td><td>董事会最终责任 → 管理层组织实施 → 精算部门独立评估 → 理赔/财务/再保部门数据支持；职责分离</td></tr>
+    <tr><td><b>流程控制</b></td><td>19号文</td><td>数据核对、方法论证、多人复核、结果审批的留痕链条</td></tr>
+    <tr><td><b>底稿留档</b></td><td>19号文</td><td>评估底稿、数据来源、假设依据完整保存备查（长期保存）</td></tr>
+  </table></div>
+  <div class="mnem"><b>内控答题模板「四分离 + 三留痕」：</b>四分离——评估（精算）、数据（理赔/财务）、审批（管理层/董事会）、签署（精算责任人）职责分离；三留痕——假设有依据、过程有复核、结果有底稿。任何内控简答套此模板。</div>
+</section>
+
+<section id="s54">
+  <h2><span class="sn">§5.4</span>准备金对经营管理的影响</h2>
+  <div class="lead">考纲最后一项「对经营管理的影响」——论述题压轴。四条业务线 + 一条监管线，五条传导路径。</div>
+  <div class="arch">
+    <div class="arch-top"><b>准备金评估的五大经营传导</b><div class="meta"><span>承保 · 理赔 · 再保 · 财务 · 偿付能力</span></div></div>
+    <div class="arch-grid">
+      <div class="arch-card"><b>→ 承保与定价</b><p>PDR 补提 = 费率不足的市场化警报；隐含赔付率回传定价端，指导费率调整与核保政策收紧。</p></div>
+      <div class="arch-card"><b>→ 理赔管理</b><p>回溯正偏差提示逐案估损保守（资金沉淀）；负偏差提示估损不足或结案拖沓——理赔KPI 的精算校准器。</p></div>
+      <div class="arch-card"><b>→ 再保安排</b><p>净额口径的未决结构决定摊回资产质量；长尾险种 K2 高 → 用再保（超赔/成数）降低净敞口与资本占用。</p></div>
+      <div class="arch-card"><b>→ 财务与利润</b><p>准备金是最大的利润调节阀（也是最大的审计焦点）；计提政策的连续性与回溯纪律决定利润质量。</p></div>
+      <div class="arch-card"><b>→ 偿付能力（监管）</b><p>K2 直接挂接未决规模；准备金每上调，最低资本同步上升——「估得准」本身就是资本节约。</p></div>
+    </div>
+    <div class="arch-hint">论述题答题顺序：先总（准备金 = 负债之锚，牵一发而动全身）→ 五条路径各一句 → 收尾（准确评估是经营与监管的双重要求）。</div>
+  </div>
+  <div class="exam"><span class="yr">2024回忆</span><b>真题影子：</b>「结合监管规则论述准备金评估结果如何影响公司经营管理」——按五传导路径作答，每条点出对应监管文号（PDR→财会15号；回溯→2022年6号；K2→偿二代Ⅱ附件4），文号就是得分点。<span class="star s3">高频必背</span></div>
+</section>
+
+<section id="s55">
+  <h2><span class="sn">§5.5</span>考点清单与文号速查</h2>
+  <div class="tbl-scroll"><table>
+    <tr><th>考点</th><th class="ctr">星级</th><th>考过形式</th><th>速记要点</th></tr>
+    <tr><td>K1 / K2 / K3 三模块与暴露口径</td><td class="ctr"><span class="star s3">高频必背</span></td><td>选择/简答</td><td>K1 保费口径、K2 未决净额、K3 按灾因</td></tr>
+    <tr><td>准备金→偿付能力传导链</td><td class="ctr"><span class="star s3">高频必背</span></td><td>论述</td><td>未决↑ → K2↑ → 最低资本↑ → 充足率↓</td></tr>
+    <tr><td>财会15号科目体系与损益流转</td><td class="ctr"><span class="star s3">高频必背</span></td><td>选择/计算</td><td>UPR 走收入端、未决走成本端、摊回是资产</td></tr>
+    <tr><td>PDR 的报表影响</td><td class="ctr"><span class="star s2">常考</span></td><td>简答</td><td>负债并列 + 费用化 + K1 信号</td></tr>
+    <tr><td>评估频率与签署责任</td><td class="ctr"><span class="star s2">常考</span></td><td>选择</td><td>至少每季度；精算责任人签署</td></tr>
+    <tr><td>内控「四分离三留痕」</td><td class="ctr"><span class="star s2">常考</span></td><td>简答</td><td>评估/数据/审批/签署分离；依据/复核/底稿留痕</td></tr>
+    <tr><td>险种间相关系数聚合</td><td class="ctr"><span class="star s1">了解</span></td><td>选择</td><td>矩阵聚合，巨灾趋于加总</td></tr>
+  </table></div>
+  <div class="tbl-scroll"><table>
+    <tr><th>文号</th><th>名称（简称）</th><th>本站落点</th></tr>
+    <tr><td>银保监会令2021年第11号</td><td>《保险公司非寿险业务准备金管理办法》</td><td>CH.01/04/05 · 全站总纲</td></tr>
+    <tr><td>财会〔2009〕15号</td><td>《保险合同相关会计处理规定》</td><td>CH.03 §3.5 · CH.05 §5.2 · 专题·会计</td></tr>
+    <tr><td>保监发〔2012〕19号</td><td>《非寿险业务准备金评估内部控制规范》</td><td>CH.05 §5.3</td></tr>
+    <tr><td>银保监发〔2021〕51号附件4</td><td>《偿付能力监管规则（Ⅱ）》保险风险</td><td>CH.05 §5.1 · 专题·最低资本</td></tr>
+    <tr><td>银保监规〔2022〕6号</td><td>非寿险准备金监管实施细则1–7号</td><td>CH.04 §4.3 回溯 · CH.05</td></tr>
+    <tr><td>银保监规〔2023〕4号</td><td>《农业保险精算规定》</td><td>专题·农险</td></tr>
+  </table></div>
+  <div class="mnem"><b>考前一晚文号串联（一句话）：</b>「11号令管总、15号管账、19号管控、51号管资本、6号管回溯、4号管农险」——六个文号各配一个动词，选择题秒杀。</div>
+</section>
+
+<aside style="margin:36px 0 0;padding:18px 22px;background:linear-gradient(90deg,rgba(181,61,46,.06),rgba(24,95,165,.04));border:1px solid rgba(181,61,46,.22);border-left:4px solid #b53d2e;border-radius:8px">
+  <div style="font-size:13.5px;color:#7a3417;font-weight:600;letter-spacing:.04em;margin-bottom:8px">📎 监管原文对照</div>
+  <div style="font-size:13px;color:#3a302a;line-height:1.9">本章「监管·会计·经营」与六大文号 <a href="regulations.html#m11">11号令</a>·<a href="regulations.html#m15">15号</a>·<a href="regulations.html#m19">19号</a>·<a href="regulations.html#m51">51号附件4</a>·<a href="regulations.html#m6">6号</a>·<a href="regulations.html#m4">4号</a> 全部相关，详见 <a href="regulations.html#map">§R.7 跨章节对照总表</a>。</div>
+</aside>
+
+<button class="done-btn" data-id="ch5">○ 标记本页已完成</button>
+
+<div class="pager"><a class="prev" href="ch4.html">← CH.04 评估实务</a><a class="next" href="topic-stochastic.html">进入拓展专题 · 随机模型与CV →</a></div>
+</main>
+<script src="js/kb.js"></script>
+</body>
+</html>
