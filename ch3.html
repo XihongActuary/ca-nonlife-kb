@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CH.03 未到期责任准备金评估 · 非寿险责任准备金评估</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .calc button{background:var(--blue);color:#fff;border:none;border-radius:6px;padding:6px 18px;font-size:13px;cursor:pointer;margin-left:8px}
+  .calc button:hover{background:var(--blue-2)}
+  .calc .row{margin:8px 0;font-size:13.5px}
+  .calc .out-box{background:var(--blue-l);border-radius:8px;padding:10px 14px;margin-top:10px;font-family:var(--mono);font-size:13px;line-height:2}
+</style>
+</head>
+<body>
+<aside class="side">
+  <div class="brand"><b>非寿险责任准备金评估</b><span>正精算师（非寿险）</span></div>
+    <nav>
+    <a href="xihong.html">关于 · 西红精算</a>
+    <a href="index.html">首页 · 考试全景</a>
+    <a href="about.html">本库说明 · 编法与用法</a>
+    <div class="grp">五大篇章（考纲权重）</div>
+    <a href="ch1.html">CH.01 总览与体系<span class="w">10%</span></a>
+    <a href="ch2.html">CH.02 未决赔款<span class="w">30%</span></a>
+    <a href="ch3.html" class="on">CH.03 未到期责任<span class="w">25%</span></a>
+    <a href="ch4.html">CH.04 评估实务<span class="w">20%</span></a>
+    <a href="ch5.html">CH.05 监管·会计·经营<span class="w">15%</span></a>
+    <div class="grp">拓展专题（不止于考纲）</div>
+    <a href="topic-stochastic.html">专题·随机模型与CV</a>
+    <a href="topic-reinsurance.html">专题·再保险准备金</a>
+    <a href="topic-rural.html">专题·农业保险精算规定</a>
+    <a href="topic-solvency.html">专题·保险风险最低资本</a>
+    <a href="topic-accounting.html">专题·财会15号与IFRS17衔接</a>
+    <div class="grp">真题 / 模拟 / 资料</div>
+    <a href="zhenti.html">真题馆</a>
+    <a href="moni-1.html">模拟卷一 · 流量三角形</a>
+    <a href="moni-2.html">模拟卷二 · 监管口径</a>
+    <a href="moni-3.html">模拟卷三 · 实务综合</a>
+    <a href="references.html">参考资料库</a>
+    <div class="grp">知识拓展</div>
+    <a href="textbook.html">书本题目·解题汇总</a>
+    <a href="regulations.html">监管原文·对照库</a>
+  </nav>
+  <div class="prog-mini">学习进度 <b>0 / 14</b></div>
+</aside>
+<main class="main">
+
+<div class="ch-head">
+  <div class="no">CHAPTER 03 · WEIGHT 25%</div>
+  <h1>未到期责任准备金评估</h1>
+  <p class="sub">比例法 · 风险分布法 · 长期合同 · 保费充足性测试 —— 「法规 + 算式」组合题的每年必考之地</p>
+  <div class="wbar"><div class="lab"><span>考纲权重</span><span>25%（4–5 天）</span></div><div class="bar"><i style="width:25%"></i></div></div>
+  <div class="toc">
+    <a href="#s31">§3.1 基本概念与未赚保费逻辑</a>
+    <a href="#s32">§3.2 比例法（1/365 · 1/24 · 1/8）</a>
+    <a href="#s33">§3.3 风险分布法</a>
+    <a href="#s34">§3.4 长期合同未到期责任</a>
+    <a href="#s35">§3.5 保费充足性测试（保费不足准备金）</a>
+    <a href="#s36">§3.6 考点清单</a>
+  </div>
+</div>
+
+<section id="s31">
+  <h2><span class="sn">§3.1</span>基本概念与未赚保费逻辑</h2>
+  <div class="lead">未到期责任准备金（UPR）= 未赚保费对应的负债：评估日之后仍在保障期内的那部分保费收入。</div>
+  <div class="formula"><b>核心恒等式</b><div class="fx">已赚保费 = 保费收入 − Δ未到期责任准备金<br>UPR = 保费收入 × 未到期比例（比例法）<br>UPR = 未来风险暴露对应保费（风险分布法）</div><span class="src src-jiao">教</span>谢志刚 Ch8 P194 起</div>
+  <p>三层理解：</p>
+  <ol>
+    <li><b>时间切分：</b>一年期保单的保障期横跨评估日，保费按「已提供保障 / 未提供保障」切成两段——已赚部分进损益，未赚部分留在负债。</li>
+    <li><b>与未决的本质区别：</b>未决对应「已发生的保险事故」（过去时），未到期对应「尚未发生的风险」（将来时）。未决靠三角形回望，未到期靠暴露前瞻。</li>
+    <li><b>充足性是底线：</b>比例法算出的只是「未赚的保费」，不保证够赔——赚得不够赔时，用<b>保费充足性测试</b>补提保费不足准备金（→§3.5）。</li>
+  </ol>
+  <div class="src-note"><span class="src src-gui">规</span>银保监会令2021年第11号：未到期责任准备金评估应当采用未赚保费法（1/365法等）或者风险分布法等方法；采用其他方法的，应当说明理由。</div>
+</section>
+
+<section id="s32">
+  <h2><span class="sn">§3.2</span>比例法（1/365 · 1/24 · 1/8）</h2>
+  <div class="lead">假设风险随时间均匀分布，未到期比例 = 剩余天数 / 保险期间总天数。三种粒度，精度与工作量递增。</div>
+  <div class="tbl-scroll"><table>
+    <tr><th>方法</th><th>粒度</th><th>假设</th><th>未到期比例（评估日 12-31，保单当年 3 月起保）</th><th>适用</th></tr>
+    <tr><td><b>1/365 法</b>（逐日）</td><td>天</td><td>无需假设，按保单起保日精确切分</td><td class="num">剩余 62 天 / 365</td><td>信息系统支持逐单处理（现行主流）</td></tr>
+    <tr><td><b>1/24 法</b>（月）</td><td>月</td><td>月内均匀出单，视同月中起保</td><td class="num">2.5 / 12</td><td>按月汇总数据（传统手工口径）</td></tr>
+    <tr><td><b>1/8 法</b>（季）</td><td>季</td><td>季内均匀出单，视同季中起保</td><td class="num">1.5 / 4</td><td>按季度汇总数据（粗略）</td></tr>
+  </table></div>
+  <div class="formula"><b>1/24 法演算（3 月保单，年保费 1200）</b><div class="fx">3 月签单视同 3 月 15 日起保 → 至 12-31 已保障 9.5 个月，剩余 2.5 个月<br>未到期比例 = 2.5/12 = 0.2083　→　UPR = 1200 × 0.2083 = <b>250</b>；已赚 = 950</div></div>
+  <div class="mnem"><b>1/24 的「0.5 从哪来」：</b>假设当月 15 日出单，当月已保障半月——所以签单当月按 0.5 个月计已赚。1/8 同理：签单当季按 0.5 季（1.5 个月）计已赚。考试爱问「1/24 法隐含假设是什么」——答「各月内出单均匀，等价于月中集中出单」。</div>
+  <div class="warn"><b>易错点：</b>① 跨年度保单（如 2024-07-01 至 2025-06-30）在 2024 年末评估时剩余 6 个月，未到期 = 1/2，别按「当年内剩余」算；② 保费不足准备金<b>不冲减</b> UPR，而是单独列示（→§3.5）；③ 1/365 法不需要均匀假设，是三种方法中唯一「无假设」的。<span class="star s3">高频必背</span></div>
+
+  <div class="calc">
+    <b>演算器 3-1 · 比例法速算</b>
+    <div class="row">年保费 = <input id="upr_p" value="1200">　起保月（1–12，视同月中）= <input id="upr_m" value="3">　保单期限（月）= <input id="upr_t" value="12">
+    <button onclick="calcUPR()">计算</button></div>
+    <div class="out-box" id="upr_out">至年末已保障 9.5 月　未到期比例 = 0.2083　UPR = 250.0</div>
+    <div class="calc-steps">1/24 口径：已保障月数 = 12 − 起保月 + 0.5；未到期 = max(0, 期限 − 已保障)。期限改 24 即试跨两年度的长期单。</div>
+  </div>
+</section>
+
+<section id="s33">
+  <h2><span class="sn">§3.3</span>风险分布法</h2>
+  <div class="lead">风险不随时间均匀分布时（季节性、事件性风险），按「未来风险暴露占比」而非「剩余时间占比」计提。</div>
+  <div class="formula"><b>方法框架</b><div class="fx">UPR = 保费 × [Σ(评估日后各期风险暴露权重)] / [Σ(全保险期间风险暴露权重)]<br>暴露权重可取：历史各期出险频率 / 行业风险分布 / 事件触发概率</div></div>
+  <div class="tbl-scroll"><table>
+    <tr><th>业务</th><th>风险分布特征</th><th>均匀假设的偏差</th><th>风险分布法处理</th></tr>
+    <tr><td>种植险 / 洪涝险</td><td>风险集中在 6–9 月</td><td>年末按时间比例计提<b>偏高</b>（冬春风险小）</td><td>按生长期各月出险概率分配暴露权重</td></tr>
+    <tr><td>建筑工程险</td><td>随施工进度（基础→结构→装修）递变</td><td>时间比例与风险暴露错位</td><td>按工程造价进度曲线分配</td></tr>
+    <tr><td>货物运输险</td><td>随运输批次脉冲式</td><td>均匀假设严重失真</td><td>按未来运输计划（航次/吨公里）暴露</td></tr>
+    <tr><td>意外险（日常）</td><td>基本均匀</td><td>偏差小</td><td>用 1/365 即可（无需风险分布法）</td></tr>
+  </table></div>
+  <div class="prac"><b>算例（洪涝险）：</b>年保费 800，风险暴露权重：1–5 月各 0.5、6–9 月各 3、10–12 月各 1（合计 12）。评估日 12-31，未来只剩 1–5 月（权重合计 2.5）。UPR = 800 × 2.5/12 = <b>167</b>；若误用 1/24（5/12 = 0.4167）则计提 333——<b>高估一倍</b>。风险分布法不是「更精细的装饰」，而是季节性业务的方向性纠偏。</div>
+  <div class="exam"><span class="yr">2023回忆</span><b>真题影子：</b>「哪些业务适合用风险分布法评估未到期责任准备金？说明理由」——按上表逻辑答「风险暴露与时间显著不匹配的业务 + 一句假设对比 + 一个例子」，再补「银保监会令2021年第11号允许并鼓励更合理方法」收尾。<span class="star s2">常考</span></div>
+</section>
+
+<section id="s34">
+  <h2><span class="sn">§3.4</span>长期合同未到期责任</h2>
+  <div class="lead">保险期间一年以上的非寿险合同（工程险长期保单、船舶险、融资性信保等），时间切分之外还要看赔付节奏。</div>
+  <div class="tbl-scroll"><table>
+    <tr><th>维度</th><th>一年期合同</th><th>长期非寿险合同</th></tr>
+    <tr><td>未到期评估</td><td>1/365 / 1/24 / 风险分布</td><td>风险分布法为主（暴露跨多年）；或按合同约定赔付节点切分</td></tr>
+    <tr><td>数据成熟度</td><td>1 年内见分晓</td><td>多年进展，兼有未决三角形的长期性</td></tr>
+    <tr><td>充足性测试</td><td>年度滚动测试</td><td>应覆盖整个剩余期间的全部预期流出</td></tr>
+    <tr><td>折现</td><td>通常不折现</td><td>期限长，<b>应当考虑折现</b>（11号令：考虑货币时间价值）</td></tr>
+    <tr><td>教材落点</td><td>Ch8 P194</td><td>Ch9 P209</td></tr>
+  </table></div>
+  <div class="tip"><b>考试定位：</b>长期合同是「未到期 + 未决 + 折现」三合一的综合题素材——大题若给三年期工程险保单，就按「风险分布法切暴露 → 三角形估未决 → 长久期折现 → 整体充足性测试」四步走，每步都有分。<span class="star s1">了解</span></div>
+</section>
+
+<section id="s35">
+  <h2><span class="sn">§3.5</span>保费充足性测试（保费不足准备金）——每年必考</h2>
+  <div class="lead">比例法只保证「账算得平」，不保证「钱够赔」。充足性测试是监管强制的安全阀：测试失败 → 补提保费不足准备金（PDR）。</div>
+  <div class="formula"><b>测试逻辑（财会〔2009〕15号口径）</b><div class="fx">预期未来流出 = UPR × [预期赔付率 + 理赔费用率 + 维持费用率 + 营业税及附加率]<br>若 预期未来流出 > UPR → PDR = 预期未来流出 − UPR（补提，进当期损益）<br>若 预期未来流出 ≤ UPR → 测试通过，PDR = 0（超额部分<b>不得</b>转回利润）</div><span class="src src-gui">规</span>财会〔2009〕15号：充足性测试应考虑未来发生赔款、理赔费用、营业税及附加及维持费用等</div>
+
+  <h3>完整算例（自构，对齐监管口径）</h3>
+  <p>某公司车险业务年末未到期责任准备金 UPR = <b>8000</b>万元。精算评估未来预期：赔付率 <b>82%</b>、理赔费用率 <b>3%</b>、营业税及附加率 <b>5.5%</b>、维持费用率（展业及管理分摊）<b>16%</b>。</p>
+  <div class="tbl-scroll"><table>
+    <tr><th>项目</th><th class="num">比率</th><th class="num">金额（万元）</th><th>说明</th></tr>
+    <tr><td>未到期责任准备金 UPR</td><td class="num">—</td><td class="num"><b>8000</b></td><td>1/365 法计提结果</td></tr>
+    <tr><td>预期未来赔付</td><td class="num">82%</td><td class="num">6560</td><td>基于定价赔付率与经验回溯</td></tr>
+    <tr><td>预期理赔费用</td><td class="num">3%</td><td class="num">240</td><td>ALAE + ULAE</td></tr>
+    <tr><td>营业税及附加</td><td class="num">5.5%</td><td class="num">440</td><td>随保费发生的不可回收流出</td></tr>
+    <tr><td>维持费用</td><td class="num">16%</td><td class="num">1280</td><td>展业、管理、系统分摊</td></tr>
+    <tr><td class="f-hi"><b>预期未来流出合计</b></td><td class="num f-hi"><b>106.5%</b></td><td class="num f-hi"><b>8520</b></td><td>流出现值（短险不折现）</td></tr>
+    <tr><td class="f-hi"><b>保费不足准备金 PDR</b></td><td class="num f-hi"><b>+6.5%</b></td><td class="num f-hi"><b>520</b></td><td>8520 − 8000，当期费用化</td></tr>
+  </table></div>
+  <div class="warn"><b>三个高频陷阱：</b>① PDR 是<b>补提</b>不是重算 UPR——账面上 UPR 8000 与 PDR 520 并列；② 测试通过时差额<b>不得</b>释放为利润（谨慎性）；③ 维持费用与税费<b>必须</b>纳入测试——只比赔付率是「半张卷子」。<span class="star s3">高频必背</span></div>
+
+  <div class="calc">
+    <b>演算器 3-2 · 保费充足性测试（默认 = 上例）</b>
+    <div class="row">UPR = <input id="tst_upr" value="8000">　预期赔付率 = <input id="tst_lr" value="0.82">　理赔费用率 = <input id="tst_lae" value="0.03">　税费率 = <input id="tst_tax" value="0.055">　维持费用率 = <input id="tst_maint" value="0.16">
+    <button onclick="calcTST()">测试</button></div>
+    <div class="out-box" id="tst_out">预期流出比率 = 106.5%　预期流出 = 8520　测试<b>未通过</b> → 补提 PDR = 520</div>
+    <div class="calc-steps">把赔付率降到 0.70 再测：流出比率 94.5% → 通过，PDR = 0，且超额 460 不得转回利润。</div>
+  </div>
+
+  <div class="exam"><span class="yr">2024回忆</span><span class="yr">2025回忆</span><b>真题影子：</b>两种考法：① 纯计算——给 UPR 与四项比率求 PDR（本节算例结构）；② 论述——「充足性测试失败后的会计处理与利润影响」：补提 PDR 计当期损益 → 承保亏损显性化 → 提示费率不足/业务结构问题（衔接 CH.05 经营管理）。<span class="star s3">高频必背</span></div>
+
+  <div class="src-note"><b>与寿险 F3 的对照（跨库）：</b>寿险的「准备金充足性测试」比较的是<b>未来现金流现值 vs 账面准备金</b>（负债端整体）；非寿险的「保费充足性测试」比较的是<b>未赚保费 vs 预期流出</b>（保费端）。一个问「准备金够不够」，一个问「保费够不够」——名词一字之差，对象完全不同。</div>
+</section>
+
+<section id="s36">
+  <h2><span class="sn">§3.6</span>考点清单</h2>
+  <div class="tbl-scroll"><table>
+    <tr><th>考点</th><th class="ctr">星级</th><th>考过形式</th><th>速记要点</th></tr>
+    <tr><td>保费充足性测试全流程</td><td class="ctr"><span class="star s3">高频必背</span></td><td>计算大题（每年）</td><td>四项流出率 → 比率 >100% 补提 PDR</td></tr>
+    <tr><td>1/365 · 1/24 · 1/8 假设与换算</td><td class="ctr"><span class="star s3">高频必背</span></td><td>计算/选择</td><td>1/24 的 0.5 个月；1/365 唯一无假设</td></tr>
+    <tr><td>PDR 的会计处理</td><td class="ctr"><span class="star s3">高频必背</span></td><td>选择/简答</td><td>并列列示、费用化、通过时不得转回</td></tr>
+    <tr><td>风险分布法适用场景</td><td class="ctr"><span class="star s2">常考</span></td><td>简答（2023）</td><td>季节性/事件性暴露 vs 均匀假设</td></tr>
+    <tr><td>跨年保单的未到期切分</td><td class="ctr"><span class="star s2">常考</span></td><td>计算</td><td>剩余期间跨评估日的整段算</td></tr>
+    <tr><td>长期合同三合一处理</td><td class="ctr"><span class="star s1">了解</span></td><td>综合大题素材</td><td>暴露切分 + 未决 + 折现 + 整体测试</td></tr>
+    <tr><td>充足性测试的法规出处</td><td class="ctr"><span class="star s1">了解</span></td><td>选择</td><td>财会〔2009〕15号 + 11号令</td></tr>
+  </table></div>
+  <div class="mnem"><b>睡前一分钟：</b>默写「流出 = UPR×(赔付+理赔费+税+维持)」，背「测试失败补提、测试通过不转回」，再复述 1/24 法 3 月保单的 2.5/12——本章 25% 的骨架就这三句。</div>
+</section>
+
+<aside style="margin:36px 0 0;padding:18px 22px;background:linear-gradient(90deg,rgba(181,61,46,.06),rgba(24,95,165,.04));border:1px solid rgba(181,61,46,.22);border-left:4px solid #b53d2e;border-radius:8px">
+  <div style="font-size:13.5px;color:#7a3417;font-weight:600;letter-spacing:.04em;margin-bottom:8px">📎 监管原文对照</div>
+  <div style="font-size:13px;color:#3a302a;line-height:1.9">本章未到期责任准备金与 <a href="regulations.html#m11-2">11号令第二章 §m11-2</a>（第七至十条「未赚保费+保费不足准备金」）、<a href="regulations.html#m19">19号文 §m19</a> 第二节（第四十三/四十四条「充足性测试」）直接对应。</div>
+</aside>
+
+<button class="done-btn" data-id="ch3">○ 标记本页已完成</button>
+
+<div class="pager"><a class="prev" href="ch2.html">← CH.02 未决赔款准备金</a><a class="next" href="ch4.html">进入 CH.04 评估实务（20%） →</a></div>
+</main>
+<script>
+function calcUPR(){
+  var p=parseFloat(document.getElementById('upr_p').value)||0,
+      m=parseFloat(document.getElementById('upr_m').value)||1,
+      t=parseFloat(document.getElementById('upr_t').value)||12;
+  var earned=12-m+0.5, un=Math.max(0,t-earned), ratio=Math.min(1,un/12);
+  document.getElementById('upr_out').innerHTML='至年末已保障 '+earned+' 月　未到期比例 = '+ratio.toFixed(4)+'　UPR = '+(p*ratio).toFixed(1);
+}
+function calcTST(){
+  var u=parseFloat(document.getElementById('tst_upr').value)||0,
+      a=parseFloat(document.getElementById('tst_lr').value)||0,
+      b=parseFloat(document.getElementById('tst_lae').value)||0,
+      c=parseFloat(document.getElementById('tst_tax').value)||0,
+      d=parseFloat(document.getElementById('tst_maint').value)||0;
+  var r=a+b+c+d, out=u*r, pdr=Math.max(0,out-u);
+  var msg = pdr>0 ? '　测试<b>未通过</b> → 补提 PDR = '+pdr.toFixed(1) : '　测试通过 → PDR = 0，超额 '+(u-out).toFixed(1)+' 不得转回利润';
+  document.getElementById('tst_out').innerHTML='预期流出比率 = '+(r*100).toFixed(1)+'%　预期流出 = '+out.toFixed(1)+msg;
+}
+</script>
+<script src="js/kb.js"></script>
+</body>
+</html>
