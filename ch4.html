@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CH.04 评估实务：数据·模型·回溯 · 非寿险责任准备金评估</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .calc button{background:var(--blue);color:#fff;border:none;border-radius:6px;padding:6px 18px;font-size:13px;cursor:pointer;margin-left:8px}
+  .calc button:hover{background:var(--blue-2)}
+  .calc .row{margin:8px 0;font-size:13.5px}
+  .calc .out-box{background:var(--blue-l);border-radius:8px;padding:10px 14px;margin-top:10px;font-family:var(--mono);font-size:13px;line-height:2}
+</style>
+</head>
+<body>
+<aside class="side">
+  <div class="brand"><b>非寿险责任准备金评估</b><span>正精算师（非寿险）</span></div>
+    <nav>
+    <a href="xihong.html">关于 · 西红精算</a>
+    <a href="index.html">首页 · 考试全景</a>
+    <a href="about.html">本库说明 · 编法与用法</a>
+    <div class="grp">五大篇章（考纲权重）</div>
+    <a href="ch1.html">CH.01 总览与体系<span class="w">10%</span></a>
+    <a href="ch2.html">CH.02 未决赔款<span class="w">30%</span></a>
+    <a href="ch3.html">CH.03 未到期责任<span class="w">25%</span></a>
+    <a href="ch4.html" class="on">CH.04 评估实务<span class="w">20%</span></a>
+    <a href="ch5.html">CH.05 监管·会计·经营<span class="w">15%</span></a>
+    <div class="grp">拓展专题（不止于考纲）</div>
+    <a href="topic-stochastic.html">专题·随机模型与CV</a>
+    <a href="topic-reinsurance.html">专题·再保险准备金</a>
+    <a href="topic-rural.html">专题·农业保险精算规定</a>
+    <a href="topic-solvency.html">专题·保险风险最低资本</a>
+    <a href="topic-accounting.html">专题·财会15号与IFRS17衔接</a>
+    <div class="grp">真题 / 模拟 / 资料</div>
+    <a href="zhenti.html">真题馆</a>
+    <a href="moni-1.html">模拟卷一 · 流量三角形</a>
+    <a href="moni-2.html">模拟卷二 · 监管口径</a>
+    <a href="moni-3.html">模拟卷三 · 实务综合</a>
+    <a href="references.html">参考资料库</a>
+    <div class="grp">知识拓展</div>
+    <a href="textbook.html">书本题目·解题汇总</a>
+    <a href="regulations.html">监管原文·对照库</a>
+  </nav>
+  <div class="prog-mini">学习进度 <b>0 / 14</b></div>
+</aside>
+<main class="main">
+
+<div class="ch-head">
+  <div class="no">CHAPTER 04 · WEIGHT 20%</div>
+  <h1>评估实务：数据 · 模型 · 回溯</h1>
+  <p class="sub">识别数据问题 · 巨灾与通胀调整 · 回溯偏差分析 —— 「估得对不对」比「怎么估」更能区分实务型考生</p>
+  <div class="wbar"><div class="lab"><span>考纲权重</span><span>20%（实务60%的主体 · 4 天）</span></div><div class="bar"><i style="width:20%"></i></div></div>
+  <div class="toc">
+    <a href="#s41">§4.1 数据问题的识别与处理</a>
+    <a href="#s42">§4.2 模型调整与假设校验</a>
+    <a href="#s43">§4.3 回溯分析（偏差率）</a>
+    <a href="#s44">§4.4 结果检验的四个抓手</a>
+    <a href="#s45">§4.5 考点清单</a>
+  </div>
+</div>
+
+<section id="s41">
+  <h2><span class="sn">§4.1</span>数据问题的识别与处理</h2>
+  <div class="lead">「垃圾进、垃圾出」——链梯再漂亮也救不了脏数据。教材 Ch2 用一整套真实数据演示数据分组与诊断，这一节是三角形的「洗菜」工序。</div>
+  <div class="tbl-scroll"><table>
+    <tr><th>数据问题</th><th>识别信号</th><th>处理方式</th><th>不做会发生什么</th></tr>
+    <tr><td><b>大赔案 / 巨灾</b></td><td>单案占事故年赔款比重异常；某进展格突增</td><td>从三角形剔除单独评估（或设赔付上限截尾），余量走常规方法</td><td>进展因子被单案绑架，因子系统性虚高</td></tr>
+    <tr><td><b>通胀</b></td><td>各事故年首列（12月赔款）逐年趋势性抬升</td><td>指数化：历史赔款按通胀指数调整到评估日价格水平</td><td>老事故年按旧价格、新事故年按新价格，进展模式失真</td></tr>
+    <tr><td><b>理赔流程变化</b></td><td>某列因子整体跳变（如结案提速 → RV 衰减加快）</td><td>数据分组：变化前后分段；或对受影响列加权近期数据</td><td>用旧节奏预测新节奏，未决系统性错估</td></tr>
+    <tr><td><b>再保口径混装</b></td><td>毛赔款与净赔款三角形混用</td><td>分三角形：毛/净各一套，分别评估</td><td>摊回错配，净准备金不可信</td></tr>
+    <tr><td><b>数据缺口 / 迟报</b></td><td>对角线最近格异常低</td><td>最近的点降权（近三年加权法）；或延后评估基准</td><td>链梯把「还没录进系统的赔案」当作「没发生」</td></tr>
+    <tr><td><b>业务结构变化</b></td><td>险种构成、免赔额、渠道结构突变</td><td>分线（险种）评估后汇总；结构变化说明写入报告</td><td>混线三角形进展模式互相污染</td></tr>
+  </table></div>
+  <div class="src-note"><span class="src src-jiao">教</span>教材 Ch2 真实数据演示：2010 年总赔款按事故年分组的对角线为 23,000 / 148,000 / 422,000 / 744,000 / 1,007,000 / 1,536,000 / 1,889,000（事故年 2004→2010），配套 2004–2010 已报案 / 已付两套三角形——同一批赔案因<b>分组基准不同</b>（事故年 vs 报告年 vs 保单年）形状完全不同，这正是数据诊断的第一课。</div>
+  <div class="mnem"><b>「先问数据三遍」：</b>一问口径（毛/净、直接/间接费用、是否含 ALAE）；二问异常（大案、通胀、流程）；三问成熟度（最近对角线可信吗）。三问答完，方法基本自动浮现。</div>
+</section>
+
+<section id="s42">
+  <h2><span class="sn">§4.2</span>模型调整与假设校验</h2>
+  <div class="lead">教材 Ch12 的实际问题清单，浓缩成四个「调整动作」——每个动作都对应一类真题场景。</div>
+
+  <h3>动作一：巨灾与大赔案的分离评估</h3>
+  <div class="formula"><b>分离-加回框架</b><div class="fx">常规未决 = 链梯（剔除巨灾后的三角形）<br>巨灾未决 = 巨灾模型 / 事件聚合单独评估<br>总未决 = 常规未决 + 巨灾未决</div></div>
+  <p>剔除时注意：不是把整行删掉，而是把该赔案的<b>金额</b>从受影响的格子中减去（案数是否剔除视方法而定——案均法中通常保留案数）。巨灾尾部依赖再保结构（事故超赔 vs 成数），净额口径要等摊回（→专题·再保险准备金）。</p>
+
+  <h3>动作二：通胀指数化</h3>
+  <div class="formula"><b>两步走</b><div class="fx">① 历史赔款指数化：C'(i,j) = C(i,j) × [I(评估日) / I(i,j 时点)]<br>② 对 C' 做常规链梯 → 得到「评估日价格水平」的最终赔款<br>（若预期未来仍有通胀，还需对未来增量加趋势因子）</div></div>
+  <div class="prac"><b>算例：</b>年通胀 5%，AY1 的 12 月赔款 1001 距评估日 5 年 → 指数化到今天应乘 1.05⁵ ≈ 1.276，即 1277。不调整则老事故年「按 5 年前的物价」预测未来赔付——通胀把进展因子虚高（新事故年贵、老事故年便宜），指数化后因子才反映「纯进展」。</div>
+
+  <h3>动作三：进展速度变化（理赔提速/放慢）</h3>
+  <div class="tbl-scroll"><table>
+    <tr><th>情形</th><th>三角形信号</th><th>因子选择对策</th></tr>
+    <tr><td>结案提速（系统上线、人手增加）</td><td>近期行的 12→24 因子<b>低于</b>历史均值</td><td>近三年原始加权法 / 对近期行加权；说明写入报告</td></tr>
+    <tr><td>报案迟滞（渠道变更、监管新规）</td><td>首列值系统性偏低</td><td>首列降权；或用报告年三角形交叉验证</td></tr>
+    <tr><td>一次性事件（疫情停工）</td><td>个别列异常</td><td>剔除该列异常点后平均，报告披露</td></tr>
+  </table></div>
+
+  <h3>动作四：尾部因子的三个来源</h3>
+  <div class="tbl-scroll"><table>
+    <tr><th>来源</th><th>做法</th><th>教材例</th></tr>
+    <tr><td>成熟事故年外推</td><td>最老事故年实际最终 / 最后观察值</td><td>1.064 = 3705 / 3483</td></tr>
+    <tr><td>曲线外推</td><td>对尾部因子做幂/指数衰减拟合外推</td><td>长尾责任险常用</td></tr>
+    <tr><td>行业基准</td><td>监管或行业公布的最小进展期外因子</td><td>数据不足时的兜底</td></tr>
+  </table></div>
+  <div class="warn"><b>尾部是长尾业务最大的估计风险：</b>观察期只有 6 年、真实尾巴 10 年时，尾部因子差 0.1，最终赔款差 10%。大题问「链梯法的局限性」，标准答案第一条就是「尾部外推主观」。<span class="star s2">常考</span></div>
+</section>
+
+<section id="s43">
+  <h2><span class="sn">§4.3</span>回溯分析（偏差率）——监管重点</h2>
+  <div class="lead">回溯 = 拿昨天的预测对今天的实际「对账」。它是准备金体系的免疫系统，也是近年考频上升最快的实务考点。</div>
+  <div class="formula"><b>回溯偏差率（监管口径）</b><div class="fx">偏差率 =（上期评估日估计的「本期应发生额」− 本期实际发生额）/ 上期估计<br>（未决口径：比较上期未决估计的消耗进度 vs 实际赔付进展；未到期口径：比较上期 UPR 对应的已赚部分预期 vs 实际）</div></div>
+  <div class="tbl-scroll"><table>
+    <tr><th>偏差形态</th><th>含义</th><th>修正动作</th></tr>
+    <tr><td>持续正偏差（高估）</td><td>准备金释放，当期利润虚增前埋雷（前期多提）</td><td>下调节奏、检查逐案估损保守度、释放需论证</td></tr>
+    <tr><td>持续负偏差（低估）</td><td>本期补提，利润被侵蚀；可能是进展模式变了</td><td>重估进展因子、检查尾部、补提并披露</td></tr>
+    <tr><td>符号交替、幅度收敛</td><td>估计过程受控</td><td>维持方法与假设</td></tr>
+  </table></div>
+  <div class="calc">
+    <b>演算器 4-1 · 回溯偏差率（自构例，对齐监管口径）</b>
+    <div class="row">上期估计本期赔付发生额 = <input id="bt_est" value="4200">　本期实际发生额 = <input id="bt_act" value="4536">
+    <button onclick="calcBT()">回溯</button></div>
+    <div class="out-box" id="bt_out">偏差率 =（4200 − 4536）/ 4200 = −8.0%　→ 持续负偏差需重估因子并补提</div>
+    <div class="calc-steps">监管框架（银保监规〔2022〕6号实施细则）：准备金评估结果连续回溯偏差超过监管设定幅度（按险种设定阈值）的，应当分析原因、调整方法或假设并向监管报告。</div>
+  </div>
+  <div class="src-note"><span class="src src-gui">规</span>银保监规〔2022〕6号（非寿险业务准备金监管有关问题的通知及实施细则1–7号）：建立准备金回溯披露与修正机制，连续偏差超限须说明并整改。教材 Ch7 P175「评估结果检验」与 Ch12 实际问题清单互为印证。</div>
+  <div class="exam"><span class="yr">2025回忆</span><b>真题影子：</b>「简述回溯分析的作用与偏差处理」——答「免疫系统」三层：① 检验假设与方法有效性；② 发现系统性偏差（高估释放 / 低估补提）；③ 触发修正（因子重估、方法更换、监管报告）。<span class="star s2">常考</span></div>
+</section>
+
+<section id="s44">
+  <h2><span class="sn">§4.4</span>结果检验的四个抓手（教材 Ch7）</h2>
+  <div class="lead">算完不是终点。教材 Ch7 给出四个互相独立的检验抓手，大题「如何检验评估结果的合理性」按此作答。</div>
+  <div class="tbl-scroll"><table>
+    <tr><th>抓手</th><th>怎么做</th><th>不合理时的信号</th></tr>
+    <tr><td><b>① 赔付率合理性</b></td><td>各事故年隐含最终赔付率 = LU / EP，与定价赔付率、行业均值对比</td><td>某事故年隐含赔付率 120% 而定价 75% → 因子或先验失真</td></tr>
+    <tr><td><b>② 多方法交叉</b></td><td>链梯 / B-F / 准备金进展 / 案均并列，看差异能否解释</td><td>方法间差异 >10% 且解释不了 → 数据问题嫌疑最大</td></tr>
+    <tr><td><b>③ 分组一致性</b></td><td>分险种 / 地区 / 渠道子三角形分别评估后加总 vs 整体直接评估</td><td>加总与整体显著不等 → 混合三角形掩盖结构差异</td></tr>
+    <tr><td><b>④ 逐期回溯</b></td><td>上节回溯偏差的时间序列（不只是单期）</td><td>连续同号偏差 → 系统性，必须修</td></tr>
+  </table></div>
+  <div class="prac"><b>本库数据实操：</b>用 CH.02 的真实数据算隐含赔付率——链梯法 LU 合计 32825 ÷ EP 合计 37764 = <b>86.9%</b>；B-F(RC) 隐含 = 31344/37764 = 83.0%（先验锚定的自然结果）；赔付率法 = 83%。三法隐含赔付率落在 83–87% 区间，差异可由「新事故年进展不确定性」解释 → 结果可信。这就是抓手①②的联合用法，考综合题时写出这段推理就是满分答案。</div>
+</section>
+
+<section id="s45">
+  <h2><span class="sn">§4.5</span>考点清单</h2>
+  <div class="tbl-scroll"><table>
+    <tr><th>考点</th><th class="ctr">星级</th><th>考过形式</th><th>速记要点</th></tr>
+    <tr><td>大赔案 / 巨灾的分离处理</td><td class="ctr"><span class="star s3">高频必背</span></td><td>大题（2023/2024）</td><td>剔除-单独评估-加回；金额剔除案数视方法</td></tr>
+    <tr><td>通胀指数化两步法</td><td class="ctr"><span class="star s2">常考</span></td><td>计算/简答</td><td>历史指数化 + 未来趋势；不调则因子虚高</td></tr>
+    <tr><td>回溯偏差率计算与含义</td><td class="ctr"><span class="star s2">常考</span></td><td>计算/简答（2025）</td><td>（估计−实际）/估计；连续同号必须修</td></tr>
+    <tr><td>结果检验四抓手</td><td class="ctr"><span class="star s2">常考</span></td><td>简答</td><td>赔付率·多方法·分组·回溯</td></tr>
+    <tr><td>尾部因子三来源</td><td class="ctr"><span class="star s2">常考</span></td><td>选择/简答</td><td>成熟年外推·曲线外推·行业基准</td></tr>
+    <tr><td>理赔流程变化的因子对策</td><td class="ctr"><span class="star s1">了解</span></td><td>选择</td><td>近三年加权 / 分段</td></tr>
+    <tr><td>毛 / 净三角形分设</td><td class="ctr"><span class="star s1">了解</span></td><td>判断</td><td>摊回口径不得混装</td></tr>
+    <tr><td>数据「先问三遍」</td><td class="ctr"><span class="star s1">了解</span></td><td>论述素材</td><td>口径·异常·成熟度</td></tr>
+  </table></div>
+  <div class="mnem"><b>睡前一分钟：</b>「数据三问（口径/异常/成熟）→ 四个动作（剔巨灾/调通胀/看进展/定尾部）→ 一面对账（回溯）」——CH.04 的全部内容压缩成三句话。</div>
+</section>
+
+<aside style="margin:36px 0 0;padding:18px 22px;background:linear-gradient(90deg,rgba(181,61,46,.06),rgba(24,95,165,.04));border:1px solid rgba(181,61,46,.22);border-left:4px solid #b53d2e;border-radius:8px">
+  <div style="font-size:13.5px;color:#7a3417;font-weight:600;letter-spacing:.04em;margin-bottom:8px">📎 监管原文对照</div>
+  <div style="font-size:13px;color:#3a302a;line-height:1.9">本章评估实务与 <a href="regulations.html#m19">19号文 §m19</a> 全文（数据·评估·核算·披露 五段式）、<a href="regulations.html#m6">6号细则 §m6</a>（细则 3 回溯 / 细则 5 风险边际）直接对应。</div>
+</aside>
+
+<button class="done-btn" data-id="ch4">○ 标记本页已完成</button>
+
+<div class="pager"><a class="prev" href="ch3.html">← CH.03 未到期责任准备金</a><a class="next" href="ch5.html">进入 CH.05 监管·会计·经营（15%） →</a></div>
+</main>
+<script>
+function calcBT(){
+  var e=parseFloat(document.getElementById('bt_est').value)||0,
+      a=parseFloat(document.getElementById('bt_act').value)||0;
+  var d=(e-a)/e*100;
+  var msg = d>0 ? '　→ 正偏差（前期高估），关注释放论证' : (d<0 ? '　→ 负偏差（前期低估），重估因子并补提' : '　→ 无偏差');
+  document.getElementById('bt_out').innerHTML='偏差率 =（'+e+' − '+a+'）/ '+e+' = '+d.toFixed(1)+'%'+msg;
+}
+</script>
+<script src="js/kb.js"></script>
+</body>
+</html>
