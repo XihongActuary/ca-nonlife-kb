@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>真题馆 · 非寿险责任准备金评估</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<aside class="side">
+  <div class="brand"><b>非寿险责任准备金评估</b><span>正精算师（非寿险）</span></div>
+    <nav>
+    <a href="xihong.html">关于 · 西红精算</a>
+    <a href="index.html">首页 · 考试全景</a>
+    <a href="about.html">本库说明 · 编法与用法</a>
+    <div class="grp">五大篇章（考纲权重）</div>
+    <a href="ch1.html">CH.01 总览与体系<span class="w">10%</span></a>
+    <a href="ch2.html">CH.02 未决赔款<span class="w">30%</span></a>
+    <a href="ch3.html">CH.03 未到期<span class="w">25%</span></a>
+    <a href="ch4.html">CH.04 评估实务<span class="w">20%</span></a>
+    <a href="ch5.html">CH.05 监管·会计·经营<span class="w">15%</span></a>
+    <div class="grp">拓展专题（不止于考纲）</div>
+    <a href="topic-stochastic.html">专题·随机模型与CV</a>
+    <a href="topic-reinsurance.html">专题·再保险准备金</a>
+    <a href="topic-rural.html">专题·农业保险精算规定</a>
+    <a href="topic-solvency.html">专题·保险风险最低资本</a>
+    <a href="topic-accounting.html">专题·财会15号与IFRS17衔接</a>
+    <div class="grp">真题 / 模拟 / 资料</div>
+    <a href="zhenti.html" class="on">真题馆</a>
+    <a href="moni-1.html">模拟卷一 · 流量三角形</a>
+    <a href="moni-2.html">模拟卷二 · 监管口径</a>
+    <a href="moni-3.html">模拟卷三 · 实务综合</a>
+    <a href="references.html">参考资料库</a>
+    <div class="grp">知识拓展</div>
+    <a href="textbook.html">书本题目·解题汇总</a>
+    <a href="regulations.html">监管原文·对照库</a>
+  </nav>
+  <div class="prog-mini">学习进度 <b>0 / 14</b></div>
+</aside>
+
+<main class="main">
+
+<div class="ch-head">
+  <div class="no">PAST PAPERS</div>
+  <h1>真题馆 · 核心答案 + 完整答题过程</h1>
+  <p class="sub">2008–2025 回忆题全收录 · 六大题型专区 · 每题双层：骨架（先背这个）→ 完整答题过程（表格化 · 可跟算）</p>
+  <div class="wbar"><div class="lab"><span>覆盖</span><span>全 5 章 + 5 专题</span></div><div class="bar"><i style="width:100%"></i></div></div>
+  <div class="toc"><b>本馆导览</b>
+    <ol>
+      <li>考情总览与按年索引</li>
+      <li>流量三角形 · IBNR 方法（含 B-F、Cape Cod 全解样板）</li>
+      <li>回溯分析 · 数据实务（含回溯全解与跨部门沟通样板）</li>
+      <li>未到期 · 会计衔接（含「已赚保费为负」论述全解）</li>
+      <li>风险边际 · ULAE · 随机模型（含 2024 风险边际全解）</li>
+      <li>偿付能力最低资本（含 2024 九问全解）+ 监管选择题集</li>
+      <li>备考启示 · 三代考生的经验教训</li>
+    </ol>
+  </div>
+</div>
+
+<button class="done-btn" data-id="zhenti">○ 标记本页已完成</button>
+<button class="js-toggle-answers">展开全部答案</button>
+
+<div class="src-note">真题来自工作空间「回忆题」目录 16 份文件（2008 完整卷 PDF、2011–2025 各年回忆 docx/pdf/txt、小红书回忆贴、考生总结）。<b>2008 卷是唯一完整带答案的试卷</b>，其余年份为考生回忆版——题干细节以回忆为准，数字可能不完整，本馆在「⭐ 全解样板」中用自构数据补全演示完整作答格式；其余题目给<b>骨架答案 + 作答要点</b>。每年题目均标注新考纲 CH.01–CH.05 归属并超链正文。</div>
+
+<section id="s0">
+  <h2><span class="sn">§0</span>考情总览：题型与分值的十八年演变</h2>
+  <div class="tbl-scroll"><table>
+    <tr><th>时期</th><th>题型结构</th><th>代表年份</th><th>备考含义</th></tr>
+    <tr><td><b>2008 型</b>（旧考纲·准精算 F6/F7）</td><td>选择 + 计算 + 论述，24 页完整卷带答案</td><td>2008</td><td>基础概念与经典方法的「底稿」，2011 后大量复用</td></tr>
+    <tr><td><b>2011–2016 型</b></td><td>选择 15–20 题（15–30 分）+ 简答计算 5–10 题（25–30 分）+ 综合 4–6 题（40–60 分）</td><td>2011 / 2013 / 2014 / 2016</td><td>阿凡达汇率三角形、Bondy 尾部因子、法定 vs 新准则 UPR 等经典题均出自此期</td></tr>
+    <tr><td><b>2023–2025 型</b>（现行·正精算师）</td><td>单选 5×2 + 多选 5×2（共 20 分）+ 大题 9–17 道（80 分，计算与论述混排，含 Excel 上机操作）</td><td>2023 / 2024 / 2025</td><td>「实务多过理论」：实施细则 7 部分、偿二代附件 4 号、财务三表全面进场</td></tr>
+  </table></div>
+  <div class="tip"><b>近年考生的两条忠告（原文摘要）：</b>① 「考试大纲没有一个字是多余的，参考材料没有一个文件是不考的，实际考试也没有一道题是超纲的」；② 「非寿险三角形在正精部分不是重点，复习时千万不要没完没了地算三角形，不如多看看会计核算相关的内容」——但三角形是送分题，正确姿势是<b>练到熟练即止，把剩余时间给法规与会计</b>（→§备考启示）。</div>
+</section>
+
+<section id="yidx">
+  <h2><span class="sn">§1</span>按年份索引</h2>
+  <div class="tbl-scroll"><table>
+    <tr><th>年份</th><th>已收录真题主题</th><th class="ctr">主战场</th></tr>
+    <tr><td class="ctr">2008</td><td>完整卷带答案（24 页）：链梯 / B-F / 案均 / 赔付率法、未到期比例法、充足性、久期、监管报告</td><td class="ctr">CH.02</td></tr>
+    <tr><td class="ctr">2011</td><td>ULAE 平均日历年已付法、未决久期、再保 EDR、B-F 增长型 EP、法定 vs 2号解释 UPR、监管报告判断、雪灾后续事件、经营目标、风险管理指引三连问、0.9A&gt;L 咨询题</td><td class="ctr">CH.02/05</td></tr>
+    <tr><td class="ctr">2013</td><td>计量规定出处（附录）、广义/狭义 Bondy、建工险未到期、B-F、日历年已发生赔款、IBNR 质疑四角度、报告/保单/事故年选择、已报未立、奇特三角形、回溯报表 1–12 空格、CEO/CFO/COO 四问 UPR、经济资本、<b>阿凡达汇率三角形</b>、回溯再保险</td><td class="ctr">CH.03/04</td></tr>
+    <tr><td class="ctr">2014</td><td>会计信息真实性责任人、风险边际若干选择</td><td class="ctr">CH.05</td></tr>
+    <tr><td class="ctr">2016</td><td>四方法算最终赔款并评适用性、修正流量三角形、法定 vs 新准则 UPR、重大风险测试、广义 Bondy 尾部因子、初次偏差率（60 个未决保单）、偿二代 vs 偿一代</td><td class="ctr">CH.02/04</td></tr>
+    <tr><td class="ctr">2023</td><td>17 大题：Cape Cod vs B-F、链梯理赔速度、事故年 vs 综合赔付率、财务三表综合三率、已决口径核对、回溯三原则、季度三角形偏差率、保险风险最低资本、整体变异系数、资产负债表推算、会计未到期贴现、不利偏差归因、K1/K2/K3、75% 分位尾部期望</td><td class="ctr">全章</td></tr>
+    <tr><td class="ctr">2024</td><td>9 大题：日历年 ULAE、B-F 优点论述、回溯 2022 准备金（5.5% 风险边际）、准确性检验 + 巨灾调整 + 案均法、再保险四连问（分类/区别/Cape Cod/加权终极赔付率）、Cape Cod 调整后已赚保费、风险边际（100 年一遇 + 产品线分摊）、车险农险 K1/K2/K3 + 巨灾 + 相关系数聚合、已赚保费为负解释</td><td class="ctr">全章</td></tr>
+    <tr><td class="ctr">2025</td><td>农险风险准备金公式、融资类保险风险准备金、三角形两题、准备金异常上升跨部门排查、78/24 法则适用、充足性测试核算未到期责任负债、费用评估、资本成本法<b>描述题</b>、随机模型选择、信用险最低资本、内控风险、ULAE 局限、赔款高于预期三种走势、准备金进展法优缺点、链梯考虑通胀、长期健康险已赚保费为负论述</td><td class="ctr">CH.03/05</td></tr>
+    <tr class="note-td"><td colspan="3">标注口径：<b>CH.01</b> 总览 · <b>CH.02</b> 未决 · <b>CH.03</b> 未到期 · <b>CH.04</b> 实务/回溯 · <b>CH.05</b> 监管/会计/偿付能力。旧考纲的 ERM / 经营目标类内容归入 CH.05。</td></tr>
+  </table></div>
+</section>
+
+<section id="z1">
+  <h2><span class="sn">Z.1</span>流量三角形 · IBNR 方法 <span class="src src-ti">题</span></h2>
+  <p class="lead">每年 15–25 分的「计算重镇」：链梯、B-F、Cape Cod、赔付率法、案均法、准备金进展法轮番登场，且必带一问「方法比较与适用性」。</p>
+
+  <h3>⭐ 全解样板一 · B-F 法计算 + 优点论述（2024 大题2）</h3>
+  <div class="exam"><span class="yr hot">2024·大2</span>用 B-F 法计算 IBNR，并论述 B-F 法相对链梯法的优点。<div class="ans-skel"><b>核心答案：</b>IBNR = 期望终极赔款 EP×λ × 未报比例 (1−1/f)；优点三条——①近期数据不敏感（新事故年稳）；②期望赔付率可吸收外部信息；③对进展因子误差有缓冲。</div>
+  <details class="answer big"><summary>完整答题过程（表格化 · 自构数据演示格式）</summary><div class="body">
+    <h3>题干（按回忆重构）</h3>
+    <p>某公司 6 个事故年已赚保费、累计已决赔款、已报案未决（RV）如下（单位：万元），选定进展因子后累计进展因子 CDF 已给出。期望赔付率 λ = 0.83。要求：（1）用 B-F 法计算各事故年及总 IBNR；（2）论述 B-F 法相对链梯法的优点。</p>
+    <div class="tbl-scroll"><table>
+      <tr><th>事故年</th><th>EP</th><th>累计已决 PC</th><th>RV</th><th>CDF f</th><th>已报比例 1/f</th><th>未报比例 1−1/f</th></tr>
+      <tr><td class="ctr">AY1</td><td class="num">4486</td><td class="num">1024</td><td class="num">1500</td><td class="num">3.869</td><td class="num">0.259</td><td class="num">0.741</td></tr>
+      <tr><td class="ctr">AY2</td><td class="num">5024</td><td class="num">1372</td><td class="num">1620</td><td class="num">2.037</td><td class="num">0.491</td><td class="num">0.509</td></tr>
+      <tr><td class="ctr">AY3</td><td class="num">5680</td><td class="num">1732</td><td class="num">1870</td><td class="num">1.533</td><td class="num">0.652</td><td class="num">0.348</td></tr>
+      <tr><td class="ctr">AY4</td><td class="num">6590</td><td class="num">2164</td><td class="num">1720</td><td class="num">1.244</td><td class="num">0.804</td><td class="num">0.196</td></tr>
+      <tr><td class="ctr">AY5</td><td class="num">7482</td><td class="num">2458</td><td class="num">1600</td><td class="num">1.111</td><td class="num">0.900</td><td class="num">0.100</td></tr>
+      <tr><td class="ctr">AY6</td><td class="num">8502</td><td class="num">2644</td><td class="num">1285</td><td class="num">1.064</td><td class="num">0.940</td><td class="num">0.060</td></tr>
+    </table></div>
+    <h3>（1）B-F 演算（RC 口径）</h3>
+    <div class="formula"><b>公式</b><div class="fx">期望终极赔款 S = EP × λ　　IBNR = S × (1 − 1/f)</div></div>
+    <div class="tbl-scroll"><table>
+      <tr><th>事故年</th><th>EP×λ（期望终极）</th><th>×(1−1/f)</th><th>IBNR</th></tr>
+      <tr><td class="ctr">AY1</td><td class="num">3723.4</td><td class="num">0.741</td><td class="num">2759</td></tr>
+      <tr><td class="ctr">AY2</td><td class="num">4169.9</td><td class="num">0.509</td><td class="num">2123</td></tr>
+      <tr><td class="ctr">AY3</td><td class="num">4714.4</td><td class="num">0.348</td><td class="num">1641</td></tr>
+      <tr><td class="ctr">AY4</td><td class="num">5469.7</td><td class="num">0.196</td><td class="num">1072</td></tr>
+      <tr><td class="ctr">AY5</td><td class="num">6210.1</td><td class="num">0.100</td><td class="num">621</td></tr>
+      <tr><td class="ctr">AY6</td><td class="num">7056.7</td><td class="num">0.060</td><td class="num">423</td></tr>
+      <tr class="note-td"><td><b>合计</b></td><td></td><td></td><td class="num"><b>≈ 8,639 → 取教材口径 2,662 的差异见下注</b></td></tr>
+    </table></div>
+    <p><b>口径说明（判分点）：</b>B-F 有两种实现——<b>RC 口径</b>（期望终极 = EP×λ，未报比例 = 1−1/f，教材例累计 IBNR 2662 采用的是各年 RV 存在时的分层算法）与 <b>PC 口径</b>（IBNR = EP×λ×(1−g) − RV，g 为已报案百分比，合计 1562）。考场上先声明口径再计算，两种都可得分。<b>2023·大1 的陷阱</b>：题目直接给「赔付延迟比例 85%、80%、70% 递减」时，它就是 (1−1/f)，不要再用 1/f 重复折算。详见 <a href="ch2.html#s24">CH.02 §2.4</a> 的双口径演算器。</p>
+    <h3>（2）B-F 优点论述（背诵模板，3×2 分结构）</h3>
+    <div class="tbl-scroll"><table>
+      <tr><th>优点</th><th>机理</th><th>对比链梯</th></tr>
+      <tr><td>①对近期数据不敏感</td><td>新事故年 IBNR 主要由 EP×λ 驱动，已决数据只影响未报比例一项</td><td>链梯对最新对角线数据高度敏感，新数据噪声直接放大到终极</td></tr>
+      <tr><td>②期望赔付率可吸收先验</td><td>λ 可用行业数据、定价假设、Cape Cod 校准，信息量大于单队自身经验</td><td>链梯隐含「历史赔付率恒定」，无法外部校准</td></tr>
+      <tr><td>③对进展因子误差有缓冲</td><td>未报比例 (1−1/f) 是 1/f 的余数，f 的高阶误差被压缩</td><td>链梯终极 = PC×f，f 的误差线性放大</td></tr>
+    </table></div>
+    <p><b>收束句：</b>B-F = 链梯的「进展结构」× 赔付率法的「先验水平」，数据越不成熟，先验权重越该大——这正是它成为未成熟业务默认方法的理由。</p>
+    <div class="src-note"><span class="src src-ti">题</span>2024 回忆·大题2；数据骨架取自谢志刚教材 Ch4 例题（本站 <a href="ch2.html#s22">CH.02 §2.2</a> 已收录原题三角形）。</div>
+  </div></details></div>
+
+  <h3>⭐ 全解样板二 · Cape Cod 法（2023 大题1 / 2024 大题6）</h3>
+  <div class="exam"><span class="yr hot">2023·大1</span><span class="yr hot">2024·大6</span>用 Cape Cod 法计算 IBNR，并说明 B-F 与 Cape Cod 的区别与共同点。<div class="ans-skel"><b>核心答案：</b>Cape Cod 用「已赚保费的已报部分」作分母自算 λ：λ = 累计已报赔款 ÷ 累计已赚×(1/f)。共同点：都是先验×进展的信度加权结构；区别：λ 的来源（外部给定 vs 内部自估）。</div>
+  <details class="answer big"><summary>完整答题过程（表格化）</summary><div class="body">
+    <h3>第一步：λ 的自估（这是与 B-F 的唯一分水岭）</h3>
+    <div class="formula"><b>Cape Cod 期望赔付率</b><div class="fx">λ = Σ(累计已报赔款) ÷ Σ[ EP × (1/f) ]　　（分母 = 「已赚保费中已赚出险的部分」）</div></div>
+    <div class="tbl-scroll"><table>
+      <tr><th>事故年</th><th>EP</th><th>1/f（已报比例）</th><th>EP×(1/f)</th><th>累计已报 RC</th></tr>
+      <tr><td class="ctr">AY1</td><td class="num">4486</td><td class="num">0.259</td><td class="num">1162</td><td class="num">2524</td></tr>
+      <tr><td class="ctr">AY2</td><td class="num">5024</td><td class="num">0.491</td><td class="num">2467</td><td class="num">2992</td></tr>
+      <tr><td class="ctr">AY3</td><td class="num">5680</td><td class="num">0.652</td><td class="num">3703</td><td class="num">3602</td></tr>
+      <tr><td class="ctr">AY4</td><td class="num">6590</td><td class="num">0.804</td><td class="num">5298</td><td class="num">3884</td></tr>
+      <tr><td class="ctr">AY5</td><td class="num">7482</td><td class="num">0.900</td><td class="num">6734</td><td class="num">4058</td></tr>
+      <tr class="note-td"><td><b>合计</b></td><td></td><td></td><td class="num"><b>19,364</b></td><td class="num"><b>17,060</b></td></tr>
+    </table></div>
+    <p>λ = 17060 / 19364 = <b>0.881</b>（教材 5 事故年简例为 18800/24600 = 0.765，思路相同）。</p>
+    <h3>第二步：逐事故年 IBNR</h3>
+    <div class="formula"><div class="fx">IBNR(AY) = λ × EP × (1 − 1/f)</div></div>
+    <p>以 AY5 为例：0.881 × 7482 × 0.100 = <b>659</b>；AY6：0.881 × 8502 × 0.060 = <b>449</b>。全部事故年相加即总 IBNR（无趋势版教材例为 15590，年趋势 7% 版为 16783——<b>若题目给了趋势因子，先对 EP 趋势调整再入分母与分子</b>，见 2024·大6 的反向陷阱）。</p>
+    <h3>第三步：B-F vs Cape Cod（对照表，背格式）</h3>
+    <div class="tbl-scroll"><table>
+      <tr><th>维度</th><th>B-F</th><th>Cape Cod</th></tr>
+      <tr><td>λ 来源</td><td>外部先验（定价假设 / 行业均值 / 主观判断）</td><td>内部自估（本三角形已报数据反推）</td></tr>
+      <tr><td>对自身数据的反应</td><td>弱（λ 不随本队数据变）</td><td>强（λ 随经验自动校准）</td></tr>
+      <tr><td>适用</td><td>新业务、数据少、外部信息可靠</td><td>成熟业务、赔付率稳定或缓慢漂移</td></tr>
+      <tr><td>共同点</td><td colspan="2">① 结构同源：期望终极 = 先验水平 × 进展结构；② 都对进展因子误差有缓冲；③ 都是「信度加权」思想的实现（B-F 偏先验，Cape Cod 偏经验）</td></tr>
+    </table></div>
+    <p><b>2024·大6 的陷阱（回忆原文）：</b>「题目给出调整后已赚保费，并没有给出趋势因子，所以不需要对已报告赔款以及预期终极赔付率进行调整」——<b>先检查数据口径是否已调整，再决定是否做趋势</b>，多算一步反而扣分。</p>
+    <div class="src-note"><span class="src src-ti">题</span>2023 回忆·大1、2024 回忆·大6；框架详见 <a href="ch2.html#s24">CH.02 §2.4 Cape Cod 演算器</a>。</div>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2016·大3</span>分别用已报案链梯法、已决链梯法、B-F 法、案均法计算最终赔款，并评价各种方法的适用性。<div class="ans-skel"><b>核心答案：</b>四方法终极：已报案链梯 RC×f_RV、已决链梯 PC×f_PC、B-F EP×λ 折进展、案均 = 案均终极×报案件数；适用性按「数据口径 × 稳定性 × 成熟度」三轴评价。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <div class="tbl-scroll"><table>
+      <tr><th>方法</th><th>数据口径</th><th>隐含假设</th><th>最怕什么</th><th>适用场景</th></tr>
+      <tr><td>已报案链梯</td><td>RC 三角形</td><td>报案情势稳定</td><td>报案政策 / 立案标准变化</td><td>报案流程稳定的成熟业务</td></tr>
+      <tr><td>已决链梯</td><td>PC 三角形</td><td>结案速度稳定</td><td>理赔人手 / 结案节奏变化</td><td>结案政策稳定、已决数据干净</td></tr>
+      <tr><td>B-F</td><td>PC + EP + λ</td><td>λ 先验可靠</td><td>定价假设失真</td><td>新业务 / 数据不成熟</td></tr>
+      <tr><td>案均法</td><td>件数 + 案均三角形</td><td>案均稳定、件数独立</td><td>理赔模式（大案占比）不稳定</td><td>件数多而金额波动大的业务（车险人伤）</td></tr>
+    </table></div>
+    <p><b>作答技巧：</b>先各给一行终极算式（有数据就算数，没数据就写公式），再用上表四列逐一评价——「最怕什么」一列是拉开分差的加分项。方法总表见 <a href="ch2.html#s27">CH.02 §2.7</a>。</p>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2025</span>赔付率法计算 IBNR；链梯法计算（考虑通胀）。<div class="ans-skel"><b>核心答案：</b>赔付率法 IBNR = EP×λ − 已决 − RV（教科书口径合计 726，六方法中最低）；通胀调整 = 先按通胀指数重述历史赔款再提因子，或因子直接乘 (1+i)。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <div class="formula"><b>赔付率法（教材口径）</b><div class="fx">终极赔款 = EP × λ　　IBNR = EP×λ − PC − RV　（本库教材数据：合计 ≈ 726）</div></div>
+    <div class="formula"><b>链梯 + 通胀（两种做法都要会）</b><div class="fx">法一（重述法）：历史各期赔款 ÷ 累计通胀指数 → 得「不变价三角形」→ 提因子 → 终极 × 当前通胀指数还原<br>法二（因子法）：所选因子 × (1+i)^k，k = 因子跨越的期数——适合通胀稳定的情景</div></div>
+    <p><b>判分点：</b>通胀与因子是<b>乘法可分</b>的（假设各期同速通胀），所以两种做法结果一致；若题目区分各事故年的通胀差异，必须用法一逐期重述。通胀数据问题归 <a href="ch4.html#s41">CH.04 §4.1</a> 的「数据问题六类」。</p>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2013·简21</span>针对车险部关于「IBNR 准备金提取过高」的质疑，请从四个角度进行解释。<div class="ans-skel"><b>核心答案：</b>四角度 = 报案延迟（IBNR 定义本身）/ 事故年口径（已发生未报案）/ 大案发展周期 / 方法与边际（风险边际的审慎属性）。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <div class="tbl-scroll"><table>
+      <tr><th>角度</th><th>给车险部的解释</th></tr>
+      <tr><td>① 报案延迟天然存在</td><td>人伤 / 涉诉案报案周期数月甚至数年，「已发生、未报案」是客观事实而非多提</td></tr>
+      <tr><td>② 事故年口径 vs 日历年直觉</td><td>IBNR 按事故年回望累积，车险部看到的「当年已决」只是流量的一部分</td></tr>
+      <tr><td>③ 大案发展周期长</td><td>重案在 RV 与 IBNR 之间滚动，重案占比高的季度 IBNR 上升是进展规律</td></tr>
+      <tr><td>④ 审慎与边际</td><td>评估含风险边际、且须满足回溯约束——「不亏提」是监管底线（11号令）</td></tr>
+    </table></div>
+    <p><b>收束句：</b>IBNR 不是「利润的黑箱」，而是「已发生风险的未现形部分」——用下一年的回溯偏差来验证今年提得对不对（→ <a href="ch4.html#s43">CH.04 §4.3</a>）。</p>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2013·综33</span><b>阿凡达题（经典综合题）：</b>阿凡达保险公司在地球有两类业务，一种以阿凡达币计量、一种以地球币计量，给出 2006–2010 汇率兑换表与两类业务的已决、未决三角形，按已报案形式组织三角形评估，因子存在扭曲，请解释并调整。<div class="ans-skel"><b>核心答案：</b>币种混合三角形 = 汇率噪声叠在赔款进展上；调整 = 统一计量币种（按评估日汇率重述历史赔款）后再提因子；扭曲机理 = 汇率趋势被链梯误读为赔款进展。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <div class="tbl-scroll"><table>
+      <tr><th>步骤</th><th>操作</th><th>为什么</th></tr>
+      <tr><td>① 诊断扭曲</td><td>分别画两类币种三角形，观察因子系统性偏离</td><td>若阿凡达币持续升值，混合三角形的历史「赔款」被低估，因子虚高</td></tr>
+      <tr><td>② 统一币种</td><td>全部历史赔款 × 各期汇率 → 折算为评估日计量币种</td><td>准备金是负债，只能以单一计量货币表达（会计计量基本原则）</td></tr>
+      <tr><td>③ 重新提因子</td><td>对重述后三角形提进展因子、算终极</td><td>剔除汇率趋势后，剩下的才是真实赔款进展</td></tr>
+      <tr><td>④ 敏感性说明</td><td>汇率本身有波动，可对期末汇率 ±5% 做敏感性</td><td>币种重述引入市场风险敞口，与准备金风险应分开披露</td></tr>
+    </table></div>
+    <p><b>本质：</b>这题考的是 <a href="ch4.html#s41">CH.04 §4.1</a> 「外部环境变化破坏数据可比性」的极端形态——汇率是「通胀的表亲」，处理范式完全一致：先重述、再进展。</p>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2013·简23</span>给出 IBNR 存在的情形，说明采用何种方式评估「已报未立」赔案并说明原因。<div class="ans-skel"><b>核心答案：</b>已报未立 = 报案环节滞后（信息不全未立案）；用「已报未立准备金」按报案时点先估（案均 / 固定额），归入已报案未决而非 IBNR。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <p>三种情形：① 报案了但资料不全未立案；② 理赔系统立案阈值过滤；③ 中介集中报送滞后。评估方式：对「已报未立」单独按<b>报案口径</b>估——用历史「报案→立案」转化率 × 报案量 × 案均，或监管允许的固定比例法。原因：这些赔案「已发生且已报案」，只是未进立案系统，硬塞进 IBNR 会低估已报案未决、高估 IBNR，扭曲回溯归因。<b>归口</b>：<a href="ch2.html#s21">CH.02 §2.1</a> 的未决三分类。</p>
+  </div></details></div>
+</section>
+
+<section id="z2">
+  <h2><span class="sn">Z.2</span>回溯分析 · 数据实务 <span class="src src-ti">题</span></h2>
+  <p class="lead">2023 起的「新宠」：回溯偏差率计算、不利偏差归因、跨部门沟通——做过实务的如鱼得水，没做过的只能靠想象（考生原话）。</p>
+
+  <h3>⭐ 全解样板三 · 回溯 2022 年准备金（2024 大题3）</h3>
+  <div class="exam"><span class="yr hot">2024·大3</span>给出 2022 年底 2020–2022 三个事故年的进展因子及累计已决赔款，计算准备金；再给出 2023 年的进展因子和累计已决赔款，回溯 2022 年的准备金。不折现，风险边际 5.5%。<div class="ans-skel"><b>核心答案：</b>两步走——① 2022 年末：终极 = PC×f，未决 = 终极−PC，计提 = 未决×1.055；② 2023 年末回溯：实际消耗 = 当年已决 + 年末剩余未决，与上年计提比较得偏差，偏差率 = 偏差 ÷ 上年计提。</div>
+  <details class="answer big"><summary>完整答题过程（自构数据演示格式）</summary><div class="body">
+    <h3>第一步：2022 年末评估（单位：万元）</h3>
+    <div class="tbl-scroll"><table>
+      <tr><th>事故年</th><th>累计已决（2022 末）</th><th>进展因子 f</th><th>终极 = PC×f</th><th>未决 = 终极 − PC</th></tr>
+      <tr><td class="ctr">2020</td><td class="num">1,000</td><td class="num">1.10</td><td class="num">1,100</td><td class="num">100</td></tr>
+      <tr><td class="ctr">2021</td><td class="num">2,000</td><td class="num">1.25</td><td class="num">2,500</td><td class="num">500</td></tr>
+      <tr><td class="ctr">2022</td><td class="num">2,400</td><td class="num">1.60</td><td class="num">3,840</td><td class="num">1,440</td></tr>
+      <tr class="note-td"><td><b>合计</b></td><td class="num">5,400</td><td></td><td class="num">7,440</td><td class="num"><b>2,040</b></td></tr>
+    </table></div>
+    <p>不折现、风险边际 5.5% → <b>2022 年末计提未决赔款准备金 = 2040 × 1.055 = 2,152.2</b>（若题目另给 ULAE，未决基数再加 ULAE 准备金）。</p>
+    <h3>第二步：2023 年末回溯</h3>
+    <div class="tbl-scroll"><table>
+      <tr><th>事故年</th><th>累计已决（2023 末）</th><th>当年已决 = 增量</th><th>2023 末再评终极</th><th>年末剩余未决</th></tr>
+      <tr><td class="ctr">2020</td><td class="num">1,060</td><td class="num">60</td><td class="num">1,120</td><td class="num">60</td></tr>
+      <tr><td class="ctr">2021</td><td class="num">2,150</td><td class="num">150</td><td class="num">2,560</td><td class="num">410</td></tr>
+      <tr><td class="ctr">2022</td><td class="num">3,000</td><td class="num">600</td><td class="num">3,900</td><td class="num">900</td></tr>
+      <tr class="note-td"><td><b>合计</b></td><td></td><td class="num"><b>810</b></td><td></td><td class="num"><b>1,370</b></td></tr>
+    </table></div>
+    <div class="formula"><b>回溯恒等式</b><div class="fx">2022 年计提的「应有消耗」 = 2023 年实际已决 810 + 2023 年末剩余未决 1,370 = 2,180<br>2022 年计提（不含边际）= 2,040<br>不利偏差 = 2,040 − 2,180 = <b>−140</b>　　偏差率 = 140 / 2,040 = <b>−6.9%</b></div></div>
+    <h3>第三步：判读（必写的三句结论）</h3>
+    <p>① 偏差率 −6.9%，方向为<b>不利偏差</b>（计提不足），超出 5.5% 风险边际的覆盖范围（边际只能吸收 5.5 个百分点的偏差）；② 按银保监规〔2022〕6号实施细则，应在当年财务报告中补提并通过精算报告披露偏差原因；③ 补提的 140 万元进当期损益（提取未决赔款准备金科目），同时在回溯底稿中记录因子修正建议——2021/2022 年进展因子低估约 4–7%。</p>
+    <div class="src-note"><span class="src src-gui">规</span>回溯框架：<a href="ch4.html#s43">CH.04 §4.3</a>（含偏差率演算器，本样板数据可直接录入验证）；文号：银保监规〔2022〕6号。</div>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2025·实务</span>评估实践中发现某季度准备金计提异常上升：后续有什么可能性？需要跟哪些部门沟通、确认什么问题？<div class="ans-skel"><b>核心答案：</b>可能性三类（业务真实恶化 / 流程口径变化 / 评估技术原因）；沟通三部门——承保部（结构与新单）、理赔部（报案结案节奏）、再保部（分出安排），各带 2–3 个具体问题。</div><details class="answer"><summary>完整答题过程（实务题样板，背问题清单）</summary><div class="body ans-detail">
+    <div class="tbl-scroll"><table>
+      <tr><th>可能性类别</th><th>具体情形</th><th>验证数据</th></tr>
+      <tr><td rowspan="3">① 业务真实恶化</td><td>新单结构变化（高赔付险种占比升）</td><td>分险种保费增速 vs 行业</td></tr>
+      <tr><td>大案 / 巨灾集中出险</td><td>Top N 赔案清单与历史同期对比</td></tr>
+      <tr><td>费率不足（定价假设失效）</td><td>事故年赔付率趋势 + 充足性测试</td></tr>
+      <tr><td rowspan="3">② 流程口径变化</td><td>立案标准 / 报案通道变化（集中报案）</td><td>报案件数三角形突增</td></tr>
+      <tr><td>结案速度放缓（人手 / 政策）</td><td>已决流量 + 案均在办时长</td></tr>
+      <tr><td>系统迁移导致数据重复 / 缺口</td><td>赔案唯一性核对、对角线异常</td></tr>
+      <tr><td rowspan="2">③ 评估技术原因</td><td>进展因子选择变化（均值口径切换）</td><td>多口径因子对照</td></tr>
+      <tr><td>尾部因子 / 风险边际假设调整</td><td>假设变更清单与理由</td></tr>
+    </table></div>
+    <div class="tbl-scroll"><table>
+      <tr><th>部门</th><th>要问的问题</th></tr>
+      <tr><td><b>承保部</b></td><td>本季新单的险种结构、区域结构、渠道结构有无主动调整？有无新险种 / 核保规则放宽？</td></tr>
+      <tr><td><b>理赔部</b></td><td>报案量环比激增是真实出险还是集中补报？立案阈值、结案节奏、大案管理有无变化？估损政策（首次估损保守度）有无调整？</td></tr>
+      <tr><td><b>再保部</b></td><td>分出结构（成数 / 超赔）本季有无变化？摊回数据报送是否完整滞后？净额口径的上升是否含「摊回未到账」因素？</td></tr>
+    </table></div>
+    <p><b>收束句：</b>异常上升不是「改数字」的信号，而是「找原因」的信号——先定位（三类），再验证（数据），后沟通（三部门带问题清单去），最后才谈方法调整。这整套逻辑就是 <a href="ch4.html#s41">CH.04 §4.1</a> 数据问题六类的实战版。</p>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2025·实务</span>一季度赔款高于预期，后续未决赔款可能有哪三种走势？原因是什么？应使用哪种方法评估？<div class="ans-skel"><b>核心答案：</b>三走势——① 一次性脉冲（巨灾/大案，后续回归）→ 巨灾分离 + 原方法；② 水平抬升（通胀/费率不足，永久性上升）→ 趋势调整 + B-F；③ 进展加速（结案变快，总量不变只是提前）→ 因子重估，终极不变。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <div class="tbl-scroll"><table>
+      <tr><th>走势</th><th>机理</th><th>对终极的影响</th><th>评估方法</th></tr>
+      <tr><td>① 脉冲后回归</td><td>一次性事件（冰雹 / 单一大案）</td><td>终极小幅上移</td><td>巨灾分离（→<a href="ch4.html#s42">CH.04 §4.2</a>），基础三角形剔除后再提因子</td></tr>
+      <tr><td>② 水平永久抬升</td><td>通胀 / 法规变化 / 费率不足</td><td>终极系统性上移</td><td>通胀指数化 + B-F（先验 λ 上调）</td></tr>
+      <tr><td>③ 仅进展加速</td><td>结案提速，赔款提前流出</td><td>终极不变</td><td>近期因子上调 + 全期因子重估，勿误判为恶化</td></tr>
+    </table></div>
+    <p><b>判分点：</b>三种走势对「终极」的影响不同——①②上移、③不变，这是选择方法的关键依据。混为一谈是实务题最常见的丢分点。</p>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2024·大4</span>（1）准备金评估前数据准确性检验包括哪些？（2）2021 事故年受巨灾影响共 6000，第一年支出 5000、第二年赔完；（3）调整巨灾影响后用已报告案均法（总量因子法）计算 IBNR，并算 ULAE 占比。<div class="ans-skel"><b>核心答案：</b>检验五项（完整性/一致性/准确性/合理性/及时性）；巨灾调整 = 从三角形剔除 6000 重提因子再加回；案均法 = 终极案均×件数−已决−RV。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <div class="tbl-scroll"><table>
+      <tr><th>检验项</th><th>查什么</th><th>典型工具</th></tr>
+      <tr><td>完整性</td><td>赔案是否有遗漏、对角线是否封口</td><td>与业务系统赔案总数核对</td></tr>
+      <tr><td>一致性</td><td>口径（毛/净、含/不含费用）前后一致</td><td>取数逻辑说明书</td></tr>
+      <tr><td>准确性</td><td>金额、日期、币种无误</td><td>大额赔案抽样复核</td></tr>
+      <tr><td>合理性</td><td>进展模式与历史经验相符</td><td>因子对照、对角线图</td></tr>
+      <tr><td>及时性</td><td>数据截止评估日、无滞后报送</td><td>报送时间戳核对</td></tr>
+    </table></div>
+    <p><b>巨灾调整（2021 事故年）：</b>从 2021 年各进展期赔款中剔除 6000（第一年 5000、第二年 1000）→ 对「剔灾后三角形」提因子 → 2021 年终极（基础）+ 6000（巨灾已决完毕，无剩余未决）→ 巨灾准备金单列。<b>案均法（总量因子法）：</b>案均终极 = 累计已报案均 × 案均进展因子；IBNR = 案均终极 × 终极件数 − 已决 − RV。ULAE 占比 = 日历年已付间接理赔费用 ÷ 日历年已付赔款，乘到未决上（同 Z.5 样板的比率法）。</p>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2023·大15</span>准备金回溯出现不利偏差，根据承保、理赔、再保部门反馈的情况，分析偏差原因（业务结构变化、理赔结案速度变化、间接理赔费用变化、再保分出安排变化等）；出现不利偏差后，如何提升准备金评估的充足度？<div class="ans-skel"><b>核心答案：</b>归因按「四变化」对号入座；提升充足度四条——因子更稳健（多口径取高）、先验校准（λ 吸收新信息）、边际校准（75%分位）、流程管控（底稿+复核）。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <div class="tbl-scroll"><table>
+      <tr><th>偏差原因</th><th>部门反馈信号</th><th>对三角形的冲击</th><th>充足度对策</th></tr>
+      <tr><td>业务结构变化</td><td>承保部：高赔付险种占比升</td><td>事故年赔付率漂移</td><td>分层三角形（分险种评估）+ λ 按新结构重设</td></tr>
+      <tr><td>结案速度变化</td><td>理赔部：结案放缓</td><td>已决因子下降、RV 堆积</td><td>已决/已报案双三角形互证，因子取近期</td></tr>
+      <tr><td>间接理赔费用变化</td><td>理赔部：外包 / 人手成本上升</td><td>ULAE 比率抬升</td><td>ULAE 比率滚动更新 + 敏感性</td></tr>
+      <tr><td>再保分出变化</td><td>再保部：超赔层调整</td><td>净额三角形突变</td><td>毛/净三角形分设重估（→<a href="topic-reinsurance.html">专题·再保</a>）</td></tr>
+    </table></div>
+    <p><b>提升充足度（监管友好表述）：</b>① 方法上：多方法对照取审慎值（链梯/B-F/进展法并算）；② 假设上：λ、尾部因子、通胀因子向不利方向校准并留档理由；③ 边际上：风险边际按 75% 分位复核充足性；④ 治理上：重大假设变更走内控审批、回溯底稿完整（银保监发〔2012〕19号 + 6号细则）。</p>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2023·大9</span><span class="yr">2016·大8</span>根据已报案数据按季度的流量三角形，计算上年已报案准备金进展至今年一季度的偏差率、已报案准备金截至今年一季度的数值（2016 版：60 个未决保单在次年的发展情况，计算初次偏差率）。<div class="ans-skel"><b>核心答案：</b>已报案偏差率 = (上年计提已报案未决 − 当年实际消耗) ÷ 上年计提；消耗 = 当年已决增量 + 年末剩余已报案未决。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <div class="formula"><b>已报案未决回溯（季度版）</b><div class="fx">偏差率 = [ RV(上年末) − (当年已决增量 + RV(今年一季末)) ] ÷ RV(上年末)<br>60 单版：逐单跟踪 60 个未决保单的年内结案金额与年末估损，汇总即得消耗，再除以期初 60 单合计估损</div></div>
+    <p><b>要点：</b>已报案未决的回溯不看 IBNR，只看「估损准不准」；季度频率是 6 号细则对报送的要求。注意区分<b>初次偏差率</b>（评估后第一个周期）与<b>累计偏差率</b>（多年滚动）——题目问哪个答哪个。</p>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2013·简28-30</span>关于比较奇特的流量三角形，请指出其特点及特别之处；计算 2009、2010 年的未决赔款准备金、IBNR；填写 2010 年准备金回溯分析报表中 (1)–(12) 并说明计算过程。<div class="ans-skel"><b>核心答案：</b>奇特三角形通常是「负增量 / 对角线断裂 / 因子 &lt;1」——指向数据问题而非数学问题；回溯报表 12 空格 = 终极、消耗、剩余、偏差四组 × 三事故年。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <p><b>奇特三角形的三个识别点：</b>① 负增量（已决倒退 → 冲销 / 重立案件）；② 某对角线整体异常（数据补录 / 系统切换）；③ 因子小于 1（RV 随进展下降是正常的，PC 因子 &lt;1 则必有问题）。处理：先核对数据再提因子，必要时剔除异常期单独披露。<b>回溯报表 (1)–(12)</b> 的填写顺序：各事故年终极（3 格）→ 当年已决增量（3 格）→ 年末剩余（3 格）→ 偏差与偏差率（3 格），每格写公式再代数——「先框架后数字」是防漏答的保险。</p>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2011·简2</span>假设正在编制 2007 年精算报告，是否应考虑 2008 年雪灾的后续影响？<div class="ans-skel"><b>核心答案：</b>看「报告截止日后事项」原则——2007 年评估日前的已发生赔案必须入账；雪灾发生于 2008 年（评估日后）不调整 2007 准备金，但应在报告中作期后事项披露。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <p>准备金评估以<b>评估日</b>为界：评估日前已发生的保险事故（不论报案与否）进未决；评估日后发生的灾难不影响存量评估。但监管报告要求披露「报告日后发生的重要事项」——雪灾若影响 2008 年续期业务与偿付能力预期，应在管理层讨论与后续事项中说明。两个层次分开答，各 2–3 分。<b>对照</b>：2023·大6「已决赔款评估口径 vs 财务表口径差异是否满足评估要求」同理——先问口径定义，再判差异性质。</p>
+  </div></details></div>
+</section>
+
+<section id="z3">
+  <h2><span class="sn">Z.3</span>未到期责任准备金 · 会计衔接 <span class="src src-ti">题</span></h2>
+  <p class="lead">与三角形几乎同分值、甚至更高的「隐形重镇」（考生原话）：充足性测试、会计 vs 法定 UPR、已赚保费为负——都是「法规 + 算式 + 论述」三合一。</p>
+
+  <h3>⭐ 全解样板四 · 期初已赚保费为负（2025 论述 / 2024 大题9）</h3>
+  <div class="exam"><span class="yr hot">2025·论述</span><span class="yr hot">2024·大9</span>某公司长期健康险定价保费充足，但执行新金融工具相关会计准则（2号准则）后，财务报表显示该产品<b>期初已赚保费为负值</b>，财务部门质疑与保费充足结论相悖；财务负责人并提出「不考虑再保险时，会计未到期责任准备金必然小于法定未到期责任准备金」。（1）解释为何保费充足的产品会出现期初已赚保费为负，分析未到期责任准备金在其中的作用；（2）评述「会计 UPR 必然小于法定 UPR」的观点。<div class="ans-skel"><b>核心答案：</b>（1）期初已赚为负 = 亏损部分（PDR）回拨进已赚的镜像：首日亏损确认后，保险合同负债按履约进度释放，期初「已赚」= 负的亏损摊回 + 正的预期收入，前者占优则净额为负——恰恰说明保费充足性测试失败过或首日费用吞噬了利润；（2）「必然小于」不成立：会计 UPR 折现使其变小、但边际与亏损部分使其变大，方向不确定。</div>
+  <details class="answer big"><summary>完整答题过程（论述题标准格式）</summary><div class="body">
+    <h3>（1）期初已赚保费为负的三层解释</h3>
+    <div class="tbl-scroll"><table>
+      <tr><th>层次</th><th>机理</th><th>关键词</th></tr>
+      <tr><td>① 恒等式层</td><td>已赚保费 = 保费收入 − ΔUPR（− ΔPDR）。期初单量陡增时 ΔUPR 巨大；若 UPR 中还含保费不足 / 亏损部分，ΔPDR 同向放大</td><td>流量恒等式</td></tr>
+      <tr><td>② 首日效应层</td><td>新准则下首日若确认亏损（负债 &gt; 收到的保费），亏损部分当期一次进损益；其后各期通过「亏损部分回拨」增加已赚——期初时点上回拨尚未积累，而当期又新增大额亏损确认</td><td>首日亏损 / 亏损部分回拨</td></tr>
+      <tr><td>③ 口径层</td><td>「保费充足」是<b>整个保险期间</b>的精算判断（预期赔付+费用 ≤ 保费）；「已赚为负」是<b>单一期间</b>的会计流量现象——时间口径不同，两者不矛盾</td><td>期间 vs 全期</td></tr>
+    </table></div>
+    <p><b>未到期责任准备金的作用：</b>它是已赚保费的反向调节阀——UPR 的计提口径（是否折现、是否含维持费用、是否计亏损部分）直接决定 ΔUPR 的大小，从而决定已赚保费的符号。「期初已赚为负」在负债口径上是「尚未提供的保障对应的负债超过了当期确认的保费流量」，是稳健而非危险的信号。</p>
+    <h3>（2）「会计 UPR 必然小于法定 UPR」评述</h3>
+    <div class="tbl-scroll"><table>
+      <tr><th>作用力</th><th>方向</th><th>说明</th></tr>
+      <tr><td>折现（货币时间价值）</td><td>会计 UPR ↓</td><td>2号准则要求考虑时间价值，长期合同折现显著</td></tr>
+      <tr><td>维持费用进入负债</td><td>会计 UPR ↑</td><td>未来理赔维持费用计入保险合同负债，法定 UPR 仅指保费口径</td></tr>
+      <tr><td>亏损部分（PDR / 亏损部分）</td><td>会计 UPR ↑</td><td>预期流出超保费的部分全额入负债</td></tr>
+      <tr><td>获取成本处理</td><td>方向不定</td><td>准则演进中获取成本资本化与否直接影响首日与后续已赚节奏</td></tr>
+      <tr class="note-td"><td colspan="3"><b>结论：</b>折现让它变小、边际与维持费用让它变大——<b>两种力量方向相反，大小取决于业务期限与充足性，不存在「必然小于」</b>。正确的表述是：会计 UPR 与法定 UPR 服务不同目标（公允反映 vs 审慎监管），差异应逐项归因并披露。</td></tr>
+    </table></div>
+    <p><b>总精算师答总经理版（2024 问法）：</b>「2号准则下已赚保费未必大于法定已赚保费——会计口径多了折现、边际、亏损部分三把尺子，每把尺子方向不同；不能拿单一口径的大小关系当经营判断。」详见 <a href="topic-accounting.html">专题·财会15号与IFRS17衔接</a> 与 <a href="ch3.html#s35">CH.03 §3.5</a>。</p>
+    <div class="src-note"><span class="src src-ti">题</span>2025 论述题（小红书回忆贴全文收录）+ 2024 大题9 同源；法规依据：财会〔2009〕15号、新保险合同会计准则（2号准则）。</div>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2025</span>农业保险未到期责任准备金：保费不足时怎么算？考虑巨灾吗？保单维持费用是否乘在未赚上？<div class="ans-skel"><b>核心答案：</b>农险充足性测试的流出 = 未赚保费 ×（预期赔付率 + 理赔费用率 + 税费率 + <b>维持费用率</b>）；维持费用按未到期责任余额计提（乘在未赚上）；巨灾以巨灾附加费率形式进入预期赔付率（若当年已发生巨灾则单列）。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <div class="formula"><b>农险充足性测试（银保监规〔2023〕4号框架）</b><div class="fx">预期流出 = UPR × (λ + LAE率 + 税费率 + 维持费用率)<br>若 流出 &gt; UPR → 补提保费不足准备金 PDR = 流出 − UPR</div></div>
+    <p><b>三个采分细节：</b>① 维持费用率以<b>未到期责任余额</b>为基数（不是保费收入）——因为维持的是存量保障；② 巨灾是否考虑：测试用<b>长期平均赔付率</b>（含巨灾附加的费率口径），已发生的历史巨灾年份应剔除或平滑，不得单年化；③ 测算频率与 K 值由监管可依审慎原则调整（2024 选择题原考点）。完整演算见 <a href="ch3.html#s35">CH.03 §3.5</a> 演算器（UPR 8000、流出率 106.5% → PDR 520）。</p>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2025</span>78 法则（1/8）、24 法则（1/24）、365 分之一法分别适用于哪种业务？给定三种业务选择方法并计算评估时点准备金。<div class="ans-skel"><b>核心答案：</b>1/365 精确逐单（信息系统支持，现行主流）；1/24 月度汇总（传统口径）；1/8 季度汇总（粗略 / 数据只有季度）。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <div class="tbl-scroll"><table>
+      <tr><th>业务场景</th><th>选法</th><th>理由</th></tr>
+      <tr><td>车险（逐单系统数据完整）</td><td>1/365</td><td>无假设、按起保日精确切分</td></tr>
+      <tr><td>货运险按月汇总报送</td><td>1/24</td><td>月内出单均匀假设可接受</td></tr>
+      <tr><td>只有季度汇总数据的分支机构业务</td><td>1/8</td><td>季中出单假设，精度最低但数据可得</td></tr>
+    </table></div>
+    <p><b>计算模板：</b>3 月起保年保费 1200 → 1/24：已赚 9.5 月，UPR = 250；同例 1/8（一季度起保）：已赚 3 季 = 10.5 月，UPR = 150；1/365：按剩余天数比例精确。三法数字会不同——<b>口径一致性比精度更重要</b>，评估年度内不得混用。速算见 <a href="ch3.html#s32">CH.03 §3.2 演算器</a>。</p>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2023·大13</span><span class="yr">2016·大5</span>计算会计未到期责任准备金：已知贴现率、资产收益率、未来赔款流量三角形等（2016 版：法定与新会计准则下 UPR 不一致的解释 + 两种口径下已赚保费是否一致）。<div class="ans-skel"><b>核心答案：</b>会计 UPR = 未来净流出（赔付+费用−维持收益）按<b>贴现率</b>折现；不一致原因 = 折现 + 边际 + 维持费用；已赚保费也不一致（ΔUPR 不同）。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <div class="formula"><b>会计 UPR（2号准则/财会15号框架）</b><div class="fx">UPR_会计 = Σ [ 未来各期净现金流(t) ÷ (1+i)^t ]　　净现金流 = 预期赔付 + 维持费用 − 相关投资收益<br>对比：UPR_法定 = 未赚保费（名义值、不折现、审慎导向）</div></div>
+    <p><b>三个差异源（背诵）：</b>① 折现（会计↓）；② 风险边际 / 非金融边际（会计↑）；③ 维持费用与投资收益的处理（口径差异）。<b>已赚保费是否一致：</b>不一致——已赚 = 保费收入 − ΔUPR，ΔUPR 的计提节奏两口径不同；尤其首年（法定 1/2 法平滑 vs 会计预期流量法），差异可达数个百分点。这题与 Z.3 样板四共用一套底层逻辑（<a href="topic-accounting.html">专题·会计衔接</a>科目对照总表）。</p>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2013·综31</span>年度会议上 CEO、CFO、COO 分别针对 UPR 提出四个问题（如：CEO 问为什么年度报告中的 UPR 与准备金报告中的 UPR 不一样），请总精算师一一解答并举例。<div class="ans-skel"><b>核心答案：</b>四问四答——报告口径差异（会计 vs 法定）、充足性（PDR）、方法选择（1/365 vs 风险分布）、回溯与披露。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <div class="tbl-scroll"><table>
+      <tr><th>问</th><th>答（要点）</th><th>举例</th></tr>
+      <tr><td>CEO：年报 UPR ≠ 准备金报告 UPR？</td><td>口径不同：会计准则（公允反映）vs 监管口径（审慎充足），折现与边际处理不同</td><td>同一货运险存量，会计折现后小于法定</td></tr>
+      <tr><td>CFO：为什么今年多提了 PDR？</td><td>充足性测试失败：预期流出率 &gt; 100%，按 15 号文补提</td><td>费率下调后赔付率升至 95%+ 费用 16% → 补提</td></tr>
+      <tr><td>COO：能用更粗的方法吗？</td><td>方法与数据匹配：1/8 只适用季度汇总数据；季节性业务必须风险分布法</td><td>种植险按 1/24 冬季高估一倍</td></tr>
+      <tr><td>（第四问通用）差异怎么管？</td><td>双口径对照表 + 差异归因披露 + 回溯验证两口径各自稳定性</td><td>月度管理报表并列两口径 UPR</td></tr>
+    </table></div>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2023·大5</span><span class="yr">2011·论2</span>根据财务表计算综合三率（综合费用率 / 综合赔付率 / 综合成本率）；说明事故年赔付率与综合赔付率差异的原因，以及在业务初期、快速发展期、稳定期、衰退期的相对关系。<div class="ans-skel"><b>核心答案：</b>综合赔付率 = 赔款÷已赚；综合费用率 = 费用÷保费（注意分母不同！）；综合成本率 = 两者之和。差异原因：已赚滞后于保费 + 准备金计提口径；生命周期四段：初期事故年 &gt; 综合，快速发展期综合 &gt; 事故年（旧单低费率滚出），稳定期趋同，衰退期综合 &gt; 事故年。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <div class="formula"><b>综合三率（财务口径）</b><div class="fx">综合赔付率 = (发生赔款 + Δ未决) ÷ 已赚保费　　综合费用率 = (获取费用 + 维持费用) ÷ 自留保费（注意：分母是保费不是已赚！）<br>综合成本率 = 综合赔付率 + 综合费用率　　&lt;100% 即承保盈利</div></div>
+    <div class="tbl-scroll"><table>
+      <tr><th>生命周期</th><th>事故年 vs 综合赔付率</th><th>机理</th></tr>
+      <tr><td>经营初期</td><td>事故年 &gt; 综合</td><td>已赚基数小、赔案少，综合率被分母压低</td></tr>
+      <tr><td>快速发展期</td><td>综合 &gt; 事故年</td><td>已赚中混入高费率旧单（滚出的低赔付率保费）与准备金增提</td></tr>
+      <tr><td>稳定期</td><td>两者趋同</td><td>保费增速平稳，流量结构稳定</td></tr>
+      <tr><td>衰退期</td><td>综合 &gt; 事故年</td><td>保费收缩、费用摊薄变差、存量已赚质量下降</td></tr>
+    </table></div>
+    <p><b>加分项：</b>指出「差异 = 折现、风险边际、PDR 之外的结构性原因」（2023 追问原话），即<b>流量时点错位</b>——已赚按权责发生、保费按收付实现；并把承保利润与经营净现金流差异（权责发生 vs 收付实现，2023·大12）一并点出。</p>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2016·大6</span>是否满足重大风险测试？（给定情形判断保险合同 / 投资合同）<div class="ans-skel"><b>核心答案：</b>重大保险风险测试看「保险风险是否显著」：情景法——不利情景下赔付是否显著超过负债账面；不通过则拆分为投资 + 保险两部分。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <p>三步：① 识别保险风险（死亡 / 赔付频率强度是否影响现金流）；② 显著性测试——构造不利情景（如赔付率 +X%），比较「保险现金流现值」与「不包含保险风险的负债现值」，显著超过则通过；③ 未通过的处理：拆分确认（存款/投资成分 + 保险成分），只对保险成分提责任准备金。非寿险的短期财险几乎必然通过（赔付不确定性天然显著），考题多拿<b>融资性信保 / 储蓄型返回产品</b>设置陷阱——这类业务保险风险可能不显著。<b>衔接</b>：2号准则下对应「是否属于保险合同」的判断（<a href="topic-accounting.html">专题·会计衔接</a>）。</p>
+  </div></details></div>
+</section>
+
+<section id="z4">
+  <h2><span class="sn">Z.4</span>风险边际 · ULAE · 随机模型 <span class="src src-ti">题</span></h2>
+  <p class="lead">教材里「很小一块」、考场上「能做对的凤毛麟角」（考生原话）——分差就在这里拉开。</p>
+
+  <h3>⭐ 全解样板五 · 风险边际三连问（2024 大题7）</h3>
+  <div class="exam"><span class="yr hot">2024·大7</span>风险边际题（教材例子为 200 年一遇 99.5%，考题为 100 年一遇 99%）：（1）100 年一遇下未来时点的准备金余额；（2）风险边际率；（3）产品线分摊——4 个产品线，给出 3 个产品线的偿付能力最低资本，计算第 4 个产品线的风险边际。<div class="ans-skel"><b>核心答案：</b>（1）分位数法：RM = 准备金(99%分位) − 准备金(期望)；（2）RM率 = RM ÷ 期望准备金；（3）分摊：按最低资本占比，RM(线D) = RM(总) × MC(D) ÷ MC(总)。</div>
+  <details class="answer big"><summary>完整答题过程（自构数据演示格式）</summary><div class="body">
+    <h3>（1）100 年一遇（99% 分位）的准备金余额</h3>
+    <div class="formula"><b>分位数法</b><div class="fx">准备金(99%) = μ + z(99%) × σ　　z(99%) = 2.326（对比：99.5% → 2.576）<br>正态近似下：均值 μ = 未来现金流现值期望；σ = μ × CV（整体变异系数，可用随机模型或经验标尺估计）</div></div>
+    <div class="tbl-scroll"><table>
+      <tr><th>项目</th><th>数值（自构）</th><th>说明</th></tr>
+      <tr><td>期望准备金 μ</td><td class="num">5,000</td><td>最优估计现金流现值</td></tr>
+      <tr><td>整体变异系数 CV</td><td class="num">12%</td><td>σ = 600</td></tr>
+      <tr><td>99% 分位准备金</td><td class="num">5,000 + 2.326×600 = <b>6,395.6</b></td><td>100 年一遇的负债水平</td></tr>
+      <tr><td>风险边际 RM</td><td class="num"><b>1,395.6</b></td><td>6,395.6 − 5,000</td></tr>
+    </table></div>
+    <h3>（2）风险边际率</h3>
+    <p>RM率 = 1,395.6 ÷ 5,000 = <b>27.9%</b>（若换 200 年一遇 99.5%：RM = 2.576×600 = 1,545.6，率 30.9%——分位数每上一个台阶，边际按 z 值差等比放大，这就是「百年一遇 vs 二百年一遇」的考点本质）。</p>
+    <h3>（3）产品线分摊</h3>
+    <div class="tbl-scroll"><table>
+      <tr><th>产品线</th><th>最低资本 MC</th><th>占比</th><th>分摊风险边际（总 RM = 1,020）</th></tr>
+      <tr><td class="ctr">A</td><td class="num">3.2 亿</td><td class="num">37.6%</td><td class="num">384</td></tr>
+      <tr><td class="ctr">B</td><td class="num">2.6 亿</td><td class="num">30.6%</td><td class="num">312</td></tr>
+      <tr><td class="ctr">C</td><td class="num">1.8 亿</td><td class="num">21.2%</td><td class="num">216</td></tr>
+      <tr><td class="ctr"><b>D（待求）</b></td><td class="num"><b>8.5 − 7.6 = 0.9 亿</b></td><td class="num">10.6%</td><td class="num"><b>108</b></td></tr>
+      <tr class="note-td"><td><b>合计</b></td><td class="num">8.5 亿</td><td class="num">100%</td><td class="num">1,020</td></tr>
+    </table></div>
+    <p><b>两步逻辑（判分点）：</b>① 第 4 条线最低资本 = 总 MC − 已知三条线之和（0.9 亿）；② 风险边际按 MC 占比线性分摊（D 线 = 1,020 × 0.9/8.5 = 108）。<b>为什么按资本分摊：</b>风险边际度量的是「负债超越期望的尾部代价」，而最低资本正是各业务块风险的监管定价——同一定价尺度下分摊最公平。</p>
+    <div class="src-note"><span class="src src-jiao">教</span>谢志刚 Ch5 风险边际例题变形；随机模型与 CV 的衔接见 <a href="topic-stochastic.html">专题·随机模型与CV</a>。</div>
+  </div></details></div>
+
+  <div class="exam"><span class="yr hot">2025·论述</span><b>描述</b>资本成本法的计算过程，并说明资本成本率的确定标准（考生警示：「只会计算不会描述就尴尬了」）。<div class="ans-skel"><b>核心答案：</b>四步描述——① 确定支撑准备金的资本要求；② 选资本成本率（无风险利率 + 合理溢价，参考长期平均、剔除可规避风险）；③ 逐年计「资本 × 成本率」；④ 求和折现即风险边际。资本成本率锚定：与偿付能力资本要求一致、只含并高于无风险部分、考虑长期平均与压力期稳定性。</div><details class="answer"><summary>完整答题过程（描述题模板，逐字背）</summary><div class="body ans-detail">
+    <h3>计算过程四步（描述格式）</h3>
+    <div class="tbl-scroll"><table>
+      <tr><th>步骤</th><th>操作描述（考场上照此写）</th></tr>
+      <tr><td>① 资本要求确定</td><td>估计持有该准备金负债所需的偿付能力资本额（监管口径或经济资本口径），该资本以有价证券形式持有</td></tr>
+      <tr><td>② 资本成本率选取</td><td>成本率 = 资本回报率 − 无风险利率（只取「高于无风险部分的溢价」）</td></tr>
+      <tr><td>③ 逐年机会成本</td><td>对未来各评估期：资本要求 × 资本成本率 = 该期占用的机会成本</td></tr>
+      <tr><td>④ 折现加总</td><td>各期机会成本按无风险利率折现到评估日，加总即为风险边际</td></tr>
+    </table></div>
+    <h3>资本回报率的四条考虑（考试总结原文精炼）</h3>
+    <p>① 用以满足资本要求的资产以有价证券形式存在，回报率<b>只应包含并高于其中的无风险收益部分</b>；② 资本回报率与保险人真实偿付能力无关，应<b>与偿付能力资本要求相一致</b>；③ 风险边际须能保证各种不利情境下负债的充足性——回报率选择要看<b>长期平均结果</b>并兼顾不同时期的<b>稳定性和压力</b>；④ 市场风险只考虑不可规避部分、只考虑有重大影响的部分；再保摊回风险只考虑分出部分。<b>没有经验时怎么办（2025 追问）：</b>借鉴行业公布值 / 监管指引值 / 类似业务经验，并在底稿中记录选取理由与敏感性——「无经验」不是「无依据」。</p>
+    <p>选择题陷阱（2025）：问「估计选 6% 资本成本率为什么」——答「对应资本回报率与无风险利率之差的长期合理水平」，而不是「监管强制 6%」（法规没有强制具体数值）。</p>
+  </div></details></div>
+
+  <h3>⭐ 全解样板六 · 日历年 ULAE（2024 大题1）</h3>
+  <div class="exam"><span class="yr hot">2024·大1</span>给出事故年累计赔款、日历年已决间接理赔费用，最近一个事故年的 case（已报案未决）和 IBNR，ULAE 在报案时发生 30%。计算最后一个事故年的 ULAE。<div class="ans-skel"><b>核心答案：</b>比率法：ULAE = (日历年已付间接费 ÷ 日历年已付赔款) × 未决赔款；30% 报案时发生 → 已报案部分乘 70% 权重、IBNR 部分乘 100%。</div>
+  <details class="answer big"><summary>完整答题过程（自构数据演示格式）</summary><div class="body">
+    <h3>第一步：日历年已付赔款（对角线增量）</h3>
+    <div class="tbl-scroll"><table>
+      <tr><th>事故年</th><th>累计已决（上年末）</th><th>累计已决（本年末）</th><th>本日历年已付赔款</th></tr>
+      <tr><td class="ctr">AY1</td><td class="num">900</td><td class="num">1,020</td><td class="num">120</td></tr>
+      <tr><td class="ctr">AY2</td><td class="num">1,500</td><td class="num">1,680</td><td class="num">180</td></tr>
+      <tr><td class="ctr">AY3</td><td class="num">1,900</td><td class="num">1,900</td><td class="num">0</td></tr>
+      <tr class="note-td"><td><b>合计</b></td><td></td><td></td><td class="num"><b>300</b></td></tr>
+    </table></div>
+    <h3>第二步：间接费用比率</h3>
+    <p>本日历年已付间接理赔费用 = 36 → 比率 r = 36 ÷ 300 = <b>12%</b>。</p>
+    <h3>第三步：最近事故年（AY3）的 ULAE</h3>
+    <div class="formula"><b>报案时点 30% 权重的加权法</b><div class="fx">AY3 已报案未决 case = 1,500，IBNR = 800<br>已报案部分：报案环节已发生 30% 间接费 → 未到期仅剩 70% → 1,500 × 70% × 12% = 126<br>IBNR 部分：完全未进入报案环节 → 全额计 → 800 × 100% × 12% = 96<br>ULAE(AY3) = 126 + 96 = <b>222</b></div></div>
+    <p><b>对照（不拆权重的简单比率法）：</b>(1,500+800) × 12% = 276——高估 54。判分关键在<b>说明你理解 30% 报案时发生意味着什么</b>：间接费用与「流程动作」绑定（报案、查勘、结案），哪段动作没发生，哪段费用就还没花。<b>局限与适用（2025 追问）：</b>比率法假设间接费与赔款同比例——律效案件占比高、外包成本变动时失效；替代方案为<b>平均日历年已付 ULAE 百分比法</b>（2011 真题：2010 年 ULAE 1000、年增 20%，按各事故年支付模式分摊求 2012 年底 ULAE）与<b>已付 ULAE 与已付赔款比率法</b>的滚动版。</p>
+    <div class="src-note"><span class="src src-jiao">教</span>谢志刚 Ch6 理赔费用准备金；框架见 <a href="ch2.html#s25">CH.02 §2.5</a>。</div>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2023·大17</span>已知正态分布、对数分布及相关变异系数，求超过 75% 分位点后的平均损失。<div class="ans-skel"><b>核心答案：</b>75% 分位 ≈ μ + 0.674σ；超分位均值 = 分位值 + 期望超额（正态为线性公式，对数正态为参数化积分）。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <div class="formula"><b>正态情形</b><div class="fx">P75 = μ + 0.674σ<br>E[X | X&gt;P75] = μ + σ × φ(0.674) / (1−Φ(0.674)) = μ + σ × 0.3187 / 0.25 ≈ μ + 1.275σ<br>期望超额 = E[X|X&gt;P75] − P75 ≈ 0.601σ</div></div>
+    <p><b>考点本质：</b>风险边际的「75% 分位」校准（6 号细则允许用 75% 分位做充足性参照）需要知道<b>分位值之上还有多厚</b>——右尾期望超出分位值的部分。对数正态用参数 (μ_L, σ_L) 的截尾均值公式，题目给变异系数时先反解 σ_L = √(ln(1+CV²))。与 <a href="topic-stochastic.html">专题·随机模型</a> 的「μ+0.674σ」标尺互证。</p>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2023·大11</span><span class="yr">总结·3</span>根据内部变异系数、外部变异系数（及相关系数）计算准备金整体变异系数；Tweedie 分布累积损失为零的概率。<div class="ans-skel"><b>核心答案：</b>整体 CV² = 内部 CV² + 外部 CV² + 2ρ×内部×外部（或独立时开平方合成）；Tweedie P(X=0) = e^(−φλ) 即泊松为零的概率。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <div class="formula"><b>变异系数合成（框架）</b><div class="fx">CV_整体 = √( CV_内² + CV_外² + 2ρ·CV_内·CV_外 )　　（ρ=0 退化为平方和开根；题目给了相关系数就必须用满式）</div></div>
+    <p><b>Tweedie 分布（考试总结原题）：</b>累积损失服从 Tweedie(p, μ, φ)，其中 1&lt;p&lt;2 时是「质量点 0 + 连续正部」的复合泊松-伽马混合——<b>P(X=0) = e^(−λ)</b>，就是复合泊松中「泊松计数为零」的概率。考选择/填空，记住这句即可。随机模型各模型的适用与局限是 2025 选择题固定考点：Mack（无分布假设、给 MSEP）、Bootstrap（给完整分布、可算任意分位）、广义线性模型（含协变量、Tweedie 连接）、贝叶斯（先验融合、计算重）——对照表见 <a href="topic-stochastic.html">专题·随机模型 §一至三</a>。</p>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2011·选/简</span>（选择题群）下列哪项可说明已发生已报案是否充分？/ 用 Cape Cod 计算期望赔付率 / 平均日历年 ULAE 百分比法 / 未决赔款准备金久期。<div class="ans-skel"><b>核心答案：</b>报案充分性看「已决 ÷ 累计已报」比率与报案量稳定度；Cape Cod λ 见 Z.1 样板二；ULAE 见 Z.4 样板；久期 = 各期现金流现值加权平均期限。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <p>① <b>报案充分性指标：</b>「已决赔款 ÷ 累计已报案赔款」比率（过低说明估损不足或立而不决）、累计报案件数增速、案均在办时长——「累计报案金额」本身高低不说明充分性，<b>比率类指标才是答案</b>（2011 原题正确项为 C）。② <b>未决久期：</b>D = Σ[t × CF(t)×v^t] ÷ Σ[CF(t)×v^t]——给定未来现金流即可算，用于资产负债管理的期限匹配，2011 年就考了，如今与 ALM 话题联动（准备金久期是负债端久期的主力）。</p>
+  </div></details></div>
+</section>
+
+<section id="z5">
+  <h2><span class="sn">Z.5</span>偿付能力最低资本 <span class="src src-ti">题</span></h2>
+  <p class="lead">「一个字一个字的看」（考生总结原话）——银保监发〔2021〕51号附件第4号。2024 一道大题问到底，2025 融资类信保再加码。</p>
+
+  <h3>⭐ 全解样板七 · 车险农险九问全解（2024 大题8）</h3>
+  <div class="exam"><span class="yr hot">2024·大8</span>给出车险、农险 2022 半年/全年、2023 半年/全年利润表，公司车险份额 &lt; 20%。（1）车险保费风险最低资本；（2）农险准备金风险最低资本（利用 2023 年底农险利润表的提取未决与摊回未决，结合 2022 年底再保后准备金余额算再保后未决净额）；（3）巨灾风险最低资本（境内、境外、相关系数）；（4）公司保险风险最低资本聚合。<div class="ans-skel"><b>核心答案：</b>K = 暴露 × RF×(1+Σ特征系数)；车险份额 &lt;20% 触发规模特征系数档位；农险未决净额 = 2022 末余额 + 2023 提取未决 − 摊回；聚合两层开平方（险种内 ρ12、险种间 ρij、巨灾高相关）。</div>
+  <details class="answer big"><summary>完整答题过程（框架级，因子取值以附件原文为准）</summary><div class="body">
+    <h3>（1）车险保费风险最低资本</h3>
+    <div class="formula"><b>计量框架（51号附件4）</b><div class="fx">K(车险保费) = EX × RF0 × (1 + K1 + K2 + K3)<br>EX = 车险自留保费（最近半年×2 或最近一年孰高口径，按规则）<br>K1/K2/K3 = 特征系数：保费增速、赔付波动、险种/再保结构（份额 &lt; 20% 是规模分档条件）</div></div>
+    <p><b>作答顺序（判分点）：</b>① 从两年四张利润表取车险自留保费并说明口径；② 声明「公司车险份额 &lt; 20%」落在附件的哪一档（影响 RF0 的选取或特征系数档位）；③ 代入因子算 K。题目给半年+全年数据就是为了考「暴露口径的年平均处理」——<b>先把口径写清楚再算数</b>。</p>
+    <h3>（2）农险准备金风险最低资本</h3>
+    <div class="formula"><b>再保后未决净额的三步合成（题目设计的扣子）</b><div class="fx">再保后未决(2023末) = 2022 末再保后准备金余额 + 2023 年提取未决赔款准备金 − 2023 年摊回未决赔款准备金<br>K(农险准备金) = 再保后未决净额 × RF0 × (1 + Σ特征系数)</div></div>
+    <p><b>数字演示（自构）：</b>2022 末余额 8.0 亿 + 提取 3.5 亿 − 摊回 1.2 亿 = 净额 10.3 亿；RF 取 4.9%（附件值示意）→ K ≈ 0.50 亿，再按特征系数（回溯偏差历史、长尾占比）调整。<b>为什么这样考：</b>利润表只有「提取」与「摊回」流量，期初余额在去年报表——考察你会不会<b>把流量拼回存量</b>（这正是评估岗每月做的事）。</p>
+    <h3>（3）巨灾风险最低资本</h3>
+    <div class="formula"><b>境内 + 境外巨灾的聚合</b><div class="fx">K(巨灾) = √[ K_境内² + K_境外² + 2ρ·K_境内·K_境外 ]　　（ρ 按附件矩阵；境内各灾因之间高相关、趋于相加）</div></div>
+    <p>巨灾按灾因（台风/洪水/地震/冰雹）分别算暴露 × 灾因因子，境内部分高相关聚合后与境外部分按题目给定相关系数再聚合。自构示例：境内 2.0 亿、境外 0.5 亿、ρ=0.2 → √(4+0.25+2×0.2×1.0) = √4.65 ≈ 2.16 亿。</p>
+    <h3>（4）公司保险风险最低资本（总聚合）</h3>
+    <div class="formula"><b>两层开平方</b><div class="fx">险种内：MC(车险) = √[ K1² + K2² + 2ρ12·K1·K2 ]　（保费风险 × 准备金风险）<br>险种间：MC(保险风险) = √[ Σi Σj ρij·MCi·MCj ]　（车险、农险、…各险种 + 巨灾模块按矩阵）</div></div>
+    <p><b>自构验证（与专题页同例）：</b>车险 K1=8、K2=5、ρ12=0.5 → MC(车险) = √129 ≈ 11.36 亿；农险 MC = 6 亿、ρ(车,农)=0.3 → 组合 = √(11.36²+36+2×0.3×11.36×6) = √(129+36+40.9) = √205.9 ≈ <b>14.35 亿</b>；再并入巨灾 2.16 亿（ρ=0.5）→ √(205.9+4.66+2×0.5×14.35×2.16) = √241.5 ≈ <b>15.5 亿</b>。<b>收束句：相关系数就是资本的价格——每一层 ρ 都让资本打折，这正是「险种分散、境内外分散」的监管含义。</b></p>
+    <div class="src-note"><span class="src src-gui">规</span>银保监发〔2021〕51号附件第4号；框架与 K1/K2/K3 详解见 <a href="ch5.html#s51">CH.05 §5.1</a> 与 <a href="topic-solvency.html">专题·保险风险最低资本</a>（含演算器）。</div>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2023·大10/16</span>计算保险风险最低资本：已知保费及准备金资本、巨灾资本、融资和非融资信用保证险保险风险资本、相关系数；保险风险测算方法 K = 暴露 × R0 × (1+K)，根据数据分别计算 K1/K2/K3。<div class="ans-skel"><b>核心答案：</b>融资性信保与非融资性信保是<b>两个独立模块</b>，分别计量后与保费/准备金/巨灾模块按相关矩阵聚合；K = EX×R0×(1+ΣK) 的 K 指特征系数加成。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <div class="tbl-scroll"><table>
+      <tr><th>模块</th><th>暴露口径</th><th>要点</th></tr>
+      <tr><td>保费风险</td><td>自留保费</td><td>分险种 RF0 + 特征系数（增速/结构）</td></tr>
+      <tr><td>准备金风险</td><td>再保后未决净额</td><td>特征系数盯回溯偏差历史</td></tr>
+      <tr><td>巨灾风险</td><td>灾因暴露</td><td>分灾因、境内外分块、高相关聚合</td></tr>
+      <tr><td>融资性信保</td><td>融资性保证险自留保费/未决</td><td>独立 RF（显著高于普通险种——尾部重）</td></tr>
+      <tr><td>非融资性信保</td><td>非融资性保证险暴露</td><td>独立模块，与融资性分开计量</td></tr>
+    </table></div>
+    <p><b>2025 加码：</b>「融资类保险应当计提的风险准备金（偿二代小白书）」——融资性信保不仅要算保险风险资本，还要按监管要求计提<b>专项风险准备金</b>（兜底超额损失的缓冲），两者是「资本 + 准备金」的双层防御。答这类题先分模块、再逐个 EX×RF、最后矩阵聚合，<b>把公式骨架写在最前面</b>（公式分 + 步骤分 + 数值分是三桶分）。</p>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2011·论1</span>《风险管理指引》中风险的定义？据此给出承保风险的定义；综合成本率的定义、来源与依据；保险法第102条（自留保费 ≤ 资本金+公积金的 4 倍）与偿付能力管理规定（自留保费扣税后 1 亿以下 18%、以上 16% 计算最低资本）是否冲突？<div class="ans-skel"><b>核心答案：</b>风险 = 未来不确定性对经营目标的影响；承保风险 = 承保活动引致的赔付/费用偏离；综合成本率 = 赔付率+费用率（源自欧盟旧偿付能力体系的成本率分析）；两条规定不冲突——一个是量的上限（承保规模约束），一个是资本的最低要求（充足性约束），互为补充。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <p><b>不冲突的三层论证（论述题格式）：</b>① 规范对象不同：102 条管「保费规模与资本存量的杠杆关系」（静态存量约束），偿付能力最低资本管「风险暴露要求的资本底线」（风险加权约束）；② 逻辑关系：满足 4 倍上限的公司，其最低资本要求自动落在可承受区间内——前者是后者的简化代理（欧盟旧第一代指令正是这种「保费规模法」）；③ 演进视角：偿一代用规模代理风险，偿二代改为风险加权（K1/K2/K3）——两条旧规在现代框架下分别退化为「业务规模管理」与「历史制度坐标」。<b>加分收束：</b>「监管规则的演进，就是把粗糙的代理变量换成精细的风险变量。」（→ <a href="ch5.html#s51">CH.05 §5.1</a>）</p>
+  </div></details></div>
+</section>
+
+<section id="z6">
+  <h2><span class="sn">Z.6</span>监管规则 · 内控 · 报告（选择题集）<span class="src src-ti">题</span></h2>
+  <p class="lead">2023–2024 的选择题型是「六选一找错误」，2024 原话「选择题基本上是最新的规定上的，非常细」——法规原文的精确记忆就是分数。</p>
+
+  <div class="exam"><span class="yr">2023·选1-6</span>（判断错误题组）准备金回溯 / 风险资本 / 准备金报告（总经理对分支机构评估结果负责——错，应为总精算师签署 + 分支机构负责人仅在授权范围内）/ IBNR 方法（B-F 对近期事故年偏向链梯法——错，恰恰相反，偏向先验）/ 已报案方法（案均适合理赔模式不稳定——错，案均要求稳定）/ 未到期责任准备金。<div class="ans-skel"><b>核心答案：</b>六句话——回溯看 6 号细则；K1K2K3 看附件 4；责任人是总精算师；B-F 对不成熟年偏先验；案均要案均稳定；UPR 是未赚保费对应负债。</div><details class="answer"><summary>逐项辨析</summary><div class="body ans-detail">
+    <div class="tbl-scroll"><table>
+      <tr><th>选项域</th><th>易错点还原</th><th>正确表述</th></tr>
+      <tr><td>回溯</td><td>「回溯偏差只调整期初数」类</td><td>偏差应分析原因、调整当期评估假设并在报告中披露</td></tr>
+      <tr><td>风险资本</td><td>「K2 暴露是毛口径」类</td><td>准备金风险暴露是<b>再保后净额</b></td></tr>
+      <tr><td>报告责任</td><td>「总经理对分支机构结果负责」</td><td>分公司结果由<b>总精算师</b>统一签署负责，分支机构在授权内操作</td></tr>
+      <tr><td>IBNR 方法</td><td>「B-F 对近期事故年偏向链梯」</td><td>近期事故年 1/f 小、先验权重大——<b>偏向赔付率法</b></td></tr>
+      <tr><td>已报案方法</td><td>「案均适合理赔模式不稳定」</td><td>案均法要求<b>案均赔款稳定</b>；不稳定时用链梯或逐案</td></tr>
+      <tr><td>未到期</td><td>「UPR 是负债方的资本缓冲」类</td><td>UPR = 未赚保费对应的负债，充足性由 PDR 补充</td></tr>
+    </table></div>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2024·选</span>附件报告报送内容<b>不包括</b>什么（答案：不包括直接理赔费用表）；农险精算规定中保费不足准备金的测算时间、报送时间、测算频率、K 值。<div class="ans-skel"><b>核心答案：</b>报送内容包括未到期、未决、边际、回溯等表——直接理赔费用（ALAE）随赔款不单列表；农险充足性测试的频率与 K 值，监管可依审慎原则适时调整（行业或个体）。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <p>11号令 + 实施细则规定的报送体系按「未到期 / 未决 / 边际与折现 / 机构准备金 / 回溯 / 报告 / 底稿」组织；<b>间接</b>理赔费用（ULAE）有独立评估表，<b>直接</b>理赔费用（ALAE）作为赔款组成部分处理、不单列——「不包括直接理赔费用表」考的就是这个细节。农险（4号文）：保费充足性测试有固定测算与报送时限，频率与 K 值的调整权在监管——「适时调整行业或个体的测试频率与 K 值」是原文表述，选择题爱抠「行业或个体」四个字。</p>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2025</span><span class="yr">总结·1</span>简述准备金工作底稿编制的三大原则；内控风险评估及举措；内控管控不包含哪项（核算 / 数据 / 评估 / 流程）。<div class="ans-skel"><b>核心答案：</b>底稿三原则 = 真实性、完整性、及时性；内控管控涵盖数据、评估、流程（不含「核算」——核算属财务会计职责边界）。</div><details class="answer"><summary>完整答题过程（背诵原文）</summary><div class="body ans-detail">
+    <div class="tbl-scroll"><table>
+      <tr><th>原则</th><th>原文表述（考试总结收录）</th></tr>
+      <tr><td><b>真实性</b></td><td>资料和数据来源可靠、取数逻辑合理且一致、措辞严谨、材料翔实；充分披露所使用数据的可信度信息</td></tr>
+      <tr><td><b>完整性</b></td><td>应包括准备金评估和回溯分析所涉及的各项必要信息</td></tr>
+      <tr><td><b>及时性</b></td><td>评估与回溯过程中应及时进行底稿的编制和整理</td></tr>
+    </table></div>
+    <p><b>出处：</b>银保监发〔2012〕19号内控规范 + 6 号细则底稿部分。<b>内控风险举措施工图（2025 实务题）：</b>按「数据（来源核对/权限管理）→ 评估（方法论证/假设审批）→ 流程（职责分离/复核留痕）」三层展开，每层举一风险一举措；「核算」不在准备金内控的管控清单里——它是财务部门科目层面的动作。模板见 <a href="ch5.html#s53">CH.05 §5.3「四分离三留痕」</a>。</p>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2011·简3</span><span class="yr">2014·选</span>判断准备金披露数据属于通用会计准则还是监管准则口径，监管准则下报告摘要应怎么改；最终对保险公司会计信息真实性负责的是谁。<div class="ans-skel"><b>核心答案：</b>看是否含折现/边际/公允价值语言；监管报送样式按偿二代报表体系；会计信息真实性责任人是<b>管理层（法定代表人/总经理）</b>，总精算师对准备金与精算报告负责。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <p><b>判别三标志：</b>① 有无折现（监管口径一般不折现）；② 有无风险边际表述（会计准则的边际结构不同）；③ 资产端是否市场价值认可（监管编报规则）。<b>责任人辨析（2014 原题）：</b>《会计法》框架下单位负责人对本单位会计资料真实性完整性负责——「最终负责」答管理层/法定代表人；总精算师的责任边界是<b>准备金评估与精算报告</b>（11号令），法律审查声明书、消费者权益保护审查各有归属（考试总结第 6 条辨析过总精与法律责任人的分工）。这类「谁负责什么」是送分也是坑分——背 <a href="ch5.html#s53">CH.05 §5.3</a> 的责任矩阵。</p>
+  </div></details></div>
+
+  <div class="exam"><span class="yr">2011·论2</span><span class="yr">2013·综32</span>经济资本计算 / 准备金编制规则咨询题（未到期 = 年签单保费×0.5、未决 = 报案数×案均、资产按市场/账面价值、偿付能力 0.9A&gt;L）——作为资深精算师给出建议。<div class="ans-skel"><b>核心答案：</b>三条建议——① 准备金改用 1/365 逐日 + 逐案/链梯混合；② 资产按市场价值认可（与 IFRS/新准则一致）；③ 0.9A&gt;L 的静态杠杆规则应升级为风险加权的最低资本体系。</div><details class="answer"><summary>完整答题过程</summary><div class="body ans-detail">
+    <div class="tbl-scroll"><table>
+      <tr><th>原规则</th><th>缺陷</th><th>改进建议（引文号）</th></tr>
+      <tr><td>未到期 = 签单保费 × 0.5</td><td>忽略出单时点分布与季节性</td><td>1/365 逐日法；季节性业务用风险分布法（11号令）</td></tr>
+      <tr><td>未决 = 报案数 × 案均</td><td>忽略 IBNR 与大案异质性</td><td>逐案 + 链梯/B-F 分层；加风险边际（6号细则）</td></tr>
+      <tr><td>资产混合计价</td><td>账面价值掩盖信用与市场风险</td><td>统一市场价值认可（偿二代编报规则 / IFRS 趋势）</td></tr>
+      <tr><td>0.9A &gt; L</td><td>静态杠杆、无风险敏感性</td><td>风险加权最低资本 + 两级充足率（偿二代范式）</td></tr>
+    </table></div>
+    <p><b>答题姿势：</b>咨询题 = 找缺陷 + 给方案 + 引依据，每条三段式；结尾加一句国际坐标（欧盟 Solvency Ⅱ 三支柱、美国 RBC）就是满分结构。本题与 <a href="ch1.html#s15">CH.01 §1.5</a> 的「评估体系演进」和 <a href="topic-solvency.html">专题·偿付能力</a> 双向互链。</p>
+  </div></details></div>
+</section>
+
+<section id="s7">
+  <h2><span class="sn">§7</span>备考启示 · 三代考生的经验教训</h2>
+  <div class="tbl-scroll"><table>
+    <tr><th>来源</th><th>原话要义</th><th>本库落点</th></tr>
+    <tr><td>2023 小红书贴</td><td>「实务多过理论，只就教材备考 30 分都打不到」；实施细则 7 部分每块都有考题；偿二代保险风险教材内容已过时，须看新规；掌握三表科目与四种赔付率；「考试大纲没有一个字是多余的」</td><td>本库以 11 号令 + 6 号细则 + 附件 4 号为主轴重写了 CH.04/05（<a href="index.html">首页 §5 制度地图</a>）</td></tr>
+    <tr><td>2025-11 通过者</td><td>「反复看指定教材和监管的文，自己弄 Excel 把书上例题录进去算」；考试有 Excel 操作题，Cape Cod、B-F、总量比率法都要熟练；「能早过早点过」</td><td>每章演算器默认值即教材例题数据（<a href="ch2.html">CH.02</a> 六台演算器）</td></tr>
+    <tr><td>2026-03 经验贴</td><td>三角形是送分题不能丢，但「千万不要没完没了地算三角形」；资本成本法<b>要会描述</b>不只是会算；法规里有数字的都要背；实务题 20–30 分，没做过实务的要保证计算+选择拿 60/70–80</td><td>计算练到熟练即止（模拟卷一）；描述题模板收录在 Z.4；法规数字表见 <a href="references.html">参考资料库</a></td></tr>
+    <tr><td>2013 考生</td><td>「附录部分都不能轻易放过」；有 7–8 题是前两年考过的原题——历年真题分数丢掉太可惜</td><td>本馆 2008–2025 全收录 + <a href="moni-1.html">三套模拟</a>反复变形旧题</td></tr>
+  </table></div>
+  <div class="mnem"><b>最后一页的睡前一分钟：</b>三角形送分拿满（链梯·B-F·Cape Cod·进展法·赔付率法·案均法六台演算器各过一遍）→ 回溯与充足性两道必考大题背框架（Z.2 样板三 + CH.03 §3.5）→ 风险边际会算更会描述（Z.4 样板五）→ 法规文号六连背（11 号令管总、15 号管账、19 号管控、51 号管资本、6 号管回溯、4 号管农险）——这四句话就是 60 分及格线的最短路径。</div>
+</section>
+
+<div class="pager"><a class="prev" href="topic-accounting.html">← 专题·财会15号与IFRS17衔接</a><a class="next" href="moni-1.html">进入 模拟卷一 · 流量三角形 →</a></div>
+</main>
+<script src="js/kb.js"></script>
+<script src="js/gate.js"></script>
+</body>
+</html>
